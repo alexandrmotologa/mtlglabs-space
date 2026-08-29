@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MTLG Labs — Autonomous Software Lab & Developer Tooling</title>
+  <meta name="description" content="MTLG Labs is an independent software lab creating developer tools, SaaS applications, and AI-driven automation engines. Built by Alexandr Motologa." />
+  <meta name="keywords" content="MTLG Labs, Developer Tools, SnapFrame, Bubble Dev Studio, CLI, SaaS, Alexandr Motologa, AI Automation" />
+  <meta name="author" content="Alexandr Motologa" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mtlglabs.space" />
+  <meta property="og:title" content="MTLG Labs — Autonomous Software & Developer Tooling" />
+  <meta property="og:description" content="Engineering next-generation developer tooling, SaaS products, and autonomous AI systems." />
+  <meta property="og:site_name" content="MTLG Labs" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Ambient cyber background -->
+  <div class="ambient-glow glow-cyan"></div>
+  <div class="ambient-glow glow-purple"></div>
+  <div class="ambient-glow glow-emerald"></div>
+  <div class="cyber-grid"></div>
+
+  <div class="app-container">
+    <!-- Header -->
+    <header class="navbar">
+      <div class="nav-brand">
+        <div class="logo-box">
+          <span class="logo-icon">◈</span>
+        </div>
+        <div class="brand-text">
+          <span class="brand-title">MTLG LABS</span>
+          <span class="brand-sub">LABS.SPACE // v2.6</span>
+        </div>
+      </div>
+      <div class="nav-actions">
+        <a href="https://mtlg.site" target="_blank" rel="noopener" class="creator-badge">
+          <span class="avatar-small">AM</span>
+          <span>Founder: Alexandr Motologa</span>
+          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Hero -->
+    <main>
+      <section class="hero-section">
+        <div class="hero-badge">
+          <span class="badge-dot"></span>
+          <span>INDEPENDENT PRODUCT & TOOLING STUDIO</span>
+        </div>
+
+        <h1 class="hero-headline">
+          Engineering High-Velocity <br />
+          <span class="gradient-text">Developer Tools & SaaS</span>
+        </h1>
+
+        <p class="hero-subtext">
+          MTLG Labs is the software innovation lab of Alexandr Motologa. We build desktop developer studios, 
+          command-line workflows, AI-assisted QA engines, and production-ready SaaS platforms.
+        </p>
+
+        <!-- Metrics Ticker -->
+        <div class="metrics-ticker">
+          <div class="metric-item">
+            <span class="metric-num">7+</span>
+            <span class="metric-label">Software Projects</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-num">100%</span>
+            <span class="metric-label">Autonomous Engineering</span>
+          </div>
+          <div class="metric-divider"></div>
+          <div class="metric-item">
+            <span class="metric-num">TypeScript</span>
+            <span class="metric-label">Core Foundation</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Products & Labs Section -->
+      <section class="showcase-section">
+        <div class="showcase-header">
+          <div>
+            <h2 class="section-heading">Product Ecosystem</h2>
+            <p class="section-subheading">Explore live software, developer studios, and active laboratory experiments.</p>
+          </div>
+
+          <!-- Category Filters -->
+          <div class="filter-group">
+            <button class="filter-btn active" data-filter="all">All Labs</button>
+            <button class="filter-btn" data-filter="devtools">Dev Tools</button>
+            <button class="filter-btn" data-filter="saas">SaaS & Apps</button>
+            <button class="filter-btn" data-filter="ai">AI & Automation</button>
+          </div>
+        </div>
+
+        <div class="products-grid" id="products-grid">
+          
+          <!-- Product 1: SnapFrame.store -->
+          <div class="product-card" data-category="saas">
+            <div class="card-top">
+              <span class="status-pill status-live">
+                <span class="pulse-dot"></span> Live SaaS
+              </span>
+              <span class="cat-pill">Micro-SaaS</span>
+            </div>
+            <div class="card-main">
+              <h3 class="product-name">SnapFrame.store</h3>
+              <p class="product-desc">
+                Studio-grade App Store & Google Play screenshot generator powered by AI Vision Auto-Pilot, 3D device frames, video previews, and Fastlane ASO metadata automation.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Production SaaS</span>
+              <span class="tag">Three.js</span>
+              <span class="tag">AI Vision</span>
+              <span class="tag">ASO Suite</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://snapframe.store" target="_blank" rel="noopener" class="card-action-btn primary-action">
+                <span>Launch App</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+              <a href="https://github.com/alexandrmotologa/snapframe.store" target="_blank" rel="noopener" class="card-action-btn icon-action" title="View Source">
+                <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 2: Bubble.io Dev Studio -->
+          <div class="product-card" data-category="devtools">
+            <div class="card-top">
+              <span class="status-pill status-dev">
+                <span class="pulse-dot"></span> In Active Dev
+              </span>
+              <span class="cat-pill">Developer Studio</span>
+            </div>
+            <div class="card-main">
+              <h3 class="product-name">Bubble.io Dev Studio</h3>
+              <p class="product-desc">
+                All-in-one Developer Studio & Desktop GUI for Bubble.io: automated backups, schema inspection, dead code audit, AI translation, and visual QA testing.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Electron</span>
+              <span class="tag">TypeScript</span>
+              <span class="tag">DevOps</span>
+              <span class="tag">GUI</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/alexandrmotologa/bubble-io-dev-studio" target="_blank" rel="noopener" class="card-action-btn primary-action">
+                <span>View Repository</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 3: Bubble.io CLI Suite -->
+          <div class="product-card" data-category="devtools">
+            <div class="card-top">
+              <span class="status-pill status-oss">
+                <span class="pulse-dot"></span> Open Source
+              </span>
+              <span class="cat-pill">CLI / Tooling</span>
+            </div>
+            <div class="card-main">
+              <h3 class="product-name">bubble-io-cli</h3>
+              <p class="product-desc">
+                Comprehensive TypeScript CLI for Bubble.io: automated backups, schema inspection, local mocking, CI/CD integrations, and plugin deployment workflows.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">TypeScript</span>
+              <span class="tag">Commander</span>
+              <span class="tag">CI/CD</span>
+              <span class="tag">Terminal</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/alexandrmotologa/bubble-io-cli" target="_blank" rel="noopener" class="card-action-btn primary-action">
+                <span>GitHub Repo</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 4: Bubble AI Translator -->
+          <div class="product-card" data-category="ai">
+            <div class="card-top">
+              <span class="status-pill status-ai">
+                <span class="pulse-dot"></span> AI Engine
+              </span>
+              <span class="cat-pill">AI & Localization</span>
+            </div>
+            <div class="card-main">
+              <h3 class="product-name">bubble-io-ai-translator</h3>
+              <p class="product-desc">
+                AI-Powered Localization CLI & Interactive TUI for high-precision multi-language translation and token management.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">AI Translation</span>
+              <span class="tag">TUI</span>
+              <span class="tag">i18n</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/alexandrmotologa/bubble-io-ai-translator" target="_blank" rel="noopener" class="card-action-btn primary-action">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 5: Bubble Dead Code Detector -->
+          <div class="product-card" data-category="devtools">
+            <div class="card-top">
+              <span class="status-pill status-tool">
+                <span class="pulse-dot"></span> Audit Tool
+              </span>
+              <span class="cat-pill">Code Audit</span>
+            </div>
+            <div class="card-main">
+              <h3 class="product-name">bubble-dead-code-detector</h3>
+              <p class="product-desc">
+                Dead code detector, dependency analyzer & health scorer designed to keep enterprise low-code codebases clean and performant.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">AST Analysis</span>
+              <span class="tag">Health Audit</span>
+              <span class="tag">Optimizer</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/alexandrmotologa/bubble-io-dead-code-detector" target="_blank" rel="noopener" class="card-action-btn primary-action">
+                <span>View on GitHub</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <!-- Product 6: SOMA Bioflow Labs -->
+          <div class="product-card" data-category="saas">
+            <div class="card-top">
+              <span class="status-pill status-lab">
+                <span class="pulse-dot"></span> Lab Beta
+              </span>
+              <span class="cat-pill">Bio & Fitness</span>
+            </div>
+            <div class="card-main">
+              <h3 class="product-name">SOMA Bioflow Platform</h3>
+              <p class="product-desc">
+                Biometric intelligence, workout tracking, and micronutrient bioflow analyzer for athletes and high-performance individuals.
+              </p>
+            </div>
+            <div class="card-tags">
+              <span class="tag">Mobile</span>
+              <span class="tag">Health Tech</span>
+              <span class="tag">Analytics</span>
+            </div>
+            <div class="card-footer">
+              <a href="https://github.com/alexandrmotologa/soma-fitness-and-workouts" target="_blank" rel="noopener" class="card-action-btn primary-action">
+                <span>Lab Details</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Philosophy Bento Grid -->
+      <section class="philosophy-section">
+        <h2 class="section-heading">The MTLG Labs Engineering Standard</h2>
+        <div class="bento-grid">
+          <div class="bento-card">
+            <div class="bento-icon">⚡</div>
+            <h3>Velocity & Precision</h3>
+            <p>Every tool is designed to cut hours of tedious work into seconds of autonomous execution.</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-icon">🛡️</div>
+            <h3>Local-First & Resilient</h3>
+            <p>Architecture that works reliably with offline resilience, zero-friction developer experience, and modern TypeScript standards.</p>
+          </div>
+          <div class="bento-card">
+            <div class="bento-icon">🤖</div>
+            <h3>AI-Augmented Workflows</h3>
+            <p>Direct integration with vision and language models to automate visual QA, localization, and smart code refactoring.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Founder Banner -->
+      <section class="founder-card">
+        <div class="founder-left">
+          <span class="founder-label">LAB FOUNDER & ARCHITECT</span>
+          <h3 class="founder-name">Alexandr Motologa</h3>
+          <p class="founder-text">
+            Looking to collaborate, sponsor tooling development, or discuss custom software architectures? 
+            Visit my personal engineering hub or get in touch directly.
+          </p>
+        </div>
+        <div class="founder-right">
+          <a href="https://mtlg.site" target="_blank" rel="noopener" class="founder-cta-btn">
+            <span>Visit mtlg.site</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="footer-col">
+        <div class="footer-brand">
+          <span>◈</span>
+          <strong>MTLG Labs</strong>
+        </div>
+        <p class="footer-copy">Autonomous Software & Developer Tooling Lab.</p>
+      </div>
+
+      <div class="footer-col footer-links">
+        <a href="https://mtlg.site" target="_blank" rel="noopener">Founder Profile (mtlg.site)</a>
+        <a href="https://github.com/alexandrmotologa" target="_blank" rel="noopener">GitHub (@alexandrmotologa)</a>
+        <a href="https://snapframe.store" target="_blank" rel="noopener">SnapFrame.store</a>
+      </div>
+
+      <div class="footer-col footer-end">
+        <span class="footer-stamp">&copy; <span id="year">2026</span> MTLG Labs.</span>
+        <span class="endpoint-tag">mtlglabs.space</span>
+      </div>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
