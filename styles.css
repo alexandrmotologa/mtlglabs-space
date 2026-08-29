@@ -753,10 +753,13 @@ body {
   border: 1px solid var(--card-border);
 }
 
-/* Responsive */
+/* Responsive & Adaptive */
 @media (max-width: 768px) {
+  .app-container {
+    padding: 1.5rem 1rem;
+  }
   .hero-headline {
-    font-size: 2.35rem;
+    font-size: 2.2rem;
   }
   .products-grid {
     grid-template-columns: 1fr;
@@ -772,4 +775,54 @@ body {
     flex-direction: column;
     align-items: flex-start;
   }
+  .hero-stats {
+    flex-wrap: wrap;
+  }
 }
+
+@media (max-width: 480px) {
+  .app-container {
+    padding: 1rem 0.75rem;
+  }
+  .hero-headline {
+    font-size: 1.75rem;
+  }
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+  .filter-bar {
+    width: 100%;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+  .filter-bar::-webkit-scrollbar {
+    display: none;
+  }
+  .filter-btn {
+    white-space: nowrap;
+    padding: 0.4rem 0.75rem;
+    font-size: 0.78rem;
+  }
+  .founder-top {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .founder-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+  .founder-actions .founder-cta-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .card-footer {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .card-footer .card-action-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
