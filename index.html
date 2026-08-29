@@ -525,66 +525,116 @@ body {
 }
 
 
-/* Carousel Styles */
+
+/* Enhanced Media & Drag-To-Scroll Carousel */
+.card-media,
+.project-media,
 .card-carousel,
 .project-carousel {
   position: relative;
   width: 100%;
-  height: 185px;
-  border-radius: 10px;
+  height: 220px;
+  border-radius: 12px;
   overflow: hidden;
   margin-bottom: 1.25rem;
-  background: rgba(0, 0, 0, 0.4);
+  background: radial-gradient(circle at center, rgba(22, 27, 44, 0.8), rgba(6, 8, 14, 0.95));
   border: 1px solid rgba(255, 255, 255, 0.08);
   user-select: none;
+  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+.project-media,
 .project-carousel {
   margin: 0.85rem 0 1rem;
-  border-radius: var(--radius-sm, 10px);
+  border-radius: var(--radius-sm, 12px);
   border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
 }
 
-.carousel-track {
-  position: relative;
-  width: 100%;
-  height: 100%;
+.card-media,
+.project-media {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
 }
 
-.carousel-slide {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s ease, transform 0.3s ease;
-  transform: scale(0.98);
-}
-
-.carousel-slide.active {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}
-
-.carousel-slide img,
 .card-media img,
 .project-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  object-position: top center;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
   display: block;
+  transition: transform 0.3s ease;
+  pointer-events: none;
+}
+
+.product-card:hover .card-media img,
+.project-card:hover .project-media img {
+  transform: scale(1.02);
+}
+
+/* Scroll-Snap Track */
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  width: 100%;
+  height: 100%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease;
+  pointer-events: none;
 }
 
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  background: rgba(10, 14, 25, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(8, 12, 22, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #ffffff;
   display: flex;
   align-items: center;
@@ -593,7 +643,7 @@ body {
   z-index: 10;
   opacity: 0;
   transition: all 0.2s ease;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   padding: 0;
 }
 
@@ -603,17 +653,18 @@ body {
 }
 
 .carousel-prev {
-  left: 8px;
+  left: 10px;
 }
 
 .carousel-next {
-  right: 8px;
+  right: 10px;
 }
 
 .carousel-btn:hover {
-  background: rgba(6, 182, 212, 0.8);
-  border-color: rgba(255, 255, 255, 0.6);
+  background: rgba(6, 182, 212, 0.9);
+  border-color: rgba(255, 255, 255, 0.7);
   transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
 }
 
 .carousel-indicators {
@@ -624,41 +675,43 @@ body {
   display: flex;
   gap: 5px;
   z-index: 10;
-  padding: 3px 8px;
-  background: rgba(0, 0, 0, 0.55);
+  padding: 4px 9px;
+  background: rgba(5, 7, 14, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 9999px;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 
 .carousel-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.35);
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: all 0.25s ease;
 }
 
 .carousel-dot.active {
   background: #38bdf8;
-  width: 14px;
+  width: 16px;
   border-radius: 4px;
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
 }
 
 .carousel-badge {
   position: absolute;
   top: 8px;
   right: 8px;
-  background: rgba(0, 0, 0, 0.65);
+  background: rgba(5, 7, 14, 0.8);
   border: 1px solid rgba(255, 255, 255, 0.15);
   color: #e2e8f0;
   font-family: var(--font-mono, monospace);
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 600;
-  padding: 2px 7px;
+  padding: 3px 8px;
   border-radius: 6px;
   z-index: 10;
-  backdrop-filter: blur(4px);
+  backdrop-filter: blur(6px);
 }
 
 /* Products Grid */
@@ -1613,38 +1666,38 @@ body {
               </span>
               <span class="cat-pill">AI & Mental Health</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="5">
+            <div class="card-carousel" data-total="5">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/oneira-web-1.png" alt="Oneira Space (Web) Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/oneira-web-2.png" alt="Oneira Space (Web) Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/oneira-web-3.png" alt="Oneira Space (Web) Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/oneira-web-4.png" alt="Oneira Space (Web) Screenshot Preview 4" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="4">
                   <img src="images/oneira-web-5.png" alt="Oneira Space (Web) Screenshot Preview 5" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
+                <span class="carousel-dot " data-dot-index="4"></span>
               </div>
               <div class="carousel-badge">1/5</div>
             </div>
@@ -1675,38 +1728,38 @@ body {
               </span>
               <span class="cat-pill">Mobile Well-Being</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="5">
+            <div class="card-carousel" data-total="5">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/oneira-app-1.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/oneira-app-2.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/oneira-app-3.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/oneira-app-4.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 4" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="4">
                   <img src="images/oneira-app-5.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 5" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
+                <span class="carousel-dot " data-dot-index="4"></span>
               </div>
               <div class="carousel-badge">1/5</div>
             </div>
@@ -1766,26 +1819,26 @@ body {
               </span>
               <span class="cat-pill">CLI & Automation</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="2">
+            <div class="card-carousel" data-total="2">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/bubble-cli-1.jpg" alt="bubble-io-cli Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/bubble-cli-2.jpg" alt="bubble-io-cli Screenshot Preview 2" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
               </div>
               <div class="carousel-badge">1/2</div>
             </div>
@@ -1819,30 +1872,30 @@ body {
               </span>
               <span class="cat-pill">AI & Localization</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/bubble-ai-translator-1.png" alt="bubble-io-ai-translator Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/bubble-ai-translator-2.png" alt="bubble-io-ai-translator Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/bubble-ai-translator-3.png" alt="bubble-io-ai-translator Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -1877,30 +1930,30 @@ body {
               </span>
               <span class="cat-pill">Code Health</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/bubble-dead-code-detector-1.png" alt="bubble-io-dead-code-detector Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/bubble-dead-code-detector-2.png" alt="bubble-io-dead-code-detector Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/bubble-dead-code-detector-3.png" alt="bubble-io-dead-code-detector Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -1934,26 +1987,26 @@ body {
               </span>
               <span class="cat-pill">Automated QA</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="2">
+            <div class="card-carousel" data-total="2">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/bubble-visual-tester-1.png" alt="bubble-io-visual-tester Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/bubble-visual-tester-2.png" alt="bubble-io-visual-tester Screenshot Preview 2" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
               </div>
               <div class="carousel-badge">1/2</div>
             </div>
@@ -1983,34 +2036,34 @@ body {
               </span>
               <span class="cat-pill">Custom Architectural</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="4">
+            <div class="card-carousel" data-total="4">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/alu-traumterrasse-1.jpg" alt="Alu-Traumterrasse Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/alu-traumterrasse-2.jpg" alt="Alu-Traumterrasse Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/alu-traumterrasse-3.png" alt="Alu-Traumterrasse Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/alu-traumterrasse-4.png" alt="Alu-Traumterrasse Screenshot Preview 4" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
               </div>
               <div class="carousel-badge">1/4</div>
             </div>
@@ -2040,38 +2093,38 @@ body {
               </span>
               <span class="cat-pill">Web3 & FinTech</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="5">
+            <div class="card-carousel" data-total="5">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/quiz2coin-1.png" alt="Quiz2Coin Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/quiz2coin-2.png" alt="Quiz2Coin Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/quiz2coin-3.png" alt="Quiz2Coin Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/quiz2coin-4.png" alt="Quiz2Coin Screenshot Preview 4" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="4">
                   <img src="images/quiz2coin-5.png" alt="Quiz2Coin Screenshot Preview 5" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
+                <span class="carousel-dot " data-dot-index="4"></span>
               </div>
               <div class="carousel-badge">1/5</div>
             </div>
@@ -2131,38 +2184,38 @@ body {
               </span>
               <span class="cat-pill">Telegram & Gaming</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="5">
+            <div class="card-carousel" data-total="5">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/telequiz-1.png" alt="TeleQuiz Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/telequiz-2.png" alt="TeleQuiz Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/telequiz-3.png" alt="TeleQuiz Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/telequiz-4.png" alt="TeleQuiz Screenshot Preview 4" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="4">
                   <img src="images/telequiz-5.png" alt="TeleQuiz Screenshot Preview 5" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
+                <span class="carousel-dot " data-dot-index="4"></span>
               </div>
               <div class="carousel-badge">1/5</div>
             </div>
@@ -2196,30 +2249,30 @@ body {
               </span>
               <span class="cat-pill">Campus Network</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/atcollege-1.png" alt="atCollege.com Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/atcollege-2.png" alt="atCollege.com Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/atcollege-3.png" alt="atCollege.com Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -2252,30 +2305,30 @@ body {
               </span>
               <span class="cat-pill">Sustainable Re-Commerce</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/nxtchapter-1.png" alt="Nxt Chapter Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/nxtchapter-2.png" alt="Nxt Chapter Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/nxtchapter-3.png" alt="Nxt Chapter Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -2305,34 +2358,34 @@ body {
               </span>
               <span class="cat-pill">Food & Delivery</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="4">
+            <div class="card-carousel" data-total="4">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/burgercraft-1.png" alt="BurgerCraft Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/burgercraft-2.png" alt="BurgerCraft Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/burgercraft-3.png" alt="BurgerCraft Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/burgercraft-4.png" alt="BurgerCraft Screenshot Preview 4" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
               </div>
               <div class="carousel-badge">1/4</div>
             </div>
@@ -2362,30 +2415,30 @@ body {
               </span>
               <span class="cat-pill">Architecture Showcase</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/greenspace-1.jpg" alt="GreenSpace Architects Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/greenspace-2.png" alt="GreenSpace Architects Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/greenspace-3.jpg" alt="GreenSpace Architects Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -2415,34 +2468,34 @@ body {
               </span>
               <span class="cat-pill">Digital Agency</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="4">
+            <div class="card-carousel" data-total="4">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/pixelwave-1.png" alt="PixelWave Agency Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/pixelwave-2.png" alt="PixelWave Agency Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/pixelwave-3.jpg" alt="PixelWave Agency Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/pixelwave-4.png" alt="PixelWave Agency Screenshot Preview 4" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
               </div>
               <div class="carousel-badge">1/4</div>
             </div>
@@ -2472,30 +2525,30 @@ body {
               </span>
               <span class="cat-pill">FinTech & Agri</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/acrehedge-1.png" alt="AcreHedge Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/acrehedge-2.png" alt="AcreHedge Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/acrehedge-3.png" alt="AcreHedge Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -2525,34 +2578,34 @@ body {
               </span>
               <span class="cat-pill">Web3 Publishing</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="4">
+            <div class="card-carousel" data-total="4">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/format-kultify-1.png" alt="Format (Kultify) Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/format-kultify-2.png" alt="Format (Kultify) Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/format-kultify-3.png" alt="Format (Kultify) Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/format-kultify-4.png" alt="Format (Kultify) Screenshot Preview 4" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
               </div>
               <div class="carousel-badge">1/4</div>
             </div>
@@ -2611,38 +2664,38 @@ body {
               </span>
               <span class="cat-pill">Prediction Market</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="5">
+            <div class="card-carousel" data-total="5">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/satoshibet-1.png" alt="SatoshiBet Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/satoshibet-2.png" alt="SatoshiBet Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/satoshibet-3.png" alt="SatoshiBet Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/satoshibet-4.png" alt="SatoshiBet Screenshot Preview 4" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="4">
                   <img src="images/satoshibet-5.png" alt="SatoshiBet Screenshot Preview 5" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
+                <span class="carousel-dot " data-dot-index="4"></span>
               </div>
               <div class="carousel-badge">1/5</div>
             </div>
@@ -2666,30 +2719,30 @@ body {
               </span>
               <span class="cat-pill">Smart Shopping</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/aislesync-1.png" alt="AisleSync Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/aislesync-2.png" alt="AisleSync Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/aislesync-3.png" alt="AisleSync Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -2719,38 +2772,38 @@ body {
               </span>
               <span class="cat-pill">Accessibility & Audits</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="5">
+            <div class="card-carousel" data-total="5">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/evas-ro-1.png" alt="EVAS RO Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/evas-ro-2.png" alt="EVAS RO Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/evas-ro-3.png" alt="EVAS RO Screenshot Preview 3" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="3">
                   <img src="images/evas-ro-4.png" alt="EVAS RO Screenshot Preview 4" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="4">
                   <img src="images/evas-ro-5.png" alt="EVAS RO Screenshot Preview 5" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
+                <span class="carousel-dot " data-dot-index="3"></span>
+                <span class="carousel-dot " data-dot-index="4"></span>
               </div>
               <div class="carousel-badge">1/5</div>
             </div>
@@ -2780,26 +2833,26 @@ body {
               </span>
               <span class="cat-pill">EdTech & Tutors</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="2">
+            <div class="card-carousel" data-total="2">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/ezlanguage-1.png" alt="EzLanguage (EzSchool) Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/ezlanguage-2.png" alt="EzLanguage (EzSchool) Screenshot Preview 2" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
               </div>
               <div class="carousel-badge">1/2</div>
             </div>
@@ -2855,30 +2908,30 @@ body {
               </span>
               <span class="cat-pill">Music & Booking</span>
             </div>
-            <div class="card-carousel" data-current="0" data-total="3">
+            <div class="card-carousel" data-total="3">
               <div class="carousel-track">
                 
-                <div class="carousel-slide active">
+                <div class="carousel-slide" data-slide-index="0">
                   <img src="images/nothing-unwanted-1.png" alt="Nothing Unwanted Screenshot Preview 1" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="1">
                   <img src="images/nothing-unwanted-2.png" alt="Nothing Unwanted Screenshot Preview 2" loading="lazy" />
                 </div>
-                <div class="carousel-slide ">
+                <div class="carousel-slide" data-slide-index="2">
                   <img src="images/nothing-unwanted-3.png" alt="Nothing Unwanted Screenshot Preview 3" loading="lazy" />
                 </div>
               </div>
-              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
               </button>
-              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image">
                 <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
               </button>
               <div class="carousel-indicators">
                 
-                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
-                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot active" data-dot-index="0"></span>
+                <span class="carousel-dot " data-dot-index="1"></span>
+                <span class="carousel-dot " data-dot-index="2"></span>
               </div>
               <div class="carousel-badge">1/3</div>
             </div>
@@ -3277,66 +3330,107 @@ body {
 
   <script src="script.js"></script>
 
+
 <script>
-// Carousel Logic for Multi-Image Cards
-function updateCarousel(container, newIndex) {
-  const total = parseInt(container.dataset.total, 10);
-  let idx = newIndex;
-  if (idx < 0) idx = total - 1;
-  if (idx >= total) idx = 0;
-  
-  container.dataset.current = idx;
-  
-  const slides = container.querySelectorAll('.carousel-slide');
-  slides.forEach((s, i) => {
-    s.classList.toggle('active', i === idx);
-  });
-  
-  const dots = container.querySelectorAll('.carousel-dot');
-  dots.forEach((d, i) => {
-    d.classList.toggle('active', i === idx);
-  });
-  
-  const badge = container.querySelector('.carousel-badge');
-  if (badge) {
-    badge.textContent = (idx + 1) + '/' + total;
-  }
-}
-
-function stepCarousel(btn, delta) {
-  const container = btn.closest('.card-carousel, .project-carousel');
-  if (!container) return;
-  const current = parseInt(container.dataset.current, 10) || 0;
-  updateCarousel(container, current + delta);
-}
-
-function setCarouselSlide(dot, index) {
-  const container = dot.closest('.card-carousel, .project-carousel');
-  if (!container) return;
-  updateCarousel(container, index);
-}
-
-// Touch swipe support for carousels
+// Interactive Drag-to-Scroll & Swipe Carousel
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.card-carousel, .project-carousel').forEach(carousel => {
+    const track = carousel.querySelector('.carousel-track');
+    const prevBtn = carousel.querySelector('.carousel-prev');
+    const nextBtn = carousel.querySelector('.carousel-next');
+    const dots = carousel.querySelectorAll('.carousel-dot');
+    const badge = carousel.querySelector('.carousel-badge');
+    const total = parseInt(carousel.dataset.total, 10) || 1;
+
+    let isDown = false;
     let startX = 0;
-    let endX = 0;
-    
-    carousel.addEventListener('touchstart', (e) => {
-      startX = e.changedTouches[0].screenX;
-    }, { passive: true });
-    
-    carousel.addEventListener('touchend', (e) => {
-      endX = e.changedTouches[0].screenX;
-      if (startX - endX > 40) {
-        stepCarousel(carousel.querySelector('.carousel-next'), 1);
-      } else if (endX - startX > 40) {
-        stepCarousel(carousel.querySelector('.carousel-prev'), -1);
+    let scrollLeft = 0;
+    let isDragging = false;
+
+    // Update active dot and counter based on scroll position
+    const updateActiveState = () => {
+      const slideWidth = track.clientWidth || 1;
+      const index = Math.round(track.scrollLeft / slideWidth);
+      const clampedIndex = Math.max(0, Math.min(index, total - 1));
+      
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('active', i === clampedIndex);
+      });
+      
+      if (badge) {
+        badge.textContent = (clampedIndex + 1) + '/' + total;
       }
-    }, { passive: true });
+    };
+
+    track.addEventListener('scroll', updateActiveState, { passive: true });
+
+    // Buttons
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        track.scrollBy({ left: -track.clientWidth, behavior: 'smooth' });
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        track.scrollBy({ left: track.clientWidth, behavior: 'smooth' });
+      });
+    }
+
+    // Dots
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+      });
+    });
+
+    // Mouse Drag to Scroll
+    track.addEventListener('mousedown', (e) => {
+      isDown = true;
+      isDragging = false;
+      startX = e.pageX - track.offsetLeft;
+      scrollLeft = track.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (!isDown) return;
+      isDown = false;
+      setTimeout(() => { isDragging = false; }, 50);
+      
+      // Snap to nearest slide
+      const slideWidth = track.clientWidth || 1;
+      const targetIndex = Math.round(track.scrollLeft / slideWidth);
+      track.scrollTo({ left: targetIndex * slideWidth, behavior: 'smooth' });
+    });
+
+    track.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - track.offsetLeft;
+      const walk = (x - startX);
+      if (Math.abs(walk) > 4) {
+        isDragging = true;
+      }
+      track.scrollLeft = scrollLeft - walk;
+    });
+
+    // Prevent parent card navigation if user dragged
+    carousel.addEventListener('click', (e) => {
+      if (isDragging) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
   });
 });
 </script>
+
 
 </body>
 </html>
