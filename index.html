@@ -324,6 +324,27 @@ body {
   flex-shrink: 0;
 }
 
+.linkedin-icon {
+  display: none;
+  flex-shrink: 0;
+}
+
+.nav-text-full {
+  display: inline;
+}
+
+.founder-full {
+  display: inline;
+}
+
+.founder-short {
+  display: none;
+}
+
+.founder-icon {
+  flex-shrink: 0;
+}
+
 /* Hero Section */
 .hero-section {
   text-align: center;
@@ -501,6 +522,143 @@ body {
 
 .product-card:hover .card-media img {
   transform: scale(1.04);
+}
+
+
+/* Carousel Styles */
+.card-carousel,
+.project-carousel {
+  position: relative;
+  width: 100%;
+  height: 185px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  user-select: none;
+}
+
+.project-carousel {
+  margin: 0.85rem 0 1rem;
+  border-radius: var(--radius-sm, 10px);
+  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
+}
+
+.carousel-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-slide {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  transform: scale(0.98);
+}
+
+.carousel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.carousel-slide img,
+.card-media img,
+.project-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: rgba(10, 14, 25, 0.75);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.2s ease;
+  backdrop-filter: blur(6px);
+  padding: 0;
+}
+
+.card-carousel:hover .carousel-btn,
+.project-carousel:hover .carousel-btn {
+  opacity: 1;
+}
+
+.carousel-prev {
+  left: 8px;
+}
+
+.carousel-next {
+  right: 8px;
+}
+
+.carousel-btn:hover {
+  background: rgba(6, 182, 212, 0.8);
+  border-color: rgba(255, 255, 255, 0.6);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 5px;
+  z-index: 10;
+  padding: 3px 8px;
+  background: rgba(0, 0, 0, 0.55);
+  border-radius: 9999px;
+  backdrop-filter: blur(4px);
+}
+
+.carousel-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.carousel-dot.active {
+  background: #38bdf8;
+  width: 14px;
+  border-radius: 4px;
+}
+
+.carousel-badge {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #e2e8f0;
+  font-family: var(--font-mono, monospace);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: 6px;
+  z-index: 10;
+  backdrop-filter: blur(4px);
 }
 
 /* Products Grid */
@@ -932,6 +1090,40 @@ body {
     padding: 2rem 1.25rem;
   }
   
+  /* Compact Navbar Actions under 900px */
+  .nav-personal-link {
+    padding: 0.45rem 0.65rem;
+    gap: 0;
+  }
+  .nav-personal-link .linkedin-icon {
+    display: inline-block;
+  }
+  .nav-personal-link .nav-text-full {
+    display: none;
+  }
+
+  .bmc-badge {
+    padding: 0.45rem 0.65rem;
+    gap: 0;
+  }
+  .bmc-badge .nav-text-full {
+    display: none;
+  }
+
+  .creator-badge {
+    padding: 0.45rem 0.75rem;
+    gap: 0.4rem;
+  }
+  .creator-badge .avatar-small {
+    display: none;
+  }
+  .creator-badge .founder-full {
+    display: none;
+  }
+  .creator-badge .founder-short {
+    display: inline;
+  }
+  
   .products-grid {
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 1.25rem;
@@ -1308,16 +1500,19 @@ body {
         </div>
       </div>
       <div class="nav-actions">
-        <a href="https://linkedin.com/in/alexandrmotologa" target="_blank" rel="noopener" class="nav-personal-link">
-          <span>LinkedIn ↗</span>
+        <a href="https://linkedin.com/in/alexandrmotologa" target="_blank" rel="noopener" class="nav-personal-link" title="LinkedIn Profile" aria-label="LinkedIn">
+          <svg class="linkedin-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+          <span class="nav-text-full">LinkedIn ↗</span>
         </a>
-        <a href="https://buymeacoffee.com/mtlg" target="_blank" rel="noopener" class="bmc-badge">
-          <span>☕ Buy Me a Coffee</span>
+        <a href="https://buymeacoffee.com/mtlg" target="_blank" rel="noopener" class="bmc-badge" title="Buy Me a Coffee" aria-label="Buy Me a Coffee">
+          <span class="bmc-icon">☕</span>
+          <span class="nav-text-full">Buy Me a Coffee</span>
         </a>
-        <a href="https://mtlg.site" target="_blank" rel="noopener" class="creator-badge">
+        <a href="https://mtlg.site" target="_blank" rel="noopener" class="creator-badge" title="Founder Hub" aria-label="Founder">
           <span class="avatar-small">AM</span>
-          <span>Founder: Alexandr Motologa</span>
-          <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+          <span class="founder-full">Founder: Alexandr Motologa</span>
+          <span class="founder-short">Founder</span>
+          <svg class="founder-icon" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
         </a>
       </div>
     </header>
@@ -1387,7 +1582,7 @@ body {
               <span class="cat-pill">Micro-SaaS</span>
             </div>
             <div class="card-media">
-              <img src="images/snapframe.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" />
+              <img src="images/snapframe-1.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">SnapFrame.store</h3>
@@ -1418,8 +1613,40 @@ body {
               </span>
               <span class="cat-pill">AI & Mental Health</span>
             </div>
-            <div class="card-media">
-              <img src="images/oneira-web.png" alt="Oneira Space (Web) Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/oneira-web-1.png" alt="Oneira Space (Web) Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-2.png" alt="Oneira Space (Web) Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-3.png" alt="Oneira Space (Web) Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-4.png" alt="Oneira Space (Web) Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-web-5.png" alt="Oneira Space (Web) Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Oneira Space (Web)</h3>
@@ -1448,8 +1675,40 @@ body {
               </span>
               <span class="cat-pill">Mobile Well-Being</span>
             </div>
-            <div class="card-media">
-              <img src="images/oneira-app.png" alt="Oneira: Journal & Self-Growth Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/oneira-app-1.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-2.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-3.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-4.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/oneira-app-5.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Oneira: Journal & Self-Growth</h3>
@@ -1507,8 +1766,28 @@ body {
               </span>
               <span class="cat-pill">CLI & Automation</span>
             </div>
-            <div class="card-media">
-              <img src="images/bubble-cli.jpg" alt="bubble-io-cli Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="2">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-cli-1.jpg" alt="bubble-io-cli Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-cli-2.jpg" alt="bubble-io-cli Screenshot Preview 2" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+              </div>
+              <div class="carousel-badge">1/2</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-cli</h3>
@@ -1540,8 +1819,32 @@ body {
               </span>
               <span class="cat-pill">AI & Localization</span>
             </div>
-            <div class="card-media">
-              <img src="images/bubble-ai-translator.png" alt="bubble-io-ai-translator Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-ai-translator-1.png" alt="bubble-io-ai-translator Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-ai-translator-2.png" alt="bubble-io-ai-translator Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-ai-translator-3.png" alt="bubble-io-ai-translator Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-ai-translator</h3>
@@ -1574,8 +1877,32 @@ body {
               </span>
               <span class="cat-pill">Code Health</span>
             </div>
-            <div class="card-media">
-              <img src="images/bubble-dead-code-detector.png" alt="bubble-io-dead-code-detector Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-dead-code-detector-1.png" alt="bubble-io-dead-code-detector Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-dead-code-detector-2.png" alt="bubble-io-dead-code-detector Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-dead-code-detector-3.png" alt="bubble-io-dead-code-detector Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-dead-code-detector</h3>
@@ -1607,8 +1934,28 @@ body {
               </span>
               <span class="cat-pill">Automated QA</span>
             </div>
-            <div class="card-media">
-              <img src="images/bubble-visual-tester.png" alt="bubble-io-visual-tester Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="2">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/bubble-visual-tester-1.png" alt="bubble-io-visual-tester Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/bubble-visual-tester-2.png" alt="bubble-io-visual-tester Screenshot Preview 2" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+              </div>
+              <div class="carousel-badge">1/2</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-visual-tester</h3>
@@ -1636,8 +1983,36 @@ body {
               </span>
               <span class="cat-pill">Custom Architectural</span>
             </div>
-            <div class="card-media">
-              <img src="images/alu-traumterrasse.jpg" alt="Alu-Traumterrasse Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/alu-traumterrasse-1.jpg" alt="Alu-Traumterrasse Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/alu-traumterrasse-2.jpg" alt="Alu-Traumterrasse Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/alu-traumterrasse-3.png" alt="Alu-Traumterrasse Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/alu-traumterrasse-4.png" alt="Alu-Traumterrasse Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Alu-Traumterrasse</h3>
@@ -1665,8 +2040,40 @@ body {
               </span>
               <span class="cat-pill">Web3 & FinTech</span>
             </div>
-            <div class="card-media">
-              <img src="images/quiz2coin.png" alt="Quiz2Coin Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/quiz2coin-1.png" alt="Quiz2Coin Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-2.png" alt="Quiz2Coin Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-3.png" alt="Quiz2Coin Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-4.png" alt="Quiz2Coin Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/quiz2coin-5.png" alt="Quiz2Coin Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Quiz2Coin</h3>
@@ -1724,8 +2131,40 @@ body {
               </span>
               <span class="cat-pill">Telegram & Gaming</span>
             </div>
-            <div class="card-media">
-              <img src="images/telequiz.png" alt="TeleQuiz Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/telequiz-1.png" alt="TeleQuiz Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-2.png" alt="TeleQuiz Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-3.png" alt="TeleQuiz Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-4.png" alt="TeleQuiz Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/telequiz-5.png" alt="TeleQuiz Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">TeleQuiz</h3>
@@ -1757,8 +2196,32 @@ body {
               </span>
               <span class="cat-pill">Campus Network</span>
             </div>
-            <div class="card-media">
-              <img src="images/atcollege.png" alt="atCollege.com Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/atcollege-1.png" alt="atCollege.com Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/atcollege-2.png" alt="atCollege.com Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/atcollege-3.png" alt="atCollege.com Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">atCollege.com</h3>
@@ -1789,8 +2252,32 @@ body {
               </span>
               <span class="cat-pill">Sustainable Re-Commerce</span>
             </div>
-            <div class="card-media">
-              <img src="images/nxtchapter.png" alt="Nxt Chapter Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/nxtchapter-1.png" alt="Nxt Chapter Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nxtchapter-2.png" alt="Nxt Chapter Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nxtchapter-3.png" alt="Nxt Chapter Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Nxt Chapter</h3>
@@ -1818,8 +2305,36 @@ body {
               </span>
               <span class="cat-pill">Food & Delivery</span>
             </div>
-            <div class="card-media">
-              <img src="images/burgercraft.png" alt="BurgerCraft Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/burgercraft-1.png" alt="BurgerCraft Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/burgercraft-2.png" alt="BurgerCraft Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/burgercraft-3.png" alt="BurgerCraft Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/burgercraft-4.png" alt="BurgerCraft Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">BurgerCraft</h3>
@@ -1847,8 +2362,32 @@ body {
               </span>
               <span class="cat-pill">Architecture Showcase</span>
             </div>
-            <div class="card-media">
-              <img src="images/greenspace.jpg" alt="GreenSpace Architects Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/greenspace-1.jpg" alt="GreenSpace Architects Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/greenspace-2.png" alt="GreenSpace Architects Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/greenspace-3.jpg" alt="GreenSpace Architects Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">GreenSpace Architects</h3>
@@ -1876,8 +2415,36 @@ body {
               </span>
               <span class="cat-pill">Digital Agency</span>
             </div>
-            <div class="card-media">
-              <img src="images/pixelwave.png" alt="PixelWave Agency Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/pixelwave-1.png" alt="PixelWave Agency Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/pixelwave-2.png" alt="PixelWave Agency Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/pixelwave-3.jpg" alt="PixelWave Agency Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/pixelwave-4.png" alt="PixelWave Agency Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">PixelWave Agency</h3>
@@ -1905,8 +2472,32 @@ body {
               </span>
               <span class="cat-pill">FinTech & Agri</span>
             </div>
-            <div class="card-media">
-              <img src="images/acrehedge.png" alt="AcreHedge Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/acrehedge-1.png" alt="AcreHedge Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/acrehedge-2.png" alt="AcreHedge Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/acrehedge-3.png" alt="AcreHedge Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">AcreHedge</h3>
@@ -1934,8 +2525,36 @@ body {
               </span>
               <span class="cat-pill">Web3 Publishing</span>
             </div>
-            <div class="card-media">
-              <img src="images/format-kultify.png" alt="Format (Kultify) Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="4">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/format-kultify-1.png" alt="Format (Kultify) Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/format-kultify-2.png" alt="Format (Kultify) Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/format-kultify-3.png" alt="Format (Kultify) Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/format-kultify-4.png" alt="Format (Kultify) Screenshot Preview 4" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+              </div>
+              <div class="carousel-badge">1/4</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Format (Kultify)</h3>
@@ -1964,7 +2583,7 @@ body {
               <span class="cat-pill">Web3 & Art</span>
             </div>
             <div class="card-media">
-              <img src="images/inktradr.png" alt="InkTradr Screenshot Preview" loading="lazy" />
+              <img src="images/inktradr-1.png" alt="InkTradr Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">InkTradr</h3>
@@ -1992,8 +2611,40 @@ body {
               </span>
               <span class="cat-pill">Prediction Market</span>
             </div>
-            <div class="card-media">
-              <img src="images/satoshibet.png" alt="SatoshiBet Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/satoshibet-1.png" alt="SatoshiBet Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-2.png" alt="SatoshiBet Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-3.png" alt="SatoshiBet Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-4.png" alt="SatoshiBet Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/satoshibet-5.png" alt="SatoshiBet Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">SatoshiBet</h3>
@@ -2015,8 +2666,32 @@ body {
               </span>
               <span class="cat-pill">Smart Shopping</span>
             </div>
-            <div class="card-media">
-              <img src="images/aislesync.png" alt="AisleSync Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/aislesync-1.png" alt="AisleSync Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/aislesync-2.png" alt="AisleSync Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/aislesync-3.png" alt="AisleSync Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">AisleSync</h3>
@@ -2044,8 +2719,40 @@ body {
               </span>
               <span class="cat-pill">Accessibility & Audits</span>
             </div>
-            <div class="card-media">
-              <img src="images/evas-ro.png" alt="EVAS RO Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="5">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/evas-ro-1.png" alt="EVAS RO Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-2.png" alt="EVAS RO Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-3.png" alt="EVAS RO Screenshot Preview 3" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-4.png" alt="EVAS RO Screenshot Preview 4" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/evas-ro-5.png" alt="EVAS RO Screenshot Preview 5" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 3);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 4);"></span>
+              </div>
+              <div class="carousel-badge">1/5</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">EVAS RO</h3>
@@ -2073,8 +2780,28 @@ body {
               </span>
               <span class="cat-pill">EdTech & Tutors</span>
             </div>
-            <div class="card-media">
-              <img src="images/ezlanguage.png" alt="EzLanguage (EzSchool) Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="2">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/ezlanguage-1.png" alt="EzLanguage (EzSchool) Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/ezlanguage-2.png" alt="EzLanguage (EzSchool) Screenshot Preview 2" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+              </div>
+              <div class="carousel-badge">1/2</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">EzLanguage (EzSchool)</h3>
@@ -2128,8 +2855,32 @@ body {
               </span>
               <span class="cat-pill">Music & Booking</span>
             </div>
-            <div class="card-media">
-              <img src="images/nothing-unwanted.png" alt="Nothing Unwanted Screenshot Preview" loading="lazy" />
+            <div class="card-carousel" data-current="0" data-total="3">
+              <div class="carousel-track">
+                
+                <div class="carousel-slide active">
+                  <img src="images/nothing-unwanted-1.png" alt="Nothing Unwanted Screenshot Preview 1" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nothing-unwanted-2.png" alt="Nothing Unwanted Screenshot Preview 2" loading="lazy" />
+                </div>
+                <div class="carousel-slide ">
+                  <img src="images/nothing-unwanted-3.png" alt="Nothing Unwanted Screenshot Preview 3" loading="lazy" />
+                </div>
+              </div>
+              <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, -1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M15 18l-6-6 6-6"/></svg>
+              </button>
+              <button type="button" class="carousel-btn carousel-next" aria-label="Next Image" onclick="event.preventDefault(); event.stopPropagation(); stepCarousel(this, 1);">
+                <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 18l6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-indicators">
+                
+                <span class="carousel-dot active" onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 0);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 1);"></span>
+                <span class="carousel-dot " onclick="event.preventDefault(); event.stopPropagation(); setCarouselSlide(this, 2);"></span>
+              </div>
+              <div class="carousel-badge">1/3</div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Nothing Unwanted</h3>
@@ -2525,5 +3276,67 @@ body {
   </div>
 
   <script src="script.js"></script>
+
+<script>
+// Carousel Logic for Multi-Image Cards
+function updateCarousel(container, newIndex) {
+  const total = parseInt(container.dataset.total, 10);
+  let idx = newIndex;
+  if (idx < 0) idx = total - 1;
+  if (idx >= total) idx = 0;
+  
+  container.dataset.current = idx;
+  
+  const slides = container.querySelectorAll('.carousel-slide');
+  slides.forEach((s, i) => {
+    s.classList.toggle('active', i === idx);
+  });
+  
+  const dots = container.querySelectorAll('.carousel-dot');
+  dots.forEach((d, i) => {
+    d.classList.toggle('active', i === idx);
+  });
+  
+  const badge = container.querySelector('.carousel-badge');
+  if (badge) {
+    badge.textContent = (idx + 1) + '/' + total;
+  }
+}
+
+function stepCarousel(btn, delta) {
+  const container = btn.closest('.card-carousel, .project-carousel');
+  if (!container) return;
+  const current = parseInt(container.dataset.current, 10) || 0;
+  updateCarousel(container, current + delta);
+}
+
+function setCarouselSlide(dot, index) {
+  const container = dot.closest('.card-carousel, .project-carousel');
+  if (!container) return;
+  updateCarousel(container, index);
+}
+
+// Touch swipe support for carousels
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.card-carousel, .project-carousel').forEach(carousel => {
+    let startX = 0;
+    let endX = 0;
+    
+    carousel.addEventListener('touchstart', (e) => {
+      startX = e.changedTouches[0].screenX;
+    }, { passive: true });
+    
+    carousel.addEventListener('touchend', (e) => {
+      endX = e.changedTouches[0].screenX;
+      if (startX - endX > 40) {
+        stepCarousel(carousel.querySelector('.carousel-next'), 1);
+      } else if (endX - startX > 40) {
+        stepCarousel(carousel.querySelector('.carousel-prev'), -1);
+      }
+    }, { passive: true });
+  });
+});
+</script>
+
 </body>
 </html>

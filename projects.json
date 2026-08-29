@@ -3,7 +3,7 @@
     "id": "snapframe",
     "title": "SnapFrame.store",
     "category": "saas",
-    "image": "images/snapframe.png",
+    "image": "images/snapframe-1.png",
     "badgeLabs": {
       "text": "Live SaaS",
       "type": "live"
@@ -27,13 +27,16 @@
       "ASO Suite"
     ],
     "url": "https://snapframe.store",
-    "github": "https://github.com/alexandrmotologa/snapframe.store"
+    "github": "https://github.com/alexandrmotologa/snapframe.store",
+    "images": [
+      "images/snapframe-1.png"
+    ]
   },
   {
     "id": "oneira-web",
     "title": "Oneira Space (Web)",
     "category": "ai",
-    "image": "images/oneira-web.png",
+    "image": "images/oneira-web-1.png",
     "badgeLabs": {
       "text": "Live Web Platform",
       "type": "live"
@@ -58,13 +61,20 @@
       "Mental Health AI",
       "Practitioner Portal"
     ],
-    "url": "https://www.oneira.space"
+    "url": "https://www.oneira.space",
+    "images": [
+      "images/oneira-web-1.png",
+      "images/oneira-web-2.png",
+      "images/oneira-web-3.png",
+      "images/oneira-web-4.png",
+      "images/oneira-web-5.png"
+    ]
   },
   {
     "id": "oneira-app",
     "title": "Oneira: Journal & Self-Growth",
     "category": "saas",
-    "image": "images/oneira-app.png",
+    "image": "images/oneira-app-1.png",
     "badgeLabs": {
       "text": "Google Play App",
       "type": "live"
@@ -87,7 +97,14 @@
       "Mood & CBT Tools",
       "Google Play"
     ],
-    "url": "https://play.google.com/store/apps/details?id=space.oneira.app"
+    "url": "https://play.google.com/store/apps/details?id=space.oneira.app",
+    "images": [
+      "images/oneira-app-1.png",
+      "images/oneira-app-2.png",
+      "images/oneira-app-3.png",
+      "images/oneira-app-4.png",
+      "images/oneira-app-5.png"
+    ]
   },
   {
     "id": "bubble-dev-studio",
@@ -116,13 +133,14 @@
       "DevOps"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-dev-studio",
-    "releases": "https://github.com/alexandrmotologa/bubble-io-dev-studio/releases/latest"
+    "releases": "https://github.com/alexandrmotologa/bubble-io-dev-studio/releases/latest",
+    "images": []
   },
   {
     "id": "bubble-cli",
     "title": "bubble-io-cli",
     "category": "devtools",
-    "image": "images/bubble-cli.jpg",
+    "image": "images/bubble-cli-1.jpg",
     "badgeLabs": {
       "text": "Open Source",
       "type": "oss"
@@ -146,13 +164,17 @@
       "CI/CD"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-cli",
-    "npm": "https://www.npmjs.com/package/bubble-io-cli"
+    "npm": "https://www.npmjs.com/package/bubble-io-cli",
+    "images": [
+      "images/bubble-cli-1.jpg",
+      "images/bubble-cli-2.jpg"
+    ]
   },
   {
     "id": "bubble-ai-translator",
     "title": "bubble-io-ai-translator",
     "category": "ai",
-    "image": "images/bubble-ai-translator.png",
+    "image": "images/bubble-ai-translator-1.png",
     "badgeLabs": {
       "text": "AI Engine",
       "type": "ai"
@@ -177,13 +199,18 @@
       "NPM Package"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-ai-translator",
-    "npm": "https://www.npmjs.com/package/bubble-io-ai-translator"
+    "npm": "https://www.npmjs.com/package/bubble-io-ai-translator",
+    "images": [
+      "images/bubble-ai-translator-1.png",
+      "images/bubble-ai-translator-2.png",
+      "images/bubble-ai-translator-3.png"
+    ]
   },
   {
     "id": "bubble-dead-code-detector",
     "title": "bubble-io-dead-code-detector",
     "category": "devtools",
-    "image": "images/bubble-dead-code-detector.png",
+    "image": "images/bubble-dead-code-detector-1.png",
     "badgeLabs": {
       "text": "Audit Tool",
       "type": "tool"
@@ -207,13 +234,18 @@
       "NPM Package"
     ],
     "url": "https://github.com/alexandrmotologa/bubble-io-dead-code-detector",
-    "npm": "https://www.npmjs.com/package/bubble-io-dead-code-detector"
+    "npm": "https://www.npmjs.com/package/bubble-io-dead-code-detector",
+    "images": [
+      "images/bubble-dead-code-detector-1.png",
+      "images/bubble-dead-code-detector-2.png",
+      "images/bubble-dead-code-detector-3.png"
+    ]
   },
   {
     "id": "bubble-visual-tester",
     "title": "bubble-io-visual-tester",
     "category": "devtools",
-    "image": "images/bubble-visual-tester.png",
+    "image": "images/bubble-visual-tester-1.png",
     "badgeLabs": {
       "text": "Visual QA",
       "type": "tool"
@@ -236,13 +268,17 @@
       "AWS S3 Sync",
       "CI/CD Gate"
     ],
-    "url": "https://github.com/alexandrmotologa/bubble-io-visual-tester"
+    "url": "https://github.com/alexandrmotologa/bubble-io-visual-tester",
+    "images": [
+      "images/bubble-visual-tester-1.png",
+      "images/bubble-visual-tester-2.png"
+    ]
   },
   {
     "id": "alu-traumterrasse",
     "title": "Alu-Traumterrasse",
     "category": "saas",
-    "image": "images/alu-traumterrasse.jpg",
+    "image": "images/alu-traumterrasse-1.jpg",
     "badgeLabs": {
       "text": "Live E-Commerce",
       "type": "live"
@@ -265,13 +301,19 @@
       "Custom Configurator",
       "Admin Panel"
     ],
-    "url": "https://alu-traumterrasse.de"
+    "url": "https://alu-traumterrasse.de",
+    "images": [
+      "images/alu-traumterrasse-1.jpg",
+      "images/alu-traumterrasse-2.jpg",
+      "images/alu-traumterrasse-3.png",
+      "images/alu-traumterrasse-4.png"
+    ]
   },
   {
     "id": "quiz2coin",
     "title": "Quiz2Coin",
     "category": "web3",
-    "image": "images/quiz2coin.png",
+    "image": "images/quiz2coin-1.png",
     "badgeLabs": {
       "text": "Live Web3 App",
       "type": "live"
@@ -294,7 +336,14 @@
       "USDC Rewards",
       "Multi-Rail Pay"
     ],
-    "url": "https://quiz2coin.com"
+    "url": "https://quiz2coin.com",
+    "images": [
+      "images/quiz2coin-1.png",
+      "images/quiz2coin-2.png",
+      "images/quiz2coin-3.png",
+      "images/quiz2coin-4.png",
+      "images/quiz2coin-5.png"
+    ]
   },
   {
     "id": "one2all",
@@ -326,13 +375,14 @@
     "extraLink": {
       "label": "Rarible DAO",
       "url": "https://medium.com/rarible-dao/how-to-build-the-anti-opensea-why-no-code-is-the-future-of-nft-markets-6b8b9976b285"
-    }
+    },
+    "images": []
   },
   {
     "id": "telequiz",
     "title": "TeleQuiz",
     "category": "web3",
-    "image": "images/telequiz.png",
+    "image": "images/telequiz-1.png",
     "badgeLabs": {
       "text": "Live Mini App",
       "type": "live"
@@ -359,13 +409,20 @@
     "extraLink": {
       "label": "TeleStore",
       "url": "https://tele.store"
-    }
+    },
+    "images": [
+      "images/telequiz-1.png",
+      "images/telequiz-2.png",
+      "images/telequiz-3.png",
+      "images/telequiz-4.png",
+      "images/telequiz-5.png"
+    ]
   },
   {
     "id": "atcollege",
     "title": "atCollege.com",
     "category": "saas",
-    "image": "images/atcollege.png",
+    "image": "images/atcollege-1.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -389,13 +446,18 @@
       "Groups & Events"
     ],
     "url": "https://atcollege.com",
-    "github": "https://github.com/chusla/atcollege"
+    "github": "https://github.com/chusla/atcollege",
+    "images": [
+      "images/atcollege-1.png",
+      "images/atcollege-2.png",
+      "images/atcollege-3.png"
+    ]
   },
   {
     "id": "nxtchapter",
     "title": "Nxt Chapter",
     "category": "saas",
-    "image": "images/nxtchapter.png",
+    "image": "images/nxtchapter-1.png",
     "badgeLabs": {
       "text": "Live Marketplace",
       "type": "live"
@@ -418,13 +480,18 @@
       "Multi-Vendor E-Commerce",
       "Stripe Payments"
     ],
-    "url": "https://nxtchapter.com.au"
+    "url": "https://nxtchapter.com.au",
+    "images": [
+      "images/nxtchapter-1.png",
+      "images/nxtchapter-2.png",
+      "images/nxtchapter-3.png"
+    ]
   },
   {
     "id": "burgercraft",
     "title": "BurgerCraft",
     "category": "saas",
-    "image": "images/burgercraft.png",
+    "image": "images/burgercraft-1.png",
     "badgeLabs": {
       "text": "Live Web App",
       "type": "live"
@@ -447,13 +514,19 @@
       "Kitchen Admin Portal",
       "Stripe API"
     ],
-    "url": "https://menu-and-delivery.bubbleapps.io/?page=home"
+    "url": "https://menu-and-delivery.bubbleapps.io/?page=home",
+    "images": [
+      "images/burgercraft-1.png",
+      "images/burgercraft-2.png",
+      "images/burgercraft-3.png",
+      "images/burgercraft-4.png"
+    ]
   },
   {
     "id": "greenspace",
     "title": "GreenSpace Architects",
     "category": "saas",
-    "image": "images/greenspace.jpg",
+    "image": "images/greenspace-1.jpg",
     "badgeLabs": {
       "text": "Live Template",
       "type": "live"
@@ -476,13 +549,18 @@
       "High-Res Media",
       "Lead Capture"
     ],
-    "url": "https://architecture-company.bubbleapps.io"
+    "url": "https://architecture-company.bubbleapps.io",
+    "images": [
+      "images/greenspace-1.jpg",
+      "images/greenspace-2.png",
+      "images/greenspace-3.jpg"
+    ]
   },
   {
     "id": "pixelwave",
     "title": "PixelWave Agency",
     "category": "saas",
-    "image": "images/pixelwave.png",
+    "image": "images/pixelwave-1.png",
     "badgeLabs": {
       "text": "Live Template",
       "type": "live"
@@ -505,13 +583,19 @@
       "Interactive UI",
       "Lead Generation"
     ],
-    "url": "https://digital-agency-portfolio.bubbleapps.io"
+    "url": "https://digital-agency-portfolio.bubbleapps.io",
+    "images": [
+      "images/pixelwave-1.png",
+      "images/pixelwave-2.png",
+      "images/pixelwave-3.jpg",
+      "images/pixelwave-4.png"
+    ]
   },
   {
     "id": "acrehedge",
     "title": "AcreHedge",
     "category": "web3",
-    "image": "images/acrehedge.png",
+    "image": "images/acrehedge-1.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -534,13 +618,18 @@
       "Plaid Banking API",
       "Hedging Engine"
     ],
-    "url": "https://acrehedge.com"
+    "url": "https://acrehedge.com",
+    "images": [
+      "images/acrehedge-1.png",
+      "images/acrehedge-2.png",
+      "images/acrehedge-3.png"
+    ]
   },
   {
     "id": "format-kultify",
     "title": "Format (Kultify)",
     "category": "web3",
-    "image": "images/format-kultify.png",
+    "image": "images/format-kultify-1.png",
     "badgeLabs": {
       "text": "Live Web3 Engine",
       "type": "live"
@@ -563,13 +652,19 @@
       "Collaborative Lore",
       "Creator Royalties"
     ],
-    "url": "https://kultify.io"
+    "url": "https://kultify.io",
+    "images": [
+      "images/format-kultify-1.png",
+      "images/format-kultify-2.png",
+      "images/format-kultify-3.png",
+      "images/format-kultify-4.png"
+    ]
   },
   {
     "id": "inktradr",
     "title": "InkTradr",
     "category": "web3",
-    "image": "images/inktradr.png",
+    "image": "images/inktradr-1.png",
     "badgeLabs": {
       "text": "Live Marketplace",
       "type": "live"
@@ -592,13 +687,16 @@
       "Art Licensing",
       "Marketplace"
     ],
-    "url": "https://inktradr.co"
+    "url": "https://inktradr.co",
+    "images": [
+      "images/inktradr-1.png"
+    ]
   },
   {
     "id": "satoshibet",
     "title": "SatoshiBet",
     "category": "web3",
-    "image": "images/satoshibet.png",
+    "image": "images/satoshibet-1.png",
     "badgeLabs": {
       "text": "Live MVP",
       "type": "live"
@@ -621,13 +719,20 @@
       "Real-Time Odds",
       "Mobile UI"
     ],
-    "url": null
+    "url": null,
+    "images": [
+      "images/satoshibet-1.png",
+      "images/satoshibet-2.png",
+      "images/satoshibet-3.png",
+      "images/satoshibet-4.png",
+      "images/satoshibet-5.png"
+    ]
   },
   {
     "id": "aislesync",
     "title": "AisleSync",
     "category": "saas",
-    "image": "images/aislesync.png",
+    "image": "images/aislesync-1.png",
     "badgeLabs": {
       "text": "Live Mobile App",
       "type": "live"
@@ -650,13 +755,18 @@
       "Barcode Scanning",
       "Push Notifications"
     ],
-    "url": "https://www.aislesync.com"
+    "url": "https://www.aislesync.com",
+    "images": [
+      "images/aislesync-1.png",
+      "images/aislesync-2.png",
+      "images/aislesync-3.png"
+    ]
   },
   {
     "id": "evas-ro",
     "title": "EVAS RO",
     "category": "saas",
-    "image": "images/evas-ro.png",
+    "image": "images/evas-ro-1.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -679,13 +789,20 @@
       "Mobile Field App",
       "Compliance Scoring"
     ],
-    "url": "https://evas.ro"
+    "url": "https://evas.ro",
+    "images": [
+      "images/evas-ro-1.png",
+      "images/evas-ro-2.png",
+      "images/evas-ro-3.png",
+      "images/evas-ro-4.png",
+      "images/evas-ro-5.png"
+    ]
   },
   {
     "id": "ezlanguage",
     "title": "EzLanguage (EzSchool)",
     "category": "saas",
-    "image": "images/ezlanguage.png",
+    "image": "images/ezlanguage-1.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -708,7 +825,11 @@
       "Audio Playback",
       "Scheduling & Bookings"
     ],
-    "url": "https://ezlanguage.bubbleapps.io"
+    "url": "https://ezlanguage.bubbleapps.io",
+    "images": [
+      "images/ezlanguage-1.png",
+      "images/ezlanguage-2.png"
+    ]
   },
   {
     "id": "moldova-customs",
@@ -736,13 +857,14 @@
       "E-Commerce Imports",
       "Google Play"
     ],
-    "url": "https://play.google.com/store/apps/details?id=md.customs.calculator"
+    "url": "https://play.google.com/store/apps/details?id=md.customs.calculator",
+    "images": []
   },
   {
     "id": "nothing-unwanted",
     "title": "Nothing Unwanted",
     "category": "saas",
-    "image": "images/nothing-unwanted.png",
+    "image": "images/nothing-unwanted-1.png",
     "badgeLabs": {
       "text": "Live Mobile App",
       "type": "live"
@@ -765,7 +887,12 @@
       "Geolocation & Booking",
       "Stripe API"
     ],
-    "url": null
+    "url": null,
+    "images": [
+      "images/nothing-unwanted-1.png",
+      "images/nothing-unwanted-2.png",
+      "images/nothing-unwanted-3.png"
+    ]
   },
   {
     "id": "soma-platform",
@@ -793,7 +920,8 @@
       "Nutrient Analytics",
       "Google Play"
     ],
-    "url": "https://play.google.com/store/apps/developer?id=MTLG+Labs"
+    "url": "https://play.google.com/store/apps/developer?id=MTLG+Labs",
+    "images": []
   },
   {
     "id": "idealtoolkit",
@@ -822,7 +950,8 @@
       "Developer Tooling"
     ],
     "url": "https://idealtoolkit.com/",
-    "github": "https://github.com/chusla/idealtoolkit"
+    "github": "https://github.com/chusla/idealtoolkit",
+    "images": []
   },
   {
     "id": "webotit",
@@ -850,7 +979,8 @@
       "Customer Triage",
       "Omnichannel API"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "ovidiu-platform",
@@ -878,7 +1008,8 @@
       "Enterprise Portal",
       "Custom APIs"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "nftymuse",
@@ -906,7 +1037,8 @@
       "3D Virtual Galleries",
       "Polygon MATIC"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "transium",
@@ -934,7 +1066,8 @@
       "API Webhooks",
       "Cloud Architecture"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "prophet",
@@ -962,7 +1095,8 @@
       "Decentralized Oracle",
       "Web3"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "odyssey",
@@ -990,7 +1124,8 @@
       "Smart Contracts",
       "Bot Sync"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "parabolica",
@@ -1018,7 +1153,8 @@
       "DEX Liquidity",
       "Crypto Charts"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "metaverde",
@@ -1046,7 +1182,8 @@
       "ESG Compliance",
       "IoT Sensor Data"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "matterdust",
@@ -1074,7 +1211,8 @@
       "IPFS",
       "Creative Sandbox"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "o1a",
@@ -1102,7 +1240,8 @@
       "Tool Calling",
       "LLM Pipeline"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "nuttipetz",
@@ -1130,7 +1269,8 @@
       "On-Chain Genetics",
       "Gamification"
     ],
-    "url": null
+    "url": null,
+    "images": []
   },
   {
     "id": "covault",
@@ -1158,6 +1298,7 @@
       "Zero-Knowledge",
       "Security Architecture"
     ],
-    "url": null
+    "url": null,
+    "images": []
   }
 ]
