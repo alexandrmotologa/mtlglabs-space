@@ -1,0 +1,126 @@
+{
+  "snapframe": [
+    "images/snapframe-1.png"
+  ],
+  "oneira-web": [
+    "images/oneira-web-1.png",
+    "images/oneira-web-2.png",
+    "images/oneira-web-3.png",
+    "images/oneira-web-4.png",
+    "images/oneira-web-5.png"
+  ],
+  "oneira-app": [
+    "images/oneira-app-1.png",
+    "images/oneira-app-2.png",
+    "images/oneira-app-3.png",
+    "images/oneira-app-4.png",
+    "images/oneira-app-5.png"
+  ],
+  "bubble-cli": [
+    "images/bubble-cli-1.jpg",
+    "images/bubble-cli-2.jpg"
+  ],
+  "bubble-ai-translator": [
+    "images/bubble-ai-translator-1.png",
+    "images/bubble-ai-translator-2.png",
+    "images/bubble-ai-translator-3.png"
+  ],
+  "bubble-dead-code-detector": [
+    "images/bubble-dead-code-detector-1.png",
+    "images/bubble-dead-code-detector-2.png",
+    "images/bubble-dead-code-detector-3.png"
+  ],
+  "bubble-visual-tester": [
+    "images/bubble-visual-tester-1.png",
+    "images/bubble-visual-tester-2.png"
+  ],
+  "alu-traumterrasse": [
+    "images/alu-traumterrasse-1.jpg",
+    "images/alu-traumterrasse-2.jpg",
+    "images/alu-traumterrasse-3.png",
+    "images/alu-traumterrasse-4.png"
+  ],
+  "quiz2coin": [
+    "images/quiz2coin-1.png",
+    "images/quiz2coin-2.png",
+    "images/quiz2coin-3.png",
+    "images/quiz2coin-4.png",
+    "images/quiz2coin-5.png"
+  ],
+  "telequiz": [
+    "images/telequiz-1.png",
+    "images/telequiz-2.png",
+    "images/telequiz-3.png",
+    "images/telequiz-4.png",
+    "images/telequiz-5.png"
+  ],
+  "atcollege": [
+    "images/atcollege-1.png",
+    "images/atcollege-2.png",
+    "images/atcollege-3.png"
+  ],
+  "nxtchapter": [
+    "images/nxtchapter-1.png",
+    "images/nxtchapter-2.png",
+    "images/nxtchapter-3.png"
+  ],
+  "burgercraft": [
+    "images/burgercraft-1.png",
+    "images/burgercraft-2.png",
+    "images/burgercraft-3.png",
+    "images/burgercraft-4.png"
+  ],
+  "greenspace": [
+    "images/greenspace-1.jpg",
+    "images/greenspace-2.png",
+    "images/greenspace-3.jpg"
+  ],
+  "pixelwave": [
+    "images/pixelwave-1.png",
+    "images/pixelwave-2.png",
+    "images/pixelwave-3.jpg",
+    "images/pixelwave-4.png"
+  ],
+  "acrehedge": [
+    "images/acrehedge-1.png",
+    "images/acrehedge-2.png",
+    "images/acrehedge-3.png"
+  ],
+  "format-kultify": [
+    "images/format-kultify-1.png",
+    "images/format-kultify-2.png",
+    "images/format-kultify-3.png",
+    "images/format-kultify-4.png"
+  ],
+  "inktradr": [
+    "images/inktradr-1.png"
+  ],
+  "satoshibet": [
+    "images/satoshibet-1.png",
+    "images/satoshibet-2.png",
+    "images/satoshibet-3.png",
+    "images/satoshibet-4.png",
+    "images/satoshibet-5.png"
+  ],
+  "aislesync": [
+    "images/aislesync-1.png",
+    "images/aislesync-2.png",
+    "images/aislesync-3.png"
+  ],
+  "evas-ro": [
+    "images/evas-ro-1.png",
+    "images/evas-ro-2.png",
+    "images/evas-ro-3.png",
+    "images/evas-ro-4.png",
+    "images/evas-ro-5.png"
+  ],
+  "ezlanguage": [
+    "images/ezlanguage-1.png",
+    "images/ezlanguage-2.png"
+  ],
+  "nothing-unwanted": [
+    "images/nothing-unwanted-1.png",
+    "images/nothing-unwanted-2.png",
+    "images/nothing-unwanted-3.png"
+  ]
+}
