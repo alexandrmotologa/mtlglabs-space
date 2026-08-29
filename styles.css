@@ -675,6 +675,30 @@ body {
   box-shadow: 0 6px 24px rgba(255, 255, 255, 0.35);
 }
 
+.founder-cta-btn.upwork-btn {
+  background: rgba(20, 168, 0, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(20, 168, 0, 0.4);
+}
+
+.founder-cta-btn.upwork-btn:hover {
+  background: rgba(20, 168, 0, 0.3);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(20, 168, 0, 0.3);
+}
+
+.founder-cta-btn.fiverr-btn {
+  background: rgba(29, 191, 115, 0.15);
+  color: #34d399;
+  border: 1px solid rgba(29, 191, 115, 0.4);
+}
+
+.founder-cta-btn.fiverr-btn:hover {
+  background: rgba(29, 191, 115, 0.3);
+  color: #ffffff;
+  box-shadow: 0 6px 20px rgba(29, 191, 115, 0.3);
+}
+
 /* Footer */
 .site-footer {
   margin-top: auto;
