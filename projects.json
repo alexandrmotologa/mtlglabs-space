@@ -3,6 +3,7 @@
     "id": "snapframe",
     "title": "SnapFrame.store",
     "category": "saas",
+    "image": "images/snapframe.png",
     "badgeLabs": {
       "text": "Live SaaS",
       "type": "live"
@@ -32,6 +33,7 @@
     "id": "oneira-web",
     "title": "Oneira Space (Web)",
     "category": "ai",
+    "image": "images/oneira-web.png",
     "badgeLabs": {
       "text": "Live Web Platform",
       "type": "live"
@@ -62,6 +64,7 @@
     "id": "oneira-app",
     "title": "Oneira: Journal & Self-Growth",
     "category": "saas",
+    "image": "images/oneira-app.png",
     "badgeLabs": {
       "text": "Google Play App",
       "type": "live"
@@ -119,6 +122,7 @@
     "id": "bubble-cli",
     "title": "bubble-io-cli",
     "category": "devtools",
+    "image": "images/bubble-cli.jpg",
     "badgeLabs": {
       "text": "Open Source",
       "type": "oss"
@@ -148,6 +152,7 @@
     "id": "bubble-ai-translator",
     "title": "bubble-io-ai-translator",
     "category": "ai",
+    "image": "images/bubble-ai-translator.png",
     "badgeLabs": {
       "text": "AI Engine",
       "type": "ai"
@@ -178,6 +183,7 @@
     "id": "bubble-dead-code-detector",
     "title": "bubble-io-dead-code-detector",
     "category": "devtools",
+    "image": "images/bubble-dead-code-detector.png",
     "badgeLabs": {
       "text": "Audit Tool",
       "type": "tool"
@@ -207,6 +213,7 @@
     "id": "bubble-visual-tester",
     "title": "bubble-io-visual-tester",
     "category": "devtools",
+    "image": "images/bubble-visual-tester.png",
     "badgeLabs": {
       "text": "Visual QA",
       "type": "tool"
@@ -235,6 +242,7 @@
     "id": "alu-traumterrasse",
     "title": "Alu-Traumterrasse",
     "category": "saas",
+    "image": "images/alu-traumterrasse.jpg",
     "badgeLabs": {
       "text": "Live E-Commerce",
       "type": "live"
@@ -263,6 +271,7 @@
     "id": "quiz2coin",
     "title": "Quiz2Coin",
     "category": "web3",
+    "image": "images/quiz2coin.png",
     "badgeLabs": {
       "text": "Live Web3 App",
       "type": "live"
@@ -323,6 +332,7 @@
     "id": "telequiz",
     "title": "TeleQuiz",
     "category": "web3",
+    "image": "images/telequiz.png",
     "badgeLabs": {
       "text": "Live Mini App",
       "type": "live"
@@ -355,6 +365,7 @@
     "id": "atcollege",
     "title": "atCollege.com",
     "category": "saas",
+    "image": "images/atcollege.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -384,6 +395,7 @@
     "id": "nxtchapter",
     "title": "Nxt Chapter",
     "category": "saas",
+    "image": "images/nxtchapter.png",
     "badgeLabs": {
       "text": "Live Marketplace",
       "type": "live"
@@ -412,6 +424,7 @@
     "id": "burgercraft",
     "title": "BurgerCraft",
     "category": "saas",
+    "image": "images/burgercraft.png",
     "badgeLabs": {
       "text": "Live Web App",
       "type": "live"
@@ -440,6 +453,7 @@
     "id": "greenspace",
     "title": "GreenSpace Architects",
     "category": "saas",
+    "image": "images/greenspace.jpg",
     "badgeLabs": {
       "text": "Live Template",
       "type": "live"
@@ -468,6 +482,7 @@
     "id": "pixelwave",
     "title": "PixelWave Agency",
     "category": "saas",
+    "image": "images/pixelwave.png",
     "badgeLabs": {
       "text": "Live Template",
       "type": "live"
@@ -496,6 +511,7 @@
     "id": "acrehedge",
     "title": "AcreHedge",
     "category": "web3",
+    "image": "images/acrehedge.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -524,6 +540,7 @@
     "id": "format-kultify",
     "title": "Format (Kultify)",
     "category": "web3",
+    "image": "images/format-kultify.png",
     "badgeLabs": {
       "text": "Live Web3 Engine",
       "type": "live"
@@ -552,6 +569,7 @@
     "id": "inktradr",
     "title": "InkTradr",
     "category": "web3",
+    "image": "images/inktradr.png",
     "badgeLabs": {
       "text": "Live Marketplace",
       "type": "live"
@@ -580,6 +598,7 @@
     "id": "satoshibet",
     "title": "SatoshiBet",
     "category": "web3",
+    "image": "images/satoshibet.png",
     "badgeLabs": {
       "text": "Live MVP",
       "type": "live"
@@ -602,12 +621,13 @@
       "Real-Time Odds",
       "Mobile UI"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "aislesync",
     "title": "AisleSync",
     "category": "saas",
+    "image": "images/aislesync.png",
     "badgeLabs": {
       "text": "Live Mobile App",
       "type": "live"
@@ -636,6 +656,7 @@
     "id": "evas-ro",
     "title": "EVAS RO",
     "category": "saas",
+    "image": "images/evas-ro.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -664,6 +685,7 @@
     "id": "ezlanguage",
     "title": "EzLanguage (EzSchool)",
     "category": "saas",
+    "image": "images/ezlanguage.png",
     "badgeLabs": {
       "text": "Live Platform",
       "type": "live"
@@ -720,6 +742,7 @@
     "id": "nothing-unwanted",
     "title": "Nothing Unwanted",
     "category": "saas",
+    "image": "images/nothing-unwanted.png",
     "badgeLabs": {
       "text": "Live Mobile App",
       "type": "live"
@@ -742,7 +765,7 @@
       "Geolocation & Booking",
       "Stripe API"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "soma-platform",
@@ -827,7 +850,7 @@
       "Customer Triage",
       "Omnichannel API"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "ovidiu-platform",
@@ -855,7 +878,7 @@
       "Enterprise Portal",
       "Custom APIs"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "nftymuse",
@@ -883,7 +906,7 @@
       "3D Virtual Galleries",
       "Polygon MATIC"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "transium",
@@ -911,7 +934,7 @@
       "API Webhooks",
       "Cloud Architecture"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "prophet",
@@ -939,7 +962,7 @@
       "Decentralized Oracle",
       "Web3"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "odyssey",
@@ -967,7 +990,7 @@
       "Smart Contracts",
       "Bot Sync"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "parabolica",
@@ -995,7 +1018,7 @@
       "DEX Liquidity",
       "Crypto Charts"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "metaverde",
@@ -1023,7 +1046,7 @@
       "ESG Compliance",
       "IoT Sensor Data"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "matterdust",
@@ -1051,7 +1074,7 @@
       "IPFS",
       "Creative Sandbox"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "o1a",
@@ -1079,7 +1102,7 @@
       "Tool Calling",
       "LLM Pipeline"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "nuttipetz",
@@ -1107,7 +1130,7 @@
       "On-Chain Genetics",
       "Gamification"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   },
   {
     "id": "covault",
@@ -1135,6 +1158,6 @@
       "Zero-Knowledge",
       "Security Architecture"
     ],
-    "url": "https://mtlglabs.space"
+    "url": null
   }
 ]

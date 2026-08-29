@@ -426,6 +426,31 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+
+.card-media {
+  width: 100%;
+  height: 180px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.25rem;
+  background: rgba(0, 0, 0, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  transition: transform 0.35s ease;
+  display: block;
+}
+
+.product-card:hover .card-media img {
+  transform: scale(1.04);
+}
+
 /* Products Grid */
 .products-grid {
   display: grid;
@@ -1309,6 +1334,9 @@ body {
               </span>
               <span class="cat-pill">Micro-SaaS</span>
             </div>
+            <div class="card-media">
+              <img src="images/snapframe.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">SnapFrame.store</h3>
               <p class="product-desc">Studio-grade App Store & Google Play screenshot generator powered by AI Vision Auto-Pilot, 3D device frames, video previews, and Fastlane ASO metadata automation.</p>
@@ -1338,6 +1366,9 @@ body {
               </span>
               <span class="cat-pill">AI & Mental Health</span>
             </div>
+            <div class="card-media">
+              <img src="images/oneira-web.png" alt="Oneira Space (Web) Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">Oneira Space (Web)</h3>
               <p class="product-desc">Full-stack AI emotional sanctuary & symbolic Jungian dream analysis web platform with full mobile browser support and adaptive responsive experience. Built with Next.js 16, React 19, Google Generative AI, Firebase security, clinical CBT tools, and a dedicated practitioner portal.</p>
@@ -1364,6 +1395,9 @@ body {
                 <span class="pulse-dot"></span> Google Play App
               </span>
               <span class="cat-pill">Mobile Well-Being</span>
+            </div>
+            <div class="card-media">
+              <img src="images/oneira-app.png" alt="Oneira: Journal & Self-Growth Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">Oneira: Journal & Self-Growth</h3>
@@ -1421,6 +1455,9 @@ body {
               </span>
               <span class="cat-pill">CLI & Automation</span>
             </div>
+            <div class="card-media">
+              <img src="images/bubble-cli.jpg" alt="bubble-io-cli Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-cli</h3>
               <p class="product-desc">All-in-one TypeScript CLI for Bubble.io: automated AES-256 encrypted backups, Schema-as-Code generation, local mocking, extensible plugin system with lifecycle hooks, and CI/CD pipelines.</p>
@@ -1450,6 +1487,9 @@ body {
                 <span class="pulse-dot"></span> AI Engine
               </span>
               <span class="cat-pill">AI & Localization</span>
+            </div>
+            <div class="card-media">
+              <img src="images/bubble-ai-translator.png" alt="bubble-io-ai-translator Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-ai-translator</h3>
@@ -1482,6 +1522,9 @@ body {
               </span>
               <span class="cat-pill">Code Health</span>
             </div>
+            <div class="card-media">
+              <img src="images/bubble-dead-code-detector.png" alt="bubble-io-dead-code-detector Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-dead-code-detector</h3>
               <p class="product-desc">Dead code detector, dependency analyzer & health scorer for Bubble.io. Scans exported .bubble files for dead workflows, orphaned fields, and unused plugins, outputs a 0-100 Health Score, and includes an interactive dependency graph and VS Code Extension.</p>
@@ -1512,6 +1555,9 @@ body {
               </span>
               <span class="cat-pill">Automated QA</span>
             </div>
+            <div class="card-media">
+              <img src="images/bubble-visual-tester.png" alt="bubble-io-visual-tester Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-visual-tester</h3>
               <p class="product-desc">Automated visual regression testing & pixel-level diffing utility for Bubble.io. Powered by Playwright + pixelmatch with component-level testing, AWS S3 baseline syncing, smart dynamic masking, and interactive HTML before/after slider comparison reports.</p>
@@ -1538,6 +1584,9 @@ body {
               </span>
               <span class="cat-pill">Custom Architectural</span>
             </div>
+            <div class="card-media">
+              <img src="images/alu-traumterrasse.jpg" alt="Alu-Traumterrasse Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">Alu-Traumterrasse</h3>
               <p class="product-desc">Custom architectural e-commerce platform for luxury aluminium terrace roofing & cold wintergardens in Germany. Features full online ordering down to individual fittings, dynamic product & material galleries, quotation requests, and Stripe payments.</p>
@@ -1563,6 +1612,9 @@ body {
                 <span class="pulse-dot"></span> Live Web3 App
               </span>
               <span class="cat-pill">Web3 & FinTech</span>
+            </div>
+            <div class="card-media">
+              <img src="images/quiz2coin.png" alt="Quiz2Coin Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">Quiz2Coin</h3>
@@ -1620,6 +1672,9 @@ body {
               </span>
               <span class="cat-pill">Telegram & Gaming</span>
             </div>
+            <div class="card-media">
+              <img src="images/telequiz.png" alt="TeleQuiz Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">TeleQuiz</h3>
               <p class="product-desc">Official TeleStore Telegram Mini App & bot gaming platform. Engineered with bespoke Telegram OAuth authentication, push notifications, and native Telegram Stars in-app currency payments.</p>
@@ -1650,6 +1705,9 @@ body {
               </span>
               <span class="cat-pill">Campus Network</span>
             </div>
+            <div class="card-media">
+              <img src="images/atcollege.png" alt="atCollege.com Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">atCollege.com</h3>
               <p class="product-desc">Real-time campus social & community discovery platform connecting students across 25+ universities with events, interest groups (coding, esports, wellness), local places, and volunteer or work opportunities.</p>
@@ -1679,6 +1737,9 @@ body {
               </span>
               <span class="cat-pill">Sustainable Re-Commerce</span>
             </div>
+            <div class="card-media">
+              <img src="images/nxtchapter.png" alt="Nxt Chapter Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">Nxt Chapter</h3>
               <p class="product-desc">Australian sustainable second-hand book marketplace. Integrated ISBNDB API for automated metadata lookup, multi-seller inventory management, condition grading, live Instagram social feeds, and Stripe payments.</p>
@@ -1704,6 +1765,9 @@ body {
                 <span class="pulse-dot"></span> Live Web App
               </span>
               <span class="cat-pill">Food & Delivery</span>
+            </div>
+            <div class="card-media">
+              <img src="images/burgercraft.png" alt="BurgerCraft Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">BurgerCraft</h3>
@@ -1731,6 +1795,9 @@ body {
               </span>
               <span class="cat-pill">Architecture Showcase</span>
             </div>
+            <div class="card-media">
+              <img src="images/greenspace.jpg" alt="GreenSpace Architects Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">GreenSpace Architects</h3>
               <p class="product-desc">Visual-first luxury portfolio web application for architecture firms and spatial designers. Features high-res project galleries, structural blueprints & spec sheets, category filtering, and client consultation request pipelines.</p>
@@ -1756,6 +1823,9 @@ body {
                 <span class="pulse-dot"></span> Live Template
               </span>
               <span class="cat-pill">Digital Agency</span>
+            </div>
+            <div class="card-media">
+              <img src="images/pixelwave.png" alt="PixelWave Agency Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">PixelWave Agency</h3>
@@ -1783,6 +1853,9 @@ body {
               </span>
               <span class="cat-pill">FinTech & Agri</span>
             </div>
+            <div class="card-media">
+              <img src="images/acrehedge.png" alt="AcreHedge Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">AcreHedge</h3>
               <p class="product-desc">Comprehensive agricultural risk management and FinTech hedging platform. Features real-time CBOT commodity market pricing, crop volatility prediction models, weather event insurance calculations, and Plaid financial integrations.</p>
@@ -1808,6 +1881,9 @@ body {
                 <span class="pulse-dot"></span> Live Web3 Engine
               </span>
               <span class="cat-pill">Web3 Publishing</span>
+            </div>
+            <div class="card-media">
+              <img src="images/format-kultify.png" alt="Format (Kultify) Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">Format (Kultify)</h3>
@@ -1835,6 +1911,9 @@ body {
               </span>
               <span class="cat-pill">Web3 & Art</span>
             </div>
+            <div class="card-media">
+              <img src="images/inktradr.png" alt="InkTradr Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">InkTradr</h3>
               <p class="product-desc">Digital marketplace & licensing ecosystem for tattoo artists and flash art collectors. Built on Bubble.io with Polygon MATIC Web3 checkout, artist studio portals, custom ink booking requests, and style category curation.</p>
@@ -1861,6 +1940,9 @@ body {
               </span>
               <span class="cat-pill">Prediction Market</span>
             </div>
+            <div class="card-media">
+              <img src="images/satoshibet.png" alt="SatoshiBet Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">SatoshiBet</h3>
               <p class="product-desc">Polymarket-style decentralized prediction market MVP built end-to-end on Bubble.io. Features real-time probability tracking, interactive odds charts, Yes/No binary outcome betting, and category filters (politics, finance, crypto).</p>
@@ -1871,12 +1953,6 @@ body {
               <span class="tag">Real-Time Odds</span>
               <span class="tag">Mobile UI</span>
             </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
           </div>
 
           <!-- Project: AisleSync -->
@@ -1886,6 +1962,9 @@ body {
                 <span class="pulse-dot"></span> Live Mobile App
               </span>
               <span class="cat-pill">Smart Shopping</span>
+            </div>
+            <div class="card-media">
+              <img src="images/aislesync.png" alt="AisleSync Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">AisleSync</h3>
@@ -1913,6 +1992,9 @@ body {
               </span>
               <span class="cat-pill">Accessibility & Audits</span>
             </div>
+            <div class="card-media">
+              <img src="images/evas-ro.png" alt="EVAS RO Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">EVAS RO</h3>
               <p class="product-desc">Mobile-first disability & space accessibility audit platform for field inspectors in Romania (Evaluare Voluntară Accesibilitate Spațiul). Features multi-step compliance evaluations, photo/video evidence uploads, and automated scoring.</p>
@@ -1938,6 +2020,9 @@ body {
                 <span class="pulse-dot"></span> Live Platform
               </span>
               <span class="cat-pill">EdTech & Tutors</span>
+            </div>
+            <div class="card-media">
+              <img src="images/ezlanguage.png" alt="EzLanguage (EzSchool) Screenshot Preview" loading="lazy" />
             </div>
             <div class="card-main">
               <h3 class="product-name">EzLanguage (EzSchool)</h3>
@@ -1991,6 +2076,9 @@ body {
               </span>
               <span class="cat-pill">Music & Booking</span>
             </div>
+            <div class="card-media">
+              <img src="images/nothing-unwanted.png" alt="Nothing Unwanted Screenshot Preview" loading="lazy" />
+            </div>
             <div class="card-main">
               <h3 class="product-name">Nothing Unwanted</h3>
               <p class="product-desc">Mobile-first artist & venue booking marketplace. Features an integrated persistent background audio player that streams uninterrupted across pages, gig application pipelines, dual-user workflows (Artists & Venues), and Stripe payouts.</p>
@@ -2000,12 +2088,6 @@ body {
               <span class="tag">Background Audio Engine</span>
               <span class="tag">Geolocation & Booking</span>
               <span class="tag">Stripe API</span>
-            </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
             </div>
           </div>
 
@@ -2082,12 +2164,6 @@ body {
               <span class="tag">Customer Triage</span>
               <span class="tag">Omnichannel API</span>
             </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
           </div>
 
           <!-- Project: Ovidiu Platform -->
@@ -2107,12 +2183,6 @@ body {
               <span class="tag">Workflow Automation</span>
               <span class="tag">Enterprise Portal</span>
               <span class="tag">Custom APIs</span>
-            </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
             </div>
           </div>
 
@@ -2134,12 +2204,6 @@ body {
               <span class="tag">3D Virtual Galleries</span>
               <span class="tag">Polygon MATIC</span>
             </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
           </div>
 
           <!-- Project: Transium -->
@@ -2159,12 +2223,6 @@ body {
               <span class="tag">Global Transactions</span>
               <span class="tag">API Webhooks</span>
               <span class="tag">Cloud Architecture</span>
-            </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
             </div>
           </div>
 
@@ -2186,12 +2244,6 @@ body {
               <span class="tag">Decentralized Oracle</span>
               <span class="tag">Web3</span>
             </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
           </div>
 
           <!-- Project: Odyssey -->
@@ -2211,12 +2263,6 @@ body {
               <span class="tag">Community Quests</span>
               <span class="tag">Smart Contracts</span>
               <span class="tag">Bot Sync</span>
-            </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
             </div>
           </div>
 
@@ -2238,12 +2284,6 @@ body {
               <span class="tag">DEX Liquidity</span>
               <span class="tag">Crypto Charts</span>
             </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
           </div>
 
           <!-- Project: Metaverde -->
@@ -2263,12 +2303,6 @@ body {
               <span class="tag">Carbon Credits</span>
               <span class="tag">ESG Compliance</span>
               <span class="tag">IoT Sensor Data</span>
-            </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
             </div>
           </div>
 
@@ -2290,12 +2324,6 @@ body {
               <span class="tag">IPFS</span>
               <span class="tag">Creative Sandbox</span>
             </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
           </div>
 
           <!-- Project: o1a Engine -->
@@ -2315,12 +2343,6 @@ body {
               <span class="tag">Autonomous Workflows</span>
               <span class="tag">Tool Calling</span>
               <span class="tag">LLM Pipeline</span>
-            </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
             </div>
           </div>
 
@@ -2342,12 +2364,6 @@ body {
               <span class="tag">On-Chain Genetics</span>
               <span class="tag">Gamification</span>
             </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
-            </div>
           </div>
 
           <!-- Project: CoVault -->
@@ -2367,12 +2383,6 @@ body {
               <span class="tag">Multi-Sig Vault</span>
               <span class="tag">Zero-Knowledge</span>
               <span class="tag">Security Architecture</span>
-            </div>
-            <div class="card-footer">
-              <a href="https://mtlglabs.space" target="_blank" rel="noopener" class="card-action-btn primary-action">
-                <span>Launch Project</span>
-                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
-              </a>
             </div>
           </div>
         </div>
