@@ -1,0 +1,1140 @@
+[
+  {
+    "id": "snapframe",
+    "title": "SnapFrame.store",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live SaaS",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Production SaaS",
+      "type": "live"
+    },
+    "catPill": "Micro-SaaS",
+    "desc": "Studio-grade App Store & Google Play screenshot generator powered by AI Vision Auto-Pilot, 3D device frames, video previews, and Fastlane ASO metadata automation.",
+    "tagsLabs": [
+      "Production SaaS",
+      "Three.js",
+      "AI Vision",
+      "ASO Suite"
+    ],
+    "tagsSite": [
+      "Production SaaS",
+      "Canvas / 3D",
+      "AI Vision",
+      "ASO Suite"
+    ],
+    "url": "https://snapframe.store",
+    "github": "https://github.com/alexandrmotologa/snapframe.store"
+  },
+  {
+    "id": "oneira-web",
+    "title": "Oneira Space (Web)",
+    "category": "ai",
+    "badgeLabs": {
+      "text": "Live Web Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Web Platform",
+      "type": "live"
+    },
+    "catPill": "AI & Mental Health",
+    "desc": "Full-stack AI emotional sanctuary & symbolic Jungian dream analysis web platform with full mobile browser support and adaptive responsive experience. Built with Next.js 16, React 19, Google Generative AI, Firebase security, clinical CBT tools, and a dedicated practitioner portal.",
+    "tagsLabs": [
+      "Web + Mobile Browser",
+      "Next.js 16 / React 19",
+      "Google GenAI",
+      "CBT Framework",
+      "Practitioner Portal"
+    ],
+    "tagsSite": [
+      "Web + Mobile Browser",
+      "Next.js 16 / React 19",
+      "Google GenAI",
+      "Mental Health AI",
+      "Practitioner Portal"
+    ],
+    "url": "https://www.oneira.space"
+  },
+  {
+    "id": "oneira-app",
+    "title": "Oneira: Journal & Self-Growth",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Google Play App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Google Play App",
+      "type": "live"
+    },
+    "catPill": "Mobile Well-Being",
+    "desc": "Native Android application for self-discovery, daily mood check-ins, Jungian dream journals, gratitude logging, SOS Grounding exercises, and encrypted zero-retention privacy with Capacitor 8 biometric integration.",
+    "tagsLabs": [
+      "Android / Capacitor 8",
+      "Biometrics",
+      "Encrypted Privacy",
+      "Google Play"
+    ],
+    "tagsSite": [
+      "Android / Capacitor 8",
+      "Biometrics & Privacy",
+      "Mood & CBT Tools",
+      "Google Play"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=space.oneira.app"
+  },
+  {
+    "id": "bubble-dev-studio",
+    "title": "Bubble.io Dev Studio",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "In Active Dev",
+      "type": "dev"
+    },
+    "badgeSite": {
+      "text": "In Active Dev",
+      "type": "dev"
+    },
+    "catPill": "Developer Studio",
+    "desc": "All-in-one Developer Studio & Desktop GUI for Bubble.io: automated backups, schema inspection, dead code audit, AI translation, and visual QA testing.",
+    "tagsLabs": [
+      "Electron",
+      "TypeScript",
+      "DevOps",
+      "Desktop GUI"
+    ],
+    "tagsSite": [
+      "Electron",
+      "TypeScript",
+      "Desktop GUI",
+      "DevOps"
+    ],
+    "url": "https://github.com/alexandrmotologa/bubble-io-dev-studio",
+    "releases": "https://github.com/alexandrmotologa/bubble-io-dev-studio/releases/latest"
+  },
+  {
+    "id": "bubble-cli",
+    "title": "bubble-io-cli",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Open Source",
+      "type": "oss"
+    },
+    "badgeSite": {
+      "text": "Open Source",
+      "type": "dev"
+    },
+    "catPill": "CLI & Automation",
+    "desc": "All-in-one TypeScript CLI for Bubble.io: automated AES-256 encrypted backups, Schema-as-Code generation, local mocking, extensible plugin system with lifecycle hooks, and CI/CD pipelines.",
+    "tagsLabs": [
+      "TypeScript",
+      "AES-256 Backups",
+      "CI/CD Engine",
+      "NPM Package"
+    ],
+    "tagsSite": [
+      "TypeScript",
+      "CLI Tool",
+      "NPM Package",
+      "CI/CD"
+    ],
+    "url": "https://github.com/alexandrmotologa/bubble-io-cli",
+    "npm": "https://www.npmjs.com/package/bubble-io-cli"
+  },
+  {
+    "id": "bubble-ai-translator",
+    "title": "bubble-io-ai-translator",
+    "category": "ai",
+    "badgeLabs": {
+      "text": "AI Engine",
+      "type": "ai"
+    },
+    "badgeSite": {
+      "text": "AI Tool",
+      "type": "dev"
+    },
+    "catPill": "AI & Localization",
+    "desc": "Autonomous CLI & Interactive TUI translating entire Bubble.io apps into 108+ languages using 5 LLM providers (OpenAI, Anthropic Claude 3.5 Sonnet, Gemini, OpenRouter, and local Ollama/Llama 3). Built with SQLite translation memory caching, brand glossary protection, and layout pseudo-localization.",
+    "tagsLabs": [
+      "108+ Languages",
+      "5 LLM Providers",
+      "SQLite Cache",
+      "Ollama & Cloud AI",
+      "NPM Package"
+    ],
+    "tagsSite": [
+      "108+ Languages",
+      "Multi-LLM",
+      "SQLite Cache",
+      "NPM Package"
+    ],
+    "url": "https://github.com/alexandrmotologa/bubble-io-ai-translator",
+    "npm": "https://www.npmjs.com/package/bubble-io-ai-translator"
+  },
+  {
+    "id": "bubble-dead-code-detector",
+    "title": "bubble-io-dead-code-detector",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Audit Tool",
+      "type": "tool"
+    },
+    "badgeSite": {
+      "text": "Code Health",
+      "type": "dev"
+    },
+    "catPill": "Code Health",
+    "desc": "Dead code detector, dependency analyzer & health scorer for Bubble.io. Scans exported .bubble files for dead workflows, orphaned fields, and unused plugins, outputs a 0-100 Health Score, and includes an interactive dependency graph and VS Code Extension.",
+    "tagsLabs": [
+      "AST & Graph Analysis",
+      "Health Score (0-100)",
+      "VS Code Extension",
+      "NPM Package"
+    ],
+    "tagsSite": [
+      "AST Analysis",
+      "Health Score (0-100)",
+      "VS Code Extension",
+      "NPM Package"
+    ],
+    "url": "https://github.com/alexandrmotologa/bubble-io-dead-code-detector",
+    "npm": "https://www.npmjs.com/package/bubble-io-dead-code-detector"
+  },
+  {
+    "id": "bubble-visual-tester",
+    "title": "bubble-io-visual-tester",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Visual QA",
+      "type": "tool"
+    },
+    "badgeSite": {
+      "text": "Visual QA",
+      "type": "dev"
+    },
+    "catPill": "Automated QA",
+    "desc": "Automated visual regression testing & pixel-level diffing utility for Bubble.io. Powered by Playwright + pixelmatch with component-level testing, AWS S3 baseline syncing, smart dynamic masking, and interactive HTML before/after slider comparison reports.",
+    "tagsLabs": [
+      "Playwright",
+      "Pixelmatch",
+      "AWS S3 Sync",
+      "CI/CD Gate"
+    ],
+    "tagsSite": [
+      "Playwright",
+      "Pixelmatch",
+      "AWS S3 Sync",
+      "CI/CD Gate"
+    ],
+    "url": "https://github.com/alexandrmotologa/bubble-io-visual-tester"
+  },
+  {
+    "id": "alu-traumterrasse",
+    "title": "Alu-Traumterrasse",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live E-Commerce",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live E-Commerce",
+      "type": "live"
+    },
+    "catPill": "Custom Architectural",
+    "desc": "Custom architectural e-commerce platform for luxury aluminium terrace roofing & cold wintergardens in Germany. Features full online ordering down to individual fittings, dynamic product & material galleries, quotation requests, and Stripe payments.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "E-Commerce & Stripe",
+      "Custom Configurator",
+      "Admin Panel"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "E-Commerce & Stripe",
+      "Custom Configurator",
+      "Admin Panel"
+    ],
+    "url": "https://alu-traumterrasse.de"
+  },
+  {
+    "id": "quiz2coin",
+    "title": "Quiz2Coin",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Web3 App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Web3 App",
+      "type": "live"
+    },
+    "catPill": "Web3 & FinTech",
+    "desc": "Gamified quiz & tournament platform with multi-rail fiat/crypto payments (Stripe, BridgerPay, UPI, Solana wallet integration & USDC payouts), automated DOCX/CSV question ingestion, and tokenomics reward architecture.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Solana Web3",
+      "USDC Rewards",
+      "Multi-Rail Pay"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Solana Web3",
+      "USDC Rewards",
+      "Multi-Rail Pay"
+    ],
+    "url": "https://quiz2coin.com"
+  },
+  {
+    "id": "one2all",
+    "title": "ONE2ALL",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Web3 Engine",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Web3 Engine",
+      "type": "live"
+    },
+    "catPill": "No-Code / NFT",
+    "desc": "The #1 rated white-label Web3 & NFT marketplace platform built 100% on Bubble.io (featured by Rarible DAO). Engineered decentralized minting, collection management, Rarible Protocol API integrations, Pinata IPFS metadata, and custom crypto wallet bridges.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Rarible Protocol",
+      "NFT Marketplace",
+      "Pinata IPFS"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Rarible Protocol",
+      "NFT Marketplace",
+      "Pinata IPFS"
+    ],
+    "url": "https://one2all.io",
+    "extraLink": {
+      "label": "Rarible DAO",
+      "url": "https://medium.com/rarible-dao/how-to-build-the-anti-opensea-why-no-code-is-the-future-of-nft-markets-6b8b9976b285"
+    }
+  },
+  {
+    "id": "telequiz",
+    "title": "TeleQuiz",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Mini App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Mini App",
+      "type": "live"
+    },
+    "catPill": "Telegram & Gaming",
+    "desc": "Official TeleStore Telegram Mini App & bot gaming platform. Engineered with bespoke Telegram OAuth authentication, push notifications, and native Telegram Stars in-app currency payments.",
+    "tagsLabs": [
+      "Telegram Mini App",
+      "Bubble.io Full-Stack",
+      "Telegram Stars API",
+      "Custom Plugins"
+    ],
+    "tagsSite": [
+      "Telegram Mini App",
+      "Bubble.io Full-Stack",
+      "Telegram Stars API",
+      "Custom Plugins"
+    ],
+    "url": "https://telequiz.co",
+    "extraLink": {
+      "label": "TeleStore",
+      "url": "https://tele.store"
+    }
+  },
+  {
+    "id": "atcollege",
+    "title": "atCollege.com",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "catPill": "Campus Network",
+    "desc": "Real-time campus social & community discovery platform connecting students across 25+ universities with events, interest groups (coding, esports, wellness), local places, and volunteer or work opportunities.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "25+ Universities",
+      "Campus Social",
+      "Groups & Events"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "25+ Universities",
+      "Campus Social",
+      "Groups & Events"
+    ],
+    "url": "https://atcollege.com",
+    "github": "https://github.com/chusla/atcollege"
+  },
+  {
+    "id": "nxtchapter",
+    "title": "Nxt Chapter",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Marketplace",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Marketplace",
+      "type": "live"
+    },
+    "catPill": "Sustainable Re-Commerce",
+    "desc": "Australian sustainable second-hand book marketplace. Integrated ISBNDB API for automated metadata lookup, multi-seller inventory management, condition grading, live Instagram social feeds, and Stripe payments.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "ISBNDB API",
+      "Multi-Vendor E-Commerce",
+      "Stripe Payments"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "ISBNDB API",
+      "Multi-Vendor E-Commerce",
+      "Stripe Payments"
+    ],
+    "url": "https://nxtchapter.com.au"
+  },
+  {
+    "id": "burgercraft",
+    "title": "BurgerCraft",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Web App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Web App",
+      "type": "live"
+    },
+    "catPill": "Food & Delivery",
+    "desc": "Mobile-first digital menu & food delivery white-label platform for dark kitchens and restaurants. Features item customization, category filtering, Stripe checkout, and a real-time merchant kitchen triage & order management dashboard.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Food Delivery & Cart",
+      "Kitchen Admin Portal",
+      "Stripe API"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Food Delivery & Cart",
+      "Kitchen Admin Portal",
+      "Stripe API"
+    ],
+    "url": "https://menu-and-delivery.bubbleapps.io/?page=home"
+  },
+  {
+    "id": "greenspace",
+    "title": "GreenSpace Architects",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Template",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Template",
+      "type": "live"
+    },
+    "catPill": "Architecture Showcase",
+    "desc": "Visual-first luxury portfolio web application for architecture firms and spatial designers. Features high-res project galleries, structural blueprints & spec sheets, category filtering, and client consultation request pipelines.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Spatial Showcase",
+      "High-Res Media",
+      "Lead Capture"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Spatial Showcase",
+      "High-Res Media",
+      "Lead Capture"
+    ],
+    "url": "https://architecture-company.bubbleapps.io"
+  },
+  {
+    "id": "pixelwave",
+    "title": "PixelWave Agency",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Template",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Template",
+      "type": "live"
+    },
+    "catPill": "Digital Agency",
+    "desc": "High-converting portfolio web app for software studios and digital agencies. Includes interactive case study modules, tiered service packages, client reviews, and custom lead generation forms.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Case Studies",
+      "Interactive UI",
+      "Lead Generation"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Case Studies",
+      "Interactive UI",
+      "Lead Generation"
+    ],
+    "url": "https://digital-agency-portfolio.bubbleapps.io"
+  },
+  {
+    "id": "acrehedge",
+    "title": "AcreHedge",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "catPill": "FinTech & Agri",
+    "desc": "Comprehensive agricultural risk management and FinTech hedging platform. Features real-time CBOT commodity market pricing, crop volatility prediction models, weather event insurance calculations, and Plaid financial integrations.",
+    "tagsLabs": [
+      "Bubble.io FinTech",
+      "Commodities (CBOT)",
+      "Plaid Banking API",
+      "Hedging Engine"
+    ],
+    "tagsSite": [
+      "Bubble.io FinTech",
+      "Commodities (CBOT)",
+      "Plaid Banking API",
+      "Hedging Engine"
+    ],
+    "url": "https://acrehedge.com"
+  },
+  {
+    "id": "format-kultify",
+    "title": "Format (Kultify)",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Web3 Engine",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Web3 Engine",
+      "type": "live"
+    },
+    "catPill": "Web3 Publishing",
+    "desc": "Community-driven Web3 collaborative publishing and storytelling platform. Enables modular world-building elements, character traits, and creative lore assets to be minted, owned, and traded as NFTs so all creators get compensated.",
+    "tagsLabs": [
+      "Bubble.io Web3",
+      "NFT Publishing",
+      "Collaborative Lore",
+      "Creator Royalties"
+    ],
+    "tagsSite": [
+      "Bubble.io Web3",
+      "NFT Publishing",
+      "Collaborative Lore",
+      "Creator Royalties"
+    ],
+    "url": "https://kultify.io"
+  },
+  {
+    "id": "inktradr",
+    "title": "InkTradr",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Marketplace",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Marketplace",
+      "type": "live"
+    },
+    "catPill": "Web3 & Art",
+    "desc": "Digital marketplace & licensing ecosystem for tattoo artists and flash art collectors. Built on Bubble.io with Polygon MATIC Web3 checkout, artist studio portals, custom ink booking requests, and style category curation.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Polygon MATIC",
+      "Art Licensing",
+      "Marketplace"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Polygon MATIC",
+      "Art Licensing",
+      "Marketplace"
+    ],
+    "url": "https://inktradr.co"
+  },
+  {
+    "id": "satoshibet",
+    "title": "SatoshiBet",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live MVP",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live MVP",
+      "type": "live"
+    },
+    "catPill": "Prediction Market",
+    "desc": "Polymarket-style decentralized prediction market MVP built end-to-end on Bubble.io. Features real-time probability tracking, interactive odds charts, Yes/No binary outcome betting, and category filters (politics, finance, crypto).",
+    "tagsLabs": [
+      "Bubble.io FinTech",
+      "Prediction Markets",
+      "Real-Time Odds",
+      "Mobile UI"
+    ],
+    "tagsSite": [
+      "Bubble.io FinTech",
+      "Prediction Markets",
+      "Real-Time Odds",
+      "Mobile UI"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "aislesync",
+    "title": "AisleSync",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Mobile App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Mobile App",
+      "type": "live"
+    },
+    "catPill": "Smart Shopping",
+    "desc": "Smart grocery barcode scanner & shopping companion. Built with a high-performance Flutter mobile wrapper (Android & iOS) integrated over a Bubble.io backend, featuring multi-retailer inventory lookup and barcode camera scanning.",
+    "tagsLabs": [
+      "Flutter Mobile (iOS/Android)",
+      "Bubble.io Backend",
+      "Barcode Scanning",
+      "Push Notifications"
+    ],
+    "tagsSite": [
+      "Flutter Mobile (iOS/Android)",
+      "Bubble.io Backend",
+      "Barcode Scanning",
+      "Push Notifications"
+    ],
+    "url": "https://www.aislesync.com"
+  },
+  {
+    "id": "evas-ro",
+    "title": "EVAS RO",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "catPill": "Accessibility & Audits",
+    "desc": "Mobile-first disability & space accessibility audit platform for field inspectors in Romania (Evaluare Voluntară Accesibilitate Spațiul). Features multi-step compliance evaluations, photo/video evidence uploads, and automated scoring.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Accessibility Audits",
+      "Mobile Field App",
+      "Compliance Scoring"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Accessibility Audits",
+      "Mobile Field App",
+      "Compliance Scoring"
+    ],
+    "url": "https://evas.ro"
+  },
+  {
+    "id": "ezlanguage",
+    "title": "EzLanguage (EzSchool)",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "catPill": "EdTech & Tutors",
+    "desc": "Interactive language learning and online tutor booking platform. Features audio pronunciation playback, gamified flashcards, tutor discovery with hourly rates, calendar scheduling, and structured study modules.",
+    "tagsLabs": [
+      "Bubble.io Full-Stack",
+      "Tutor Marketplace",
+      "Audio Playback",
+      "Scheduling & Bookings"
+    ],
+    "tagsSite": [
+      "Bubble.io Full-Stack",
+      "Tutor Marketplace",
+      "Audio Playback",
+      "Scheduling & Bookings"
+    ],
+    "url": "https://ezlanguage.bubbleapps.io"
+  },
+  {
+    "id": "moldova-customs",
+    "title": "Moldova Customs Calculator",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Google Play App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Google Play App",
+      "type": "live"
+    },
+    "catPill": "Mobile Utility",
+    "desc": "Native Android application built in Kotlin calculating exact import customs taxes, VAT, and duty exemptions for international parcel shipments (Amazon, AliExpress, eBay, iHerb) into the Republic of Moldova.",
+    "tagsLabs": [
+      "Android / Kotlin",
+      "Tariff Engine",
+      "E-Commerce Imports",
+      "Google Play"
+    ],
+    "tagsSite": [
+      "Android / Kotlin",
+      "Tariff Engine",
+      "E-Commerce Imports",
+      "Google Play"
+    ],
+    "url": "https://play.google.com/store/apps/details?id=md.customs.calculator"
+  },
+  {
+    "id": "nothing-unwanted",
+    "title": "Nothing Unwanted",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Mobile App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Mobile App",
+      "type": "live"
+    },
+    "catPill": "Music & Booking",
+    "desc": "Mobile-first artist & venue booking marketplace. Features an integrated persistent background audio player that streams uninterrupted across pages, gig application pipelines, dual-user workflows (Artists & Venues), and Stripe payouts.",
+    "tagsLabs": [
+      "Bubble Mobile (iOS/Android)",
+      "Background Audio Engine",
+      "Geolocation & Booking",
+      "Stripe API"
+    ],
+    "tagsSite": [
+      "Bubble Mobile (iOS/Android)",
+      "Background Audio Engine",
+      "Geolocation & Booking",
+      "Stripe API"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "soma-platform",
+    "title": "SOMA Micronutrient & Bioflow Platform",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Google Play App",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Google Play App",
+      "type": "live"
+    },
+    "catPill": "Biometrics & Health",
+    "desc": "Advanced bioflow analytics and micronutrient metabolic tracking platform for Android. Features integrated biometrics, circadian nutrient cycling algorithms, biomarker dashboards, and secure local health data encryption.",
+    "tagsLabs": [
+      "Android / Kotlin",
+      "Biometrics & Health",
+      "Nutrient Analytics",
+      "Google Play"
+    ],
+    "tagsSite": [
+      "Android / Kotlin",
+      "Biometrics & Health",
+      "Nutrient Analytics",
+      "Google Play"
+    ],
+    "url": "https://play.google.com/store/apps/developer?id=MTLG+Labs"
+  },
+  {
+    "id": "idealtoolkit",
+    "title": "IdealToolkit",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Live SaaS & Migration",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live SaaS & Migration",
+      "type": "live"
+    },
+    "catPill": "Productivity & Tooling",
+    "desc": "All-in-one developer & product management toolkit. Originally architected and built end-to-end on Bubble.io by Alexandr Motologa, then successfully migrated, restructured, and scaled using React with Supabase backend.",
+    "tagsLabs": [
+      "React",
+      "Supabase",
+      "Bubble.io Migration",
+      "Developer Tooling"
+    ],
+    "tagsSite": [
+      "React",
+      "Supabase",
+      "Bubble.io Migration",
+      "Developer Tooling"
+    ],
+    "url": "https://idealtoolkit.com/",
+    "github": "https://github.com/chusla/idealtoolkit"
+  },
+  {
+    "id": "webotit",
+    "title": "Webotit",
+    "category": "ai",
+    "badgeLabs": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "catPill": "Conversational AI",
+    "desc": "AI-powered conversational agent & customer triage automation platform. Features custom multi-turn NLP dialog flows, omnichannel widget embedding, CRM webhooks, and intelligent escalation routing.",
+    "tagsLabs": [
+      "AI Chatbots",
+      "NLP / LLM",
+      "Customer Triage",
+      "Omnichannel API"
+    ],
+    "tagsSite": [
+      "AI Chatbots",
+      "NLP / LLM",
+      "Customer Triage",
+      "Omnichannel API"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "ovidiu-platform",
+    "title": "Ovidiu Platform",
+    "category": "saas",
+    "badgeLabs": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "catPill": "Enterprise Workflow",
+    "desc": "Custom enterprise workflow and intelligent digital operations platform. Engineered with dynamic role-based permissions, automated document processing, real-time analytics, and modular service extensions.",
+    "tagsLabs": [
+      "Full-Stack Architecture",
+      "Workflow Automation",
+      "Enterprise Portal",
+      "Custom APIs"
+    ],
+    "tagsSite": [
+      "Full-Stack Architecture",
+      "Workflow Automation",
+      "Enterprise Portal",
+      "Custom APIs"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "nftymuse",
+    "title": "NFTyMuse",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Web3",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Web3",
+      "type": "live"
+    },
+    "catPill": "Digital Art & 3D",
+    "desc": "Web3 virtual museum and digital art curation platform. Enables artists and collectors to create 3D exhibition spaces, curate NFT galleries, mint verified certificates, and trade on Ethereum & Polygon.",
+    "tagsLabs": [
+      "Web3 / NFT",
+      "Digital Museum",
+      "3D Virtual Galleries",
+      "Polygon MATIC"
+    ],
+    "tagsSite": [
+      "Web3 / NFT",
+      "Digital Museum",
+      "3D Virtual Galleries",
+      "Polygon MATIC"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "transium",
+    "title": "Transium",
+    "category": "devtools",
+    "badgeLabs": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Platform",
+      "type": "live"
+    },
+    "catPill": "Localization Engine",
+    "desc": "Cross-border localization, automated multi-lingual content syncing, and global transaction management pipeline with high-throughput API webhooks and distributed edge caching.",
+    "tagsLabs": [
+      "Localization Engine",
+      "Global Transactions",
+      "API Webhooks",
+      "Cloud Architecture"
+    ],
+    "tagsSite": [
+      "Localization Engine",
+      "Global Transactions",
+      "API Webhooks",
+      "Cloud Architecture"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "prophet",
+    "title": "Prophet",
+    "category": "ai",
+    "badgeLabs": {
+      "text": "Live AI Engine",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live AI Engine",
+      "type": "live"
+    },
+    "catPill": "Predictive Intelligence",
+    "desc": "Decentralized predictive intelligence and statistical forecasting platform. Combines machine learning probability engines with collective sentiment markets and on-chain verification.",
+    "tagsLabs": [
+      "Predictive AI",
+      "Forecasting Engine",
+      "Decentralized Oracle",
+      "Web3"
+    ],
+    "tagsSite": [
+      "Predictive AI",
+      "Forecasting Engine",
+      "Decentralized Oracle",
+      "Web3"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "odyssey",
+    "title": "Odyssey",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Ecosystem",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Ecosystem",
+      "type": "live"
+    },
+    "catPill": "Community Quests",
+    "desc": "Gamified Web3 community quest & engagement ecosystem. Features dynamic XP progression trees, smart contract-verified reward distribution, leaderboards, and Discord/Telegram bot synchronization.",
+    "tagsLabs": [
+      "Web3 Gamification",
+      "Community Quests",
+      "Smart Contracts",
+      "Bot Sync"
+    ],
+    "tagsSite": [
+      "Web3 Gamification",
+      "Community Quests",
+      "Smart Contracts",
+      "Bot Sync"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "parabolica",
+    "title": "Parabolica",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live DeFi Terminal",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live DeFi Terminal",
+      "type": "live"
+    },
+    "catPill": "DeFi & Trading",
+    "desc": "DeFi & algorithmic trading analytics terminal. Features real-time liquidity pool tracking, volume anomaly alerts, automated DEX order book charts, and multi-wallet portfolio PnL visualization.",
+    "tagsLabs": [
+      "DeFi Analytics",
+      "Algorithmic Trading",
+      "DEX Liquidity",
+      "Crypto Charts"
+    ],
+    "tagsSite": [
+      "DeFi Analytics",
+      "Algorithmic Trading",
+      "DEX Liquidity",
+      "Crypto Charts"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "metaverde",
+    "title": "Metaverde",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live EcoTech",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live EcoTech",
+      "type": "live"
+    },
+    "catPill": "Green Web3",
+    "desc": "Green technology and tokenized carbon offset platform. Integrates verified environmental sensor data, transparent carbon credit retirement on-chain, and corporate ESG reporting dashboards.",
+    "tagsLabs": [
+      "Green Web3",
+      "Carbon Credits",
+      "ESG Compliance",
+      "IoT Sensor Data"
+    ],
+    "tagsSite": [
+      "Green Web3",
+      "Carbon Credits",
+      "ESG Compliance",
+      "IoT Sensor Data"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "matterdust",
+    "title": "MatterDust",
+    "category": "ai",
+    "badgeLabs": {
+      "text": "Live Sandbox",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Sandbox",
+      "type": "live"
+    },
+    "catPill": "Generative Shaders",
+    "desc": "Physics-inspired generative art engine and decentralized creative sandbox. Generates mathematically unique visual particles, real-time shaders, and generative mints stored on IPFS.",
+    "tagsLabs": [
+      "Generative Art",
+      "WebGL / Shaders",
+      "IPFS",
+      "Creative Sandbox"
+    ],
+    "tagsSite": [
+      "Generative Art",
+      "WebGL / Shaders",
+      "IPFS",
+      "Creative Sandbox"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "o1a",
+    "title": "o1a Engine",
+    "category": "ai",
+    "badgeLabs": {
+      "text": "Live AI Agent",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live AI Agent",
+      "type": "live"
+    },
+    "catPill": "Agent Orchestration",
+    "desc": "High-performance autonomous AI agent orchestration engine. Features task decomposition, tool-calling pipelines, structured memory persistence, and automated code review workflows.",
+    "tagsLabs": [
+      "Agentic AI",
+      "Autonomous Workflows",
+      "Tool Calling",
+      "LLM Pipeline"
+    ],
+    "tagsSite": [
+      "Agentic AI",
+      "Autonomous Workflows",
+      "Tool Calling",
+      "LLM Pipeline"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "nuttipetz",
+    "title": "NuttiPetz",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live GameFi",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live GameFi",
+      "type": "live"
+    },
+    "catPill": "Web3 Gaming & NFTs",
+    "desc": "Gamified digital pet collectibles and breeding ecosystem. Features interactive on-chain genetics, dynamic evolutionary state updates, NFT pet trading, and mini-game integration.",
+    "tagsLabs": [
+      "Web3 Gaming",
+      "NFT Collectibles",
+      "On-Chain Genetics",
+      "Gamification"
+    ],
+    "tagsSite": [
+      "Web3 Gaming",
+      "NFT Collectibles",
+      "On-Chain Genetics",
+      "Gamification"
+    ],
+    "url": "https://mtlglabs.space"
+  },
+  {
+    "id": "covault",
+    "title": "CoVault",
+    "category": "web3",
+    "badgeLabs": {
+      "text": "Live Security Vault",
+      "type": "live"
+    },
+    "badgeSite": {
+      "text": "Live Security Vault",
+      "type": "live"
+    },
+    "catPill": "Security & Custody",
+    "desc": "Secure digital asset custody and multi-signature cryptographic vault. Features zero-knowledge access authorization, time-locked transaction approvals, and enterprise audit trails.",
+    "tagsLabs": [
+      "Crypto Custody",
+      "Multi-Sig Vault",
+      "Zero-Knowledge",
+      "Security Architecture"
+    ],
+    "tagsSite": [
+      "Crypto Custody",
+      "Multi-Sig Vault",
+      "Zero-Knowledge",
+      "Security Architecture"
+    ],
+    "url": "https://mtlglabs.space"
+  }
+]
