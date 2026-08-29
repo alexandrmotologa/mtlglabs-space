@@ -1,0 +1,16 @@
+{
+  "name": "MTLG Labs — Autonomous Software Lab & Developer Tooling",
+  "short_name": "MTLG Labs",
+  "description": "Independent software lab creating developer tools, SaaS applications, and AI-driven automation engines. Built by Alexandr Motologa.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06070a",
+  "theme_color": "#06070a",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
