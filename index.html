@@ -526,7 +526,8 @@ body {
 
 
 
-/* Enhanced Media & Drag-To-Scroll Carousel */
+
+/* Enhanced Media & Pointer Drag-To-Scroll Carousel */
 .card-media,
 .project-media,
 .card-carousel,
@@ -540,7 +541,9 @@ body {
   background: radial-gradient(circle at center, rgba(22, 27, 44, 0.8), rgba(6, 8, 14, 0.95));
   border: 1px solid rgba(255, 255, 255, 0.08);
   user-select: none;
+  -webkit-user-select: none;
   box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
+  touch-action: pan-y pinch-zoom;
 }
 
 .project-media,
@@ -570,6 +573,8 @@ body {
   display: block;
   transition: transform 0.3s ease;
   pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .product-card:hover .card-media img,
@@ -590,6 +595,8 @@ body {
   -webkit-overflow-scrolling: touch;
   cursor: grab;
   user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-y pinch-zoom;
 }
 
 .carousel-track:active {
@@ -612,6 +619,8 @@ body {
   padding: 8px;
   box-sizing: border-box;
   position: relative;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .carousel-slide img {
@@ -624,6 +633,8 @@ body {
   display: block;
   transition: transform 0.3s ease;
   pointer-events: none;
+  -webkit-user-drag: none;
+  user-select: none;
 }
 
 .carousel-btn {
@@ -1635,7 +1646,7 @@ body {
               <span class="cat-pill">Micro-SaaS</span>
             </div>
             <div class="card-media">
-              <img src="images/snapframe-1.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" />
+              <img src="images/snapframe-1.png" alt="SnapFrame.store Screenshot Preview" loading="lazy" draggable="false" />
             </div>
             <div class="card-main">
               <h3 class="product-name">SnapFrame.store</h3>
@@ -1670,19 +1681,19 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/oneira-web-1.png" alt="Oneira Space (Web) Screenshot Preview 1" loading="lazy" />
+                  <img src="images/oneira-web-1.png" alt="Oneira Space (Web) Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/oneira-web-2.png" alt="Oneira Space (Web) Screenshot Preview 2" loading="lazy" />
+                  <img src="images/oneira-web-2.png" alt="Oneira Space (Web) Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/oneira-web-3.png" alt="Oneira Space (Web) Screenshot Preview 3" loading="lazy" />
+                  <img src="images/oneira-web-3.png" alt="Oneira Space (Web) Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/oneira-web-4.png" alt="Oneira Space (Web) Screenshot Preview 4" loading="lazy" />
+                  <img src="images/oneira-web-4.png" alt="Oneira Space (Web) Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="4">
-                  <img src="images/oneira-web-5.png" alt="Oneira Space (Web) Screenshot Preview 5" loading="lazy" />
+                  <img src="images/oneira-web-5.png" alt="Oneira Space (Web) Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -1732,19 +1743,19 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/oneira-app-1.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 1" loading="lazy" />
+                  <img src="images/oneira-app-1.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/oneira-app-2.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 2" loading="lazy" />
+                  <img src="images/oneira-app-2.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/oneira-app-3.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 3" loading="lazy" />
+                  <img src="images/oneira-app-3.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/oneira-app-4.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 4" loading="lazy" />
+                  <img src="images/oneira-app-4.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="4">
-                  <img src="images/oneira-app-5.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 5" loading="lazy" />
+                  <img src="images/oneira-app-5.png" alt="Oneira: Journal & Self-Growth Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -1823,10 +1834,10 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/bubble-cli-1.jpg" alt="bubble-io-cli Screenshot Preview 1" loading="lazy" />
+                  <img src="images/bubble-cli-1.jpg" alt="bubble-io-cli Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/bubble-cli-2.jpg" alt="bubble-io-cli Screenshot Preview 2" loading="lazy" />
+                  <img src="images/bubble-cli-2.jpg" alt="bubble-io-cli Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -1876,13 +1887,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/bubble-ai-translator-1.png" alt="bubble-io-ai-translator Screenshot Preview 1" loading="lazy" />
+                  <img src="images/bubble-ai-translator-1.png" alt="bubble-io-ai-translator Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/bubble-ai-translator-2.png" alt="bubble-io-ai-translator Screenshot Preview 2" loading="lazy" />
+                  <img src="images/bubble-ai-translator-2.png" alt="bubble-io-ai-translator Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/bubble-ai-translator-3.png" alt="bubble-io-ai-translator Screenshot Preview 3" loading="lazy" />
+                  <img src="images/bubble-ai-translator-3.png" alt="bubble-io-ai-translator Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -1934,13 +1945,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/bubble-dead-code-detector-1.png" alt="bubble-io-dead-code-detector Screenshot Preview 1" loading="lazy" />
+                  <img src="images/bubble-dead-code-detector-1.png" alt="bubble-io-dead-code-detector Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/bubble-dead-code-detector-2.png" alt="bubble-io-dead-code-detector Screenshot Preview 2" loading="lazy" />
+                  <img src="images/bubble-dead-code-detector-2.png" alt="bubble-io-dead-code-detector Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/bubble-dead-code-detector-3.png" alt="bubble-io-dead-code-detector Screenshot Preview 3" loading="lazy" />
+                  <img src="images/bubble-dead-code-detector-3.png" alt="bubble-io-dead-code-detector Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -1991,10 +2002,10 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/bubble-visual-tester-1.png" alt="bubble-io-visual-tester Screenshot Preview 1" loading="lazy" />
+                  <img src="images/bubble-visual-tester-1.png" alt="bubble-io-visual-tester Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/bubble-visual-tester-2.png" alt="bubble-io-visual-tester Screenshot Preview 2" loading="lazy" />
+                  <img src="images/bubble-visual-tester-2.png" alt="bubble-io-visual-tester Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2040,16 +2051,16 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/alu-traumterrasse-1.jpg" alt="Alu-Traumterrasse Screenshot Preview 1" loading="lazy" />
+                  <img src="images/alu-traumterrasse-1.jpg" alt="Alu-Traumterrasse Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/alu-traumterrasse-2.jpg" alt="Alu-Traumterrasse Screenshot Preview 2" loading="lazy" />
+                  <img src="images/alu-traumterrasse-2.jpg" alt="Alu-Traumterrasse Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/alu-traumterrasse-3.png" alt="Alu-Traumterrasse Screenshot Preview 3" loading="lazy" />
+                  <img src="images/alu-traumterrasse-3.png" alt="Alu-Traumterrasse Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/alu-traumterrasse-4.png" alt="Alu-Traumterrasse Screenshot Preview 4" loading="lazy" />
+                  <img src="images/alu-traumterrasse-4.png" alt="Alu-Traumterrasse Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2097,19 +2108,19 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/quiz2coin-1.png" alt="Quiz2Coin Screenshot Preview 1" loading="lazy" />
+                  <img src="images/quiz2coin-1.png" alt="Quiz2Coin Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/quiz2coin-2.png" alt="Quiz2Coin Screenshot Preview 2" loading="lazy" />
+                  <img src="images/quiz2coin-2.png" alt="Quiz2Coin Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/quiz2coin-3.png" alt="Quiz2Coin Screenshot Preview 3" loading="lazy" />
+                  <img src="images/quiz2coin-3.png" alt="Quiz2Coin Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/quiz2coin-4.png" alt="Quiz2Coin Screenshot Preview 4" loading="lazy" />
+                  <img src="images/quiz2coin-4.png" alt="Quiz2Coin Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="4">
-                  <img src="images/quiz2coin-5.png" alt="Quiz2Coin Screenshot Preview 5" loading="lazy" />
+                  <img src="images/quiz2coin-5.png" alt="Quiz2Coin Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2188,19 +2199,19 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/telequiz-1.png" alt="TeleQuiz Screenshot Preview 1" loading="lazy" />
+                  <img src="images/telequiz-1.png" alt="TeleQuiz Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/telequiz-2.png" alt="TeleQuiz Screenshot Preview 2" loading="lazy" />
+                  <img src="images/telequiz-2.png" alt="TeleQuiz Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/telequiz-3.png" alt="TeleQuiz Screenshot Preview 3" loading="lazy" />
+                  <img src="images/telequiz-3.png" alt="TeleQuiz Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/telequiz-4.png" alt="TeleQuiz Screenshot Preview 4" loading="lazy" />
+                  <img src="images/telequiz-4.png" alt="TeleQuiz Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="4">
-                  <img src="images/telequiz-5.png" alt="TeleQuiz Screenshot Preview 5" loading="lazy" />
+                  <img src="images/telequiz-5.png" alt="TeleQuiz Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2253,13 +2264,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/atcollege-1.png" alt="atCollege.com Screenshot Preview 1" loading="lazy" />
+                  <img src="images/atcollege-1.png" alt="atCollege.com Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/atcollege-2.png" alt="atCollege.com Screenshot Preview 2" loading="lazy" />
+                  <img src="images/atcollege-2.png" alt="atCollege.com Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/atcollege-3.png" alt="atCollege.com Screenshot Preview 3" loading="lazy" />
+                  <img src="images/atcollege-3.png" alt="atCollege.com Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2309,13 +2320,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/nxtchapter-1.png" alt="Nxt Chapter Screenshot Preview 1" loading="lazy" />
+                  <img src="images/nxtchapter-1.png" alt="Nxt Chapter Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/nxtchapter-2.png" alt="Nxt Chapter Screenshot Preview 2" loading="lazy" />
+                  <img src="images/nxtchapter-2.png" alt="Nxt Chapter Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/nxtchapter-3.png" alt="Nxt Chapter Screenshot Preview 3" loading="lazy" />
+                  <img src="images/nxtchapter-3.png" alt="Nxt Chapter Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2362,16 +2373,16 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/burgercraft-1.png" alt="BurgerCraft Screenshot Preview 1" loading="lazy" />
+                  <img src="images/burgercraft-1.png" alt="BurgerCraft Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/burgercraft-2.png" alt="BurgerCraft Screenshot Preview 2" loading="lazy" />
+                  <img src="images/burgercraft-2.png" alt="BurgerCraft Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/burgercraft-3.png" alt="BurgerCraft Screenshot Preview 3" loading="lazy" />
+                  <img src="images/burgercraft-3.png" alt="BurgerCraft Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/burgercraft-4.png" alt="BurgerCraft Screenshot Preview 4" loading="lazy" />
+                  <img src="images/burgercraft-4.png" alt="BurgerCraft Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2419,13 +2430,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/greenspace-1.jpg" alt="GreenSpace Architects Screenshot Preview 1" loading="lazy" />
+                  <img src="images/greenspace-1.jpg" alt="GreenSpace Architects Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/greenspace-2.png" alt="GreenSpace Architects Screenshot Preview 2" loading="lazy" />
+                  <img src="images/greenspace-2.png" alt="GreenSpace Architects Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/greenspace-3.jpg" alt="GreenSpace Architects Screenshot Preview 3" loading="lazy" />
+                  <img src="images/greenspace-3.jpg" alt="GreenSpace Architects Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2472,16 +2483,16 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/pixelwave-1.png" alt="PixelWave Agency Screenshot Preview 1" loading="lazy" />
+                  <img src="images/pixelwave-1.png" alt="PixelWave Agency Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/pixelwave-2.png" alt="PixelWave Agency Screenshot Preview 2" loading="lazy" />
+                  <img src="images/pixelwave-2.png" alt="PixelWave Agency Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/pixelwave-3.jpg" alt="PixelWave Agency Screenshot Preview 3" loading="lazy" />
+                  <img src="images/pixelwave-3.jpg" alt="PixelWave Agency Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/pixelwave-4.png" alt="PixelWave Agency Screenshot Preview 4" loading="lazy" />
+                  <img src="images/pixelwave-4.png" alt="PixelWave Agency Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2529,13 +2540,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/acrehedge-1.png" alt="AcreHedge Screenshot Preview 1" loading="lazy" />
+                  <img src="images/acrehedge-1.png" alt="AcreHedge Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/acrehedge-2.png" alt="AcreHedge Screenshot Preview 2" loading="lazy" />
+                  <img src="images/acrehedge-2.png" alt="AcreHedge Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/acrehedge-3.png" alt="AcreHedge Screenshot Preview 3" loading="lazy" />
+                  <img src="images/acrehedge-3.png" alt="AcreHedge Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2582,16 +2593,16 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/format-kultify-1.png" alt="Format (Kultify) Screenshot Preview 1" loading="lazy" />
+                  <img src="images/format-kultify-1.png" alt="Format (Kultify) Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/format-kultify-2.png" alt="Format (Kultify) Screenshot Preview 2" loading="lazy" />
+                  <img src="images/format-kultify-2.png" alt="Format (Kultify) Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/format-kultify-3.png" alt="Format (Kultify) Screenshot Preview 3" loading="lazy" />
+                  <img src="images/format-kultify-3.png" alt="Format (Kultify) Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/format-kultify-4.png" alt="Format (Kultify) Screenshot Preview 4" loading="lazy" />
+                  <img src="images/format-kultify-4.png" alt="Format (Kultify) Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2636,7 +2647,7 @@ body {
               <span class="cat-pill">Web3 & Art</span>
             </div>
             <div class="card-media">
-              <img src="images/inktradr-1.png" alt="InkTradr Screenshot Preview" loading="lazy" />
+              <img src="images/inktradr-1.png" alt="InkTradr Screenshot Preview" loading="lazy" draggable="false" />
             </div>
             <div class="card-main">
               <h3 class="product-name">InkTradr</h3>
@@ -2668,19 +2679,19 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/satoshibet-1.png" alt="SatoshiBet Screenshot Preview 1" loading="lazy" />
+                  <img src="images/satoshibet-1.png" alt="SatoshiBet Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/satoshibet-2.png" alt="SatoshiBet Screenshot Preview 2" loading="lazy" />
+                  <img src="images/satoshibet-2.png" alt="SatoshiBet Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/satoshibet-3.png" alt="SatoshiBet Screenshot Preview 3" loading="lazy" />
+                  <img src="images/satoshibet-3.png" alt="SatoshiBet Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/satoshibet-4.png" alt="SatoshiBet Screenshot Preview 4" loading="lazy" />
+                  <img src="images/satoshibet-4.png" alt="SatoshiBet Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="4">
-                  <img src="images/satoshibet-5.png" alt="SatoshiBet Screenshot Preview 5" loading="lazy" />
+                  <img src="images/satoshibet-5.png" alt="SatoshiBet Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2723,13 +2734,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/aislesync-1.png" alt="AisleSync Screenshot Preview 1" loading="lazy" />
+                  <img src="images/aislesync-1.png" alt="AisleSync Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/aislesync-2.png" alt="AisleSync Screenshot Preview 2" loading="lazy" />
+                  <img src="images/aislesync-2.png" alt="AisleSync Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/aislesync-3.png" alt="AisleSync Screenshot Preview 3" loading="lazy" />
+                  <img src="images/aislesync-3.png" alt="AisleSync Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2776,19 +2787,19 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/evas-ro-1.png" alt="EVAS RO Screenshot Preview 1" loading="lazy" />
+                  <img src="images/evas-ro-1.png" alt="EVAS RO Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/evas-ro-2.png" alt="EVAS RO Screenshot Preview 2" loading="lazy" />
+                  <img src="images/evas-ro-2.png" alt="EVAS RO Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/evas-ro-3.png" alt="EVAS RO Screenshot Preview 3" loading="lazy" />
+                  <img src="images/evas-ro-3.png" alt="EVAS RO Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="3">
-                  <img src="images/evas-ro-4.png" alt="EVAS RO Screenshot Preview 4" loading="lazy" />
+                  <img src="images/evas-ro-4.png" alt="EVAS RO Screenshot Preview 4" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="4">
-                  <img src="images/evas-ro-5.png" alt="EVAS RO Screenshot Preview 5" loading="lazy" />
+                  <img src="images/evas-ro-5.png" alt="EVAS RO Screenshot Preview 5" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2837,10 +2848,10 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/ezlanguage-1.png" alt="EzLanguage (EzSchool) Screenshot Preview 1" loading="lazy" />
+                  <img src="images/ezlanguage-1.png" alt="EzLanguage (EzSchool) Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/ezlanguage-2.png" alt="EzLanguage (EzSchool) Screenshot Preview 2" loading="lazy" />
+                  <img src="images/ezlanguage-2.png" alt="EzLanguage (EzSchool) Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -2912,13 +2923,13 @@ body {
               <div class="carousel-track">
                 
                 <div class="carousel-slide" data-slide-index="0">
-                  <img src="images/nothing-unwanted-1.png" alt="Nothing Unwanted Screenshot Preview 1" loading="lazy" />
+                  <img src="images/nothing-unwanted-1.png" alt="Nothing Unwanted Screenshot Preview 1" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="1">
-                  <img src="images/nothing-unwanted-2.png" alt="Nothing Unwanted Screenshot Preview 2" loading="lazy" />
+                  <img src="images/nothing-unwanted-2.png" alt="Nothing Unwanted Screenshot Preview 2" loading="lazy" draggable="false" />
                 </div>
                 <div class="carousel-slide" data-slide-index="2">
-                  <img src="images/nothing-unwanted-3.png" alt="Nothing Unwanted Screenshot Preview 3" loading="lazy" />
+                  <img src="images/nothing-unwanted-3.png" alt="Nothing Unwanted Screenshot Preview 3" loading="lazy" draggable="false" />
                 </div>
               </div>
               <button type="button" class="carousel-btn carousel-prev" aria-label="Previous Image">
@@ -3331,40 +3342,46 @@ body {
   <script src="script.js"></script>
 
 
+
 <script>
-// Interactive Drag-to-Scroll & Swipe Carousel
-document.addEventListener('DOMContentLoaded', () => {
+// Flawless Pointer-Drag-to-Scroll & Touch-Swipe Carousel Controller
+function setupAllCarousels() {
   document.querySelectorAll('.card-carousel, .project-carousel').forEach(carousel => {
+    if (carousel.__initializedCarousel) return;
+    carousel.__initializedCarousel = true;
+
     const track = carousel.querySelector('.carousel-track');
+    if (!track) return;
+
     const prevBtn = carousel.querySelector('.carousel-prev');
     const nextBtn = carousel.querySelector('.carousel-next');
     const dots = carousel.querySelectorAll('.carousel-dot');
     const badge = carousel.querySelector('.carousel-badge');
-    const total = parseInt(carousel.dataset.total, 10) || 1;
+    const total = parseInt(carousel.dataset.total, 10) || dots.length || 1;
 
-    let isDown = false;
-    let startX = 0;
-    let scrollLeft = 0;
-    let isDragging = false;
+    let isPointerDown = false;
+    let startPointerX = 0;
+    let startScrollLeft = 0;
+    let hasMoved = false;
 
-    // Update active dot and counter based on scroll position
-    const updateActiveState = () => {
+    // Real-time Scroll Listener for Indicators & Badge
+    const onTrackScroll = () => {
       const slideWidth = track.clientWidth || 1;
       const index = Math.round(track.scrollLeft / slideWidth);
-      const clampedIndex = Math.max(0, Math.min(index, total - 1));
+      const clamped = Math.max(0, Math.min(index, total - 1));
       
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === clampedIndex);
+      dots.forEach((dot, idx) => {
+        dot.classList.toggle('active', idx === clamped);
       });
       
       if (badge) {
-        badge.textContent = (clampedIndex + 1) + '/' + total;
+        badge.textContent = (clamped + 1) + '/' + total;
       }
     };
 
-    track.addEventListener('scroll', updateActiveState, { passive: true });
+    track.addEventListener('scroll', onTrackScroll, { passive: true });
 
-    // Buttons
+    // Prev / Next Navigation Buttons
     if (prevBtn) {
       prevBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -3381,55 +3398,82 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Dots
-    dots.forEach((dot, i) => {
+    // Dot Indicators
+    dots.forEach((dot, idx) => {
       dot.addEventListener('click', (e) => {
         e.preventDefault();
         e.stopPropagation();
-        track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+        track.scrollTo({ left: idx * track.clientWidth, behavior: 'smooth' });
       });
     });
 
-    // Mouse Drag to Scroll
-    track.addEventListener('mousedown', (e) => {
-      isDown = true;
-      isDragging = false;
-      startX = e.pageX - track.offsetLeft;
-      scrollLeft = track.scrollLeft;
+    // Pointer Events for 100% Reliable Cross-Platform Drag & Swipe
+    track.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse' && e.button !== 0) return;
+      isPointerDown = true;
+      hasMoved = false;
+      startPointerX = e.clientX;
+      startScrollLeft = track.scrollLeft;
+      track.style.scrollBehavior = 'auto';
+      track.style.scrollSnapType = 'none';
+
+      try {
+        track.setPointerCapture(e.pointerId);
+      } catch (err) {}
     });
 
-    window.addEventListener('mouseup', (e) => {
-      if (!isDown) return;
-      isDown = false;
-      setTimeout(() => { isDragging = false; }, 50);
-      
-      // Snap to nearest slide
+    track.addEventListener('pointermove', (e) => {
+      if (!isPointerDown) return;
+      const deltaX = e.clientX - startPointerX;
+      if (Math.abs(deltaX) > 4) {
+        hasMoved = true;
+      }
+      track.scrollLeft = startScrollLeft - deltaX;
+    });
+
+    const handlePointerEnd = (e) => {
+      if (!isPointerDown) return;
+      isPointerDown = false;
+      track.style.scrollBehavior = 'smooth';
+      track.style.scrollSnapType = 'x mandatory';
+
       const slideWidth = track.clientWidth || 1;
       const targetIndex = Math.round(track.scrollLeft / slideWidth);
       track.scrollTo({ left: targetIndex * slideWidth, behavior: 'smooth' });
-    });
 
-    track.addEventListener('mousemove', (e) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - track.offsetLeft;
-      const walk = (x - startX);
-      if (Math.abs(walk) > 4) {
-        isDragging = true;
-      }
-      track.scrollLeft = scrollLeft - walk;
-    });
+      try {
+        if (track.hasPointerCapture(e.pointerId)) {
+          track.releasePointerCapture(e.pointerId);
+        }
+      } catch (err) {}
 
-    // Prevent parent card navigation if user dragged
+      setTimeout(() => {
+        hasMoved = false;
+      }, 120);
+    };
+
+    track.addEventListener('pointerup', handlePointerEnd);
+    track.addEventListener('pointercancel', handlePointerEnd);
+    track.addEventListener('dragstart', (e) => e.preventDefault());
+
+    // Intercept accidental link clicks if user was dragging
     carousel.addEventListener('click', (e) => {
-      if (isDragging) {
+      if (hasMoved) {
         e.preventDefault();
         e.stopPropagation();
       }
     }, true);
   });
-});
+}
+
+// Auto-run on load and whenever DOM changes
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupAllCarousels);
+} else {
+  setupAllCarousels();
+}
 </script>
+
 
 
 </body>
