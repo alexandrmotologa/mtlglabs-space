@@ -725,6 +725,27 @@ body {
   backdrop-filter: blur(6px);
 }
 
+
+/* Interactive Spotlight Card Glassmorphism */
+.product-card,
+.card,
+.bento-card,
+.founder-card,
+.hero-card {
+  position: relative;
+  background-image: radial-gradient(
+    400px circle at var(--spotlight-x, -500px) var(--spotlight-y, -500px),
+    rgba(6, 182, 212, 0.08),
+    transparent 70%
+  );
+  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product-card:hover,
+.card:hover {
+  box-shadow: 0 12px 32px -8px rgba(6, 182, 212, 0.15);
+}
+
 /* Products Grid */
 .products-grid {
   display: grid;
@@ -3475,6 +3496,215 @@ if (document.readyState === 'loading') {
 </script>
 
 
+
+
+<script>
+/**
+ * Interactive Quantum Dot-Grid Canvas & Spotlight Border Controller
+ * High-performance, zero-dependency, 60-120 FPS hardware-accelerated background.
+ */
+(function() {
+  const isLabs = window.location.hostname.includes('mtlglabs') || document.title.includes('MTLG Labs');
+  
+  // Theme Color Configurations
+  const primaryDotColor = isLabs ? 'rgba(6, 182, 212, ' : 'rgba(56, 189, 248, ';
+  const secondaryDotColor = isLabs ? 'rgba(168, 85, 247, ' : 'rgba(129, 140, 248, ';
+  const baseDotAlpha = 0.12;
+  const activeDotAlpha = 0.85;
+  const gridSpacing = 32;
+  const proximityRadius = 140;
+
+  // Create Canvas Element
+  const canvas = document.createElement('canvas');
+  canvas.id = 'dot-grid-canvas';
+  canvas.style.position = 'fixed';
+  canvas.style.inset = '0';
+  canvas.style.width = '100vw';
+  canvas.style.height = '100vh';
+  canvas.style.pointerEvents = 'none';
+  canvas.style.zIndex = '0';
+  canvas.style.opacity = '0.9';
+  document.body.prepend(canvas);
+
+  const ctx = canvas.getContext('2d', { alpha: true });
+  let width = 0;
+  let height = 0;
+  let dpr = window.devicePixelRatio || 1;
+  let dots = [];
+  let mouse = { x: -1000, y: -1000, targetX: -1000, targetY: -1000, isHovering: false };
+  let isAnimating = false;
+  let idleFrames = 0;
+
+  class Dot {
+    constructor(x, y) {
+      this.baseX = x;
+      this.baseY = y;
+      this.x = x;
+      this.y = y;
+      this.vx = 0;
+      this.vy = 0;
+      this.radius = 1.2;
+      this.currentRadius = 1.2;
+      this.alpha = baseDotAlpha;
+      this.colorType = (x + y) % (gridSpacing * 2) === 0 ? 1 : 0;
+    }
+
+    update(mouseX, mouseY, isHovering) {
+      let dx = mouseX - this.baseX;
+      let dy = mouseY - this.baseY;
+      let dist = Math.sqrt(dx * dx + dy * dy);
+
+      let targetX = this.baseX;
+      let targetY = this.baseY;
+      let targetAlpha = baseDotAlpha;
+      let targetRadius = 1.2;
+
+      if (isHovering && dist < proximityRadius) {
+        const force = (1 - dist / proximityRadius);
+        // Subtle magnetic push
+        targetX = this.baseX - (dx / dist) * force * 14;
+        targetY = this.baseY - (dy / dist) * force * 14;
+        targetAlpha = baseDotAlpha + force * (activeDotAlpha - baseDotAlpha);
+        targetRadius = 1.2 + force * 2.2;
+      }
+
+      // Smooth spring damping physics
+      this.x += (targetX - this.x) * 0.12;
+      this.y += (targetY - this.y) * 0.12;
+      this.alpha += (targetAlpha - this.alpha) * 0.15;
+      this.currentRadius += (targetRadius - this.currentRadius) * 0.15;
+
+      return Math.abs(this.x - targetX) > 0.05 || Math.abs(this.y - targetY) > 0.05 || Math.abs(this.alpha - targetAlpha) > 0.02;
+    }
+
+    draw(context) {
+      const colorPrefix = this.colorType === 1 ? secondaryDotColor : primaryDotColor;
+      context.beginPath();
+      context.arc(this.x, this.y, this.currentRadius, 0, Math.PI * 2);
+      context.fillStyle = colorPrefix + this.alpha + ')';
+      context.fill();
+    }
+  }
+
+  function resize() {
+    dpr = window.devicePixelRatio || 1;
+    width = window.innerWidth;
+    height = window.innerHeight;
+    canvas.width = width * dpr;
+    canvas.height = height * dpr;
+    ctx.scale(dpr, dpr);
+
+    dots = [];
+    const cols = Math.ceil(width / gridSpacing) + 1;
+    const rows = Math.ceil(height / gridSpacing) + 1;
+
+    for (let i = 0; i < cols; i++) {
+      for (let j = 0; j < rows; j++) {
+        dots.push(new Dot(i * gridSpacing, j * gridSpacing));
+      }
+    }
+    draw();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, width, height);
+
+    // Subtle connecting lines near cursor
+    if (mouse.isHovering) {
+      for (let i = 0; i < dots.length; i++) {
+        const dot = dots[i];
+        const distToMouse = Math.hypot(mouse.x - dot.x, mouse.y - dot.y);
+        if (distToMouse < proximityRadius * 0.65) {
+          ctx.beginPath();
+          ctx.moveTo(dot.x, dot.y);
+          ctx.lineTo(mouse.x, mouse.y);
+          const lineAlpha = (1 - distToMouse / (proximityRadius * 0.65)) * 0.18;
+          ctx.strokeStyle = primaryDotColor + lineAlpha + ')';
+          ctx.lineWidth = 0.8;
+          ctx.stroke();
+        }
+      }
+    }
+
+    let needsNextFrame = false;
+    for (let i = 0; i < dots.length; i++) {
+      const active = dots[i].update(mouse.x, mouse.y, mouse.isHovering);
+      dots[i].draw(ctx);
+      if (active) needsNextFrame = true;
+    }
+
+    return needsNextFrame;
+  }
+
+  function loop() {
+    const active = draw();
+    if (active || mouse.isHovering) {
+      idleFrames = 0;
+      requestAnimationFrame(loop);
+    } else {
+      idleFrames++;
+      if (idleFrames < 30) {
+        requestAnimationFrame(loop);
+      } else {
+        isAnimating = false;
+      }
+    }
+  }
+
+  function startAnimation() {
+    if (!isAnimating) {
+      isAnimating = true;
+      idleFrames = 0;
+      requestAnimationFrame(loop);
+    }
+  }
+
+  // Mouse / Pointer Movement Listeners
+  window.addEventListener('pointermove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+    mouse.isHovering = true;
+    startAnimation();
+  }, { passive: true });
+
+  window.addEventListener('pointerleave', () => {
+    mouse.isHovering = false;
+    mouse.x = -1000;
+    mouse.y = -1000;
+    startAnimation();
+  });
+
+  window.addEventListener('resize', () => {
+    resize();
+    startAnimation();
+  });
+
+  // Spotlight Glassmorphism Hover Effect on Cards
+  function setupSpotlightBorders() {
+    const cards = document.querySelectorAll('.product-card, .card, .bento-card, .founder-card, .hero-card');
+    cards.forEach(card => {
+      card.addEventListener('pointermove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+        card.style.setProperty('--spotlight-x', x + 'px');
+        card.style.setProperty('--spotlight-y', y + 'px');
+      }, { passive: true });
+    });
+  }
+
+  // Initial Load
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      resize();
+      setupSpotlightBorders();
+    });
+  } else {
+    resize();
+    setupSpotlightBorders();
+  }
+})();
+</script>
 
 </body>
 </html>
