@@ -1,9 +1,6 @@
 {
+  "cleanUrls": true,
   "rewrites": [
-    {
-      "source": "/mcp",
-      "destination": "/mcp.html"
-    },
     {
       "source": "/(.*)",
       "has": [
