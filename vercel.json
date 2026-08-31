@@ -1,0 +1,18 @@
+{
+  "rewrites": [
+    {
+      "source": "/mcp",
+      "destination": "/mcp.html"
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "mcp.mtlglabs.space"
+        }
+      ],
+      "destination": "/mcp.html"
+    }
+  ]
+}

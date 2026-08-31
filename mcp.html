@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MCP Studio - Postman for Model Context Protocol (MCP)</title>
+  <meta name="description" content="All-in-one desktop IDE & visual inspector to build, test, and debug Model Context Protocol (MCP) servers with dynamic tool runners and multi-LLM simulators.">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="MCP Studio - Postman for Model Context Protocol">
+  <meta property="og:description" content="All-in-one visual desktop IDE & inspector for Model Context Protocol (MCP) servers.">
+  <meta property="og:url" content="https://mcp.mtlglabs.space">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts & Tailwind -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            studio: {
+              950: '#090a0f',
+              900: '#0f111a',
+              850: '#151824',
+              800: '#1c2030',
+              700: '#282e45',
+              border: '#23293d',
+              accent: '#6366f1',
+              cyan: '#06b6d4',
+              emerald: '#10b981',
+              purple: '#a855f7',
+              amber: '#f59e0b'
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    .glow-purple {
+      box-shadow: 0 0 50px -10px rgba(168, 85, 247, 0.25);
+    }
+    .glow-cyan {
+      box-shadow: 0 0 50px -10px rgba(6, 182, 212, 0.25);
+    }
+    .glow-indigo {
+      box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.3);
+    }
+    .grid-bg {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+  </style>
+</head>
+<body class="bg-studio-950 text-slate-100 font-sans antialiased selection:bg-indigo-500 selection:text-white grid-bg min-h-screen">
+
+  <!-- Header / Navigation -->
+  <header class="sticky top-0 z-50 border-b border-studio-border bg-studio-950/80 backdrop-blur-md">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <a href="https://mtlglabs.space" class="text-xs font-semibold text-slate-400 hover:text-white transition-colors flex items-center gap-1.5 border-r border-studio-border pr-3">
+          <span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+          MTLG Labs
+        </a>
+        <div class="flex items-center gap-2">
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-indigo-500 via-purple-500 to-cyan-500 flex items-center justify-center font-bold text-white text-xs shadow-md shadow-indigo-500/30">
+            ⚡️
+          </div>
+          <span class="font-bold text-white text-sm tracking-tight">MCP Studio</span>
+        </div>
+      </div>
+
+      <nav class="hidden md:flex items-center gap-6 text-xs font-medium text-slate-300">
+        <a href="#features" class="hover:text-cyan-400 transition-colors">Features</a>
+        <a href="#simulator" class="hover:text-purple-400 transition-colors">AI Simulator</a>
+        <a href="#pricing" class="hover:text-indigo-400 transition-colors">Pricing</a>
+        <a href="https://github.com/alexandrmotologa/mcp-studio" target="_blank" class="hover:text-white transition-colors">GitHub</a>
+      </nav>
+
+      <div class="flex items-center gap-3">
+        <a href="https://github.com/alexandrmotologa/mcp-studio" target="_blank" class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-studio-850 hover:bg-studio-800 border border-studio-border transition-colors">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+          <span class="hidden sm:inline">Star on GitHub</span>
+        </a>
+        <a href="https://mtlg.site" target="_blank" class="px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 shadow-md shadow-indigo-600/30 transition-all">
+          Contact Founder
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-20 pb-16 px-4 sm:px-6 overflow-hidden">
+    <!-- Glow Gradients -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-indigo-600/15 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute top-1/3 left-1/3 w-80 h-80 bg-purple-600/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <!-- Status Badge -->
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-6">
+        <span class="w-2 h-2 rounded-full bg-indigo-400 animate-ping"></span>
+        <span>IN ACTIVE DEVELOPMENT • EARLY ACCESS</span>
+      </div>
+
+      <!-- Main Headline -->
+      <h1 class="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight mb-6">
+        The <span class="bg-gradient-to-r from-indigo-400 via-purple-400 to-cyan-400 bg-clip-text text-transparent">Postman</span> for AI & Model Context Protocol.
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed">
+        An all-in-one desktop IDE & visual inspector to build, test, and debug MCP servers with dynamic JSON schema forms, live JSON-RPC traffic streaming, and multi-LLM prompt simulation.
+      </p>
+
+      <!-- Action Buttons -->
+      <div class="flex flex-wrap items-center justify-center gap-3 mb-12">
+        <a href="https://github.com/alexandrmotologa/mcp-studio" target="_blank" class="px-6 py-3 rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white font-bold text-sm shadow-lg shadow-indigo-600/30 transition-all flex items-center gap-2">
+          <span>Explore on GitHub</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+        <a href="https://mtlg.site" target="_blank" class="px-6 py-3 rounded-xl bg-studio-900 hover:bg-studio-850 border border-studio-border text-slate-200 font-semibold text-sm transition-colors">
+          Request Early Access
+        </a>
+      </div>
+
+      <!-- App Preview Mockup Window -->
+      <div class="rounded-2xl border border-studio-border bg-studio-900/90 shadow-2xl overflow-hidden glow-indigo text-left font-mono text-xs">
+        <!-- Mockup Titlebar -->
+        <div class="bg-studio-950 px-4 py-3 border-b border-studio-border flex items-center justify-between">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-rose-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-amber-500/80"></span>
+            <span class="w-3 h-3 rounded-full bg-emerald-500/80"></span>
+            <span class="ml-2 text-slate-400 text-[11px]">MCP Studio — PostgreSQL Database Server [connected]</span>
+          </div>
+          <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-950/60 text-emerald-400 border border-emerald-800/40">200 OK • 12ms</span>
+        </div>
+
+        <!-- Mockup Grid Content -->
+        <div class="grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-studio-border bg-studio-950/60 p-4 gap-4">
+          <!-- Col 1: Tools -->
+          <div class="space-y-2">
+            <div class="text-[11px] font-semibold uppercase text-slate-500">Exposed Tools (4)</div>
+            <div class="p-2 rounded bg-indigo-600/15 border border-indigo-500/40 text-indigo-300 font-bold">query_database</div>
+            <div class="p-2 rounded bg-studio-900 border border-studio-border text-slate-400">list_tables</div>
+            <div class="p-2 rounded bg-studio-900 border border-studio-border text-slate-400">describe_schema</div>
+          </div>
+
+          <!-- Col 2: Inputs -->
+          <div class="space-y-2">
+            <div class="text-[11px] font-semibold uppercase text-slate-500">Dynamic Arguments Form</div>
+            <div class="bg-studio-900 p-2.5 rounded border border-studio-border space-y-1.5 text-[11px]">
+              <div class="text-slate-400">sql_query:</div>
+              <div class="text-cyan-300">SELECT id, name, email FROM users LIMIT 5;</div>
+            </div>
+            <div class="bg-studio-900 p-2 rounded border border-studio-border text-slate-400 text-[11px]">
+              timeout_ms: <span class="text-indigo-400">5000</span>
+            </div>
+          </div>
+
+          <!-- Col 3: Output -->
+          <div class="space-y-2">
+            <div class="text-[11px] font-semibold uppercase text-slate-500">JSON-RPC Output Payload</div>
+            <pre class="bg-studio-900 p-2.5 rounded border border-studio-border text-emerald-300 text-[10px] overflow-x-auto leading-relaxed">{
+  "status": "success",
+  "rows": [
+    { "id": 1, "name": "Alex", "role": "admin" },
+    { "id": 2, "name": "Sarah", "role": "dev" }
+  ],
+  "durationMs": 12
+}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Grid -->
+  <section id="features" class="py-16 px-4 sm:px-6 border-t border-studio-border bg-studio-900/30">
+    <div class="max-w-6xl mx-auto">
+      <div class="text-center max-w-2xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-3">Built for Modern AI Engineers</h2>
+        <p class="text-sm text-slate-400">Everything you need to inspect, simulate, and deploy MCP servers in seconds.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="p-6 rounded-2xl bg-studio-900/80 border border-studio-border hover:border-indigo-500/50 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4 font-bold">
+            🔍
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">1-Click Auto-Discovery</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Automatically detects MCP servers configured in your Claude Desktop (<code class="text-indigo-300">claude_desktop_config.json</code>) and Cursor IDE (<code class="text-indigo-300">mcp.json</code>).
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="p-6 rounded-2xl bg-studio-900/80 border border-studio-border hover:border-purple-500/50 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4 font-bold">
+            ⚡️
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Dynamic Tool Runner</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Parses any JSON Schema and renders clean visual input forms automatically. Supports string, number, boolean, and nested JSON inputs with millisecond timers.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="p-6 rounded-2xl bg-studio-900/80 border border-studio-border hover:border-cyan-500/50 transition-all">
+          <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4 font-bold">
+            🛰️
+          </div>
+          <h3 class="text-base font-bold text-white mb-2">Live Traffic Stream</h3>
+          <p class="text-xs text-slate-400 leading-relaxed">
+            Inspect all raw JSON-RPC 2.0 requests, responses, and errors flowing over <code class="text-cyan-300">stdio</code> sub-processes or remote <code class="text-cyan-300">SSE</code> streams in real-time.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AI Simulator Highlight -->
+  <section id="simulator" class="py-16 px-4 sm:px-6 border-t border-studio-border bg-gradient-to-b from-studio-950 via-purple-950/20 to-studio-950">
+    <div class="max-w-4xl mx-auto text-center">
+      <span class="text-xs font-mono font-semibold px-2.5 py-1 rounded bg-purple-500/10 border border-purple-500/30 text-purple-300 uppercase tracking-wider">
+        Pro Feature
+      </span>
+      <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4 mb-4">Multi-LLM Agent Simulator</h2>
+      <p class="text-sm text-slate-300 max-w-xl mx-auto mb-8 leading-relaxed">
+        Don't guess how an AI will call your tools. Write natural language prompts and watch <strong>Claude 3.7</strong>, <strong>GPT-4o</strong>, <strong>Gemini 2.0</strong>, or local <strong>Ollama (Llama 3.2)</strong> reason and execute your server tools live.
+      </p>
+
+      <div class="flex flex-wrap items-center justify-center gap-3 text-xs font-mono text-slate-400">
+        <span class="px-3 py-1.5 rounded-lg bg-studio-900 border border-studio-border text-slate-300">Anthropic Claude 3.7 / 3.5</span>
+        <span class="px-3 py-1.5 rounded-lg bg-studio-900 border border-studio-border text-slate-300">OpenAI GPT-4o / o3-mini</span>
+        <span class="px-3 py-1.5 rounded-lg bg-studio-900 border border-studio-border text-slate-300">Google Gemini 2.0</span>
+        <span class="px-3 py-1.5 rounded-lg bg-studio-900 border border-studio-border text-slate-300">Ollama Local (Offline)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Table -->
+  <section id="pricing" class="py-16 px-4 sm:px-6 border-t border-studio-border bg-studio-900/40">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-2xl sm:text-3xl font-bold text-white mb-2">Transparent Pricing</h2>
+        <p class="text-xs text-slate-400">Free open-source community edition + Pro lifetime licenses for power users.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-3xl mx-auto">
+        <!-- Community Plan -->
+        <div class="p-6 rounded-2xl bg-studio-950 border border-studio-border flex flex-col justify-between">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-wider text-slate-500 mb-1">Community</div>
+            <div class="text-3xl font-extrabold text-white mb-4">$0 <span class="text-xs font-normal text-slate-500">Free forever</span></div>
+            <p class="text-xs text-slate-400 mb-6">Perfect for individual developers inspecting a single MCP server.</p>
+
+            <ul class="space-y-2.5 text-xs text-slate-300">
+              <li class="flex items-center gap-2">✓ Stdio & SSE Transport</li>
+              <li class="flex items-center gap-2">✓ Dynamic Tool Runner</li>
+              <li class="flex items-center gap-2">✓ Resource & Prompt Inspector</li>
+              <li class="flex items-center gap-2">✓ Live JSON-RPC Traffic Log</li>
+              <li class="flex items-center gap-2 text-slate-500">• 1 Active Server</li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <a href="https://github.com/alexandrmotologa/mcp-studio" target="_blank" class="block w-full py-2.5 text-center rounded-xl bg-studio-900 hover:bg-studio-850 border border-studio-border text-slate-200 text-xs font-semibold transition-colors">
+              Get Started Free
+            </a>
+          </div>
+        </div>
+
+        <!-- Pro Lifetime Plan -->
+        <div class="p-6 rounded-2xl bg-gradient-to-b from-indigo-950/40 via-studio-900 to-studio-950 border-2 border-indigo-500/60 shadow-xl glow-indigo flex flex-col justify-between relative">
+          <span class="absolute -top-3 right-6 px-2.5 py-0.5 rounded-full bg-gradient-to-r from-indigo-500 to-purple-500 text-[10px] font-extrabold uppercase tracking-wider text-white shadow-md">
+            Most Popular
+          </span>
+
+          <div>
+            <div class="text-xs font-mono uppercase tracking-wider text-indigo-400 mb-1">Pro Lifetime</div>
+            <div class="text-3xl font-extrabold text-white mb-4">$49 <span class="text-xs font-normal text-slate-400">One-time payment</span></div>
+            <p class="text-xs text-slate-300 mb-6">For engineers, teams, and builders wanting unlimited power and multi-LLM simulation.</p>
+
+            <ul class="space-y-2.5 text-xs text-slate-200">
+              <li class="flex items-center gap-2 text-emerald-400 font-semibold">✓ Unlimited Multi-Server Tabs</li>
+              <li class="flex items-center gap-2 text-emerald-400 font-semibold">✓ Multi-LLM AI Agent Simulator</li>
+              <li class="flex items-center gap-2 text-emerald-400 font-semibold">✓ 1-Click Cursor & Claude Export</li>
+              <li class="flex items-center gap-2 text-emerald-400 font-semibold">✓ Response Mocking & Fixtures</li>
+              <li class="flex items-center gap-2 text-emerald-400 font-semibold">✓ Lifetime License + 1 Year Updates</li>
+            </ul>
+          </div>
+
+          <div class="mt-8">
+            <a href="https://mtlg.site" target="_blank" class="block w-full py-2.5 text-center rounded-xl bg-gradient-to-r from-indigo-600 to-purple-600 hover:from-indigo-500 hover:to-purple-500 text-white text-xs font-bold shadow-md shadow-indigo-600/30 transition-all">
+              Pre-Order / Request Early Access
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-12 border-t border-studio-border bg-studio-950 text-xs text-slate-500">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-300">MCP Studio</span>
+        <span>•</span>
+        <span>A product of <a href="https://mtlglabs.space" class="text-indigo-400 hover:underline">MTLG Labs</a></span>
+      </div>
+
+      <div class="flex items-center gap-6">
+        <a href="https://mtlg.site" class="hover:text-slate-300 transition-colors">Founder Portfolio</a>
+        <a href="https://github.com/alexandrmotologa/mcp-studio" class="hover:text-slate-300 transition-colors">GitHub</a>
+        <a href="https://mtlglabs.space" class="hover:text-slate-300 transition-colors">All Labs Products</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>
