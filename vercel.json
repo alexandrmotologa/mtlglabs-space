@@ -2,6 +2,16 @@
   "cleanUrls": true,
   "rewrites": [
     {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "mcp.mtlglabs.space"
+        }
+      ],
+      "destination": "/mcp/index.html"
+    },
+    {
       "source": "/(.*)",
       "has": [
         {
@@ -9,7 +19,7 @@
           "value": "mcp.mtlglabs.space"
         }
       ],
-      "destination": "/mcp.html"
+      "destination": "/mcp/$1"
     }
   ]
 }
