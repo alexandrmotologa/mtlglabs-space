@@ -2,6 +2,13 @@
 <html lang="en" class="dark">
 <head>
   <meta charset="UTF-8" />
+  <!-- Instant Subdomain Router -->
+  <script>
+    if (window.location.hostname === 'mcp.mtlglabs.space') {
+      window.location.replace('https://www.mtlglabs.space/mcp' + window.location.search + window.location.hash);
+    }
+  </script>
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- Primary Meta Tags -->

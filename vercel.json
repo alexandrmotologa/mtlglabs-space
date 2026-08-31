@@ -1,16 +1,6 @@
 {
   "cleanUrls": true,
-  "rewrites": [
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "mcp.mtlglabs.space"
-        }
-      ],
-      "destination": "/mcp/index.html"
-    },
+  "redirects": [
     {
       "source": "/(.*)",
       "has": [
@@ -19,7 +9,8 @@
           "value": "mcp.mtlglabs.space"
         }
       ],
-      "destination": "/mcp/$1"
+      "destination": "https://www.mtlglabs.space/mcp",
+      "permanent": false
     }
   ]
 }
