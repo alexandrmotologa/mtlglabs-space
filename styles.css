@@ -686,6 +686,11 @@ body {
   border: 1px solid rgba(255, 255, 255, 0.12);
 }
 
+.primary-action.full-width {
+  width: 100%;
+  flex-basis: 100%;
+}
+
 .primary-action:hover {
   background: #ffffff;
   color: #06070a;
@@ -696,7 +701,8 @@ body {
   background: rgba(168, 85, 247, 0.12);
   color: #e9d5ff;
   border: 1px solid rgba(168, 85, 247, 0.3);
-  padding: 0 0.9rem;
+  padding: 0 1rem;
+  flex-grow: 1;
 }
 
 .secondary-action:hover {
