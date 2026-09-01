@@ -64,6 +64,7 @@ function generateLabsHtml(p) {
 
   const tagsHtml = p.tagsLabs.map(t => `<span class="tag">${t}</span>`).join('\n              ');
   const mediaHtml = generateMediaHtml(p, false);
+  const escapedTitle = p.title.replace(/"/g, '&quot;');
 
   let actions = [];
   if (p.url) {
@@ -104,12 +105,18 @@ function generateLabsHtml(p) {
   const footerHtml = actions.length > 0 ? `\n            <div class="card-footer">\n              ${actions.join('\n              ')}\n            </div>` : '';
 
   return `          <!-- Project: ${p.title} -->
-          <div class="product-card" data-category="${p.category}">
+          <div class="product-card" id="${p.id}" data-category="${p.category}" data-project-id="${p.id}" data-project-title="${escapedTitle}">
             <div class="card-top">
               <span class="status-pill ${statusClass}">
                 <span class="pulse-dot"></span> ${p.badgeLabs.text}
               </span>
-              <span class="cat-pill">${p.catPill}</span>
+              <div class="card-top-right">
+                <span class="cat-pill">${p.catPill}</span>
+                <button type="button" class="card-share-btn" data-project-id="${p.id}" data-project-title="${escapedTitle}" title="Copy direct link to ${escapedTitle}" aria-label="Copy direct link to ${escapedTitle}">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>${mediaHtml}
             <div class="card-main">
               <h3 class="product-name">${p.title}</h3>
@@ -126,16 +133,23 @@ function generateSiteHtml(p) {
   const badgeClass = p.badgeSite.type === 'live' ? 'live-badge' : 'dev-badge';
   const tagsHtml = p.tagsSite.map(t => `<span class="mini-tag">${t}</span>`).join('\n              ');
   const mediaHtml = generateMediaHtml(p, true);
+  const escapedTitle = p.title.replace(/"/g, '&quot;');
 
   if (p.url) {
     return `          <!-- Project: ${p.title} -->
-          <a href="${p.url}" target="_blank" rel="noopener" class="card project-card">
+          <a href="${p.url}" target="_blank" rel="noopener" class="card project-card" id="${p.id}" data-project-id="${p.id}" data-project-title="${escapedTitle}">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge ${badgeClass}">${p.badgeSite.text}</span>
                 <h3>${p.title}</h3>
               </div>
-              <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="${p.id}" data-project-title="${escapedTitle}" title="Copy direct link to ${escapedTitle}" aria-label="Copy direct link to ${escapedTitle}">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+                <svg class="arrow-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+              </div>
             </div>${mediaHtml}
             <p>${p.desc}</p>
             <div class="project-tags">
@@ -144,11 +158,17 @@ function generateSiteHtml(p) {
           </a>`;
   } else {
     return `          <!-- Project: ${p.title} -->
-          <div class="card project-card project-card-static">
+          <div class="card project-card project-card-static" id="${p.id}" data-project-id="${p.id}" data-project-title="${escapedTitle}">
             <div class="project-header">
               <div class="project-title-group">
                 <span class="project-badge ${badgeClass}">${p.badgeSite.text}</span>
                 <h3>${p.title}</h3>
+              </div>
+              <div class="project-header-actions">
+                <button type="button" class="card-share-btn" data-project-id="${p.id}" data-project-title="${escapedTitle}" title="Copy direct link to ${escapedTitle}" aria-label="Copy direct link to ${escapedTitle}">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
               </div>
             </div>${mediaHtml}
             <p>${p.desc}</p>

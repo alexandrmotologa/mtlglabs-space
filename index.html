@@ -340,27 +340,6 @@ body {
   flex-shrink: 0;
 }
 
-.linkedin-icon {
-  display: none;
-  flex-shrink: 0;
-}
-
-.nav-text-full {
-  display: inline;
-}
-
-.founder-full {
-  display: inline;
-}
-
-.founder-short {
-  display: none;
-}
-
-.founder-icon {
-  flex-shrink: 0;
-}
-
 /* Hero Section */
 .hero-section {
   text-align: center;
@@ -515,253 +494,6 @@ body {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
-
-.card-media {
-  width: 100%;
-  height: 180px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-  background: rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  position: relative;
-}
-
-.card-media img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  transition: transform 0.35s ease;
-  display: block;
-}
-
-.product-card:hover .card-media img {
-  transform: scale(1.04);
-}
-
-
-
-
-/* Enhanced Media & Pointer Drag-To-Scroll Carousel */
-.card-media,
-.project-media,
-.card-carousel,
-.project-carousel {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin-bottom: 1.25rem;
-  background: radial-gradient(circle at center, rgba(22, 27, 44, 0.8), rgba(6, 8, 14, 0.95));
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  user-select: none;
-  -webkit-user-select: none;
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.5);
-  touch-action: pan-y pinch-zoom;
-}
-
-.project-media,
-.project-carousel {
-  margin: 0.85rem 0 1rem;
-  border-radius: var(--radius-sm, 12px);
-  border: 1px solid var(--card-border, rgba(255, 255, 255, 0.08));
-}
-
-.card-media,
-.project-media {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  box-sizing: border-box;
-}
-
-.card-media img,
-.project-media img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-  -webkit-user-drag: none;
-  user-select: none;
-}
-
-.product-card:hover .card-media img,
-.project-card:hover .project-media img {
-  transform: scale(1.02);
-}
-
-/* Scroll-Snap Track */
-.carousel-track {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  overflow-x: auto;
-  overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-  cursor: grab;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: pan-y pinch-zoom;
-}
-
-.carousel-track:active {
-  cursor: grabbing;
-}
-
-.carousel-track::-webkit-scrollbar {
-  display: none;
-}
-
-.carousel-slide {
-  flex: 0 0 100%;
-  width: 100%;
-  height: 100%;
-  scroll-snap-align: center;
-  scroll-snap-stop: always;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 8px;
-  box-sizing: border-box;
-  position: relative;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-.carousel-slide img {
-  width: 100%;
-  height: 100%;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-  object-position: center;
-  display: block;
-  transition: transform 0.3s ease;
-  pointer-events: none;
-  -webkit-user-drag: none;
-  user-select: none;
-}
-
-.carousel-btn {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-  background: rgba(8, 12, 22, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.25);
-  color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0;
-  transition: all 0.2s ease;
-  backdrop-filter: blur(8px);
-  padding: 0;
-}
-
-.card-carousel:hover .carousel-btn,
-.project-carousel:hover .carousel-btn {
-  opacity: 1;
-}
-
-.carousel-prev {
-  left: 10px;
-}
-
-.carousel-next {
-  right: 10px;
-}
-
-.carousel-btn:hover {
-  background: rgba(6, 182, 212, 0.9);
-  border-color: rgba(255, 255, 255, 0.7);
-  transform: translateY(-50%) scale(1.1);
-  box-shadow: 0 0 12px rgba(6, 182, 212, 0.6);
-}
-
-.carousel-indicators {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  gap: 5px;
-  z-index: 10;
-  padding: 4px 9px;
-  background: rgba(5, 7, 14, 0.75);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 9999px;
-  backdrop-filter: blur(6px);
-}
-
-.carousel-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.35);
-  cursor: pointer;
-  transition: all 0.25s ease;
-}
-
-.carousel-dot.active {
-  background: #38bdf8;
-  width: 16px;
-  border-radius: 4px;
-  box-shadow: 0 0 8px rgba(56, 189, 248, 0.7);
-}
-
-.carousel-badge {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(5, 7, 14, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #e2e8f0;
-  font-family: var(--font-mono, monospace);
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 3px 8px;
-  border-radius: 6px;
-  z-index: 10;
-  backdrop-filter: blur(6px);
-}
-
-
-/* Interactive Spotlight Card Glassmorphism */
-.product-card,
-.card,
-.bento-card,
-.founder-card,
-.hero-card {
-  position: relative;
-  background-image: radial-gradient(
-    400px circle at var(--spotlight-x, -500px) var(--spotlight-y, -500px),
-    rgba(6, 182, 212, 0.08),
-    transparent 70%
-  );
-  transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
-}
-
-.product-card:hover,
-.card:hover {
-  box-shadow: 0 12px 32px -8px rgba(6, 182, 212, 0.15);
-}
-
 /* Products Grid */
 .products-grid {
   display: grid;
@@ -780,6 +512,7 @@ body {
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  scroll-margin-top: 100px;
 }
 
 .product-card::before {
@@ -880,11 +613,110 @@ body {
   box-shadow: 0 0 6px #fbbf24;
 }
 
+.card-top-right {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
 .cat-pill {
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--text-dim);
   white-space: nowrap;
+}
+
+.card-share-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-dim);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  flex-shrink: 0;
+  padding: 0;
+}
+
+.card-share-btn:hover {
+  background: rgba(6, 182, 212, 0.15);
+  border-color: rgba(6, 182, 212, 0.4);
+  color: var(--neon-cyan);
+  transform: translateY(-1px);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.25);
+}
+
+.card-share-btn:active {
+  transform: scale(0.92);
+}
+
+.card-share-btn .check-icon {
+  display: none;
+  color: var(--neon-emerald);
+}
+
+.card-share-btn.copied {
+  background: rgba(16, 185, 129, 0.18);
+  border-color: rgba(16, 185, 129, 0.5);
+  color: var(--neon-emerald);
+  box-shadow: 0 0 12px rgba(16, 185, 129, 0.35);
+}
+
+.card-share-btn.copied .share-icon {
+  display: none;
+}
+
+.card-share-btn.copied .check-icon {
+  display: block;
+}
+
+/* Deep Link Target Highlight Animation */
+.product-card.highlighted-project {
+  animation: labs-card-pulse 3.5s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  z-index: 10;
+}
+
+@keyframes labs-card-pulse {
+  0% {
+    transform: translateY(0) scale(1);
+    border-color: rgba(6, 182, 212, 0.2);
+    box-shadow: 0 0 0 rgba(6, 182, 212, 0);
+  }
+  15% {
+    transform: translateY(-8px) scale(1.025);
+    border-color: rgba(6, 182, 212, 0.95);
+    box-shadow: 
+      0 0 0 4px rgba(6, 182, 212, 0.35),
+      0 20px 40px rgba(0, 0, 0, 0.8),
+      0 0 35px rgba(6, 182, 212, 0.55),
+      0 0 70px rgba(168, 85, 247, 0.35);
+  }
+  30% {
+    transform: translateY(-6px) scale(1.02);
+    border-color: rgba(168, 85, 247, 0.85);
+    box-shadow: 
+      0 0 0 3px rgba(168, 85, 247, 0.25),
+      0 18px 36px rgba(0, 0, 0, 0.7),
+      0 0 30px rgba(168, 85, 247, 0.45);
+  }
+  70% {
+    transform: translateY(-3px) scale(1.01);
+    border-color: rgba(6, 182, 212, 0.6);
+    box-shadow: 
+      0 0 0 2px rgba(6, 182, 212, 0.2),
+      0 12px 28px rgba(0, 0, 0, 0.6),
+      0 0 20px rgba(6, 182, 212, 0.3);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    border-color: var(--card-border);
+    box-shadow: none;
+  }
 }
 
 .card-main {
@@ -1189,40 +1021,6 @@ body {
 @media (max-width: 900px) {
   .app-container {
     padding: 2rem 1.25rem;
-  }
-  
-  /* Compact Navbar Actions under 900px */
-  .nav-personal-link {
-    padding: 0.45rem 0.65rem;
-    gap: 0;
-  }
-  .nav-personal-link .linkedin-icon {
-    display: inline-block;
-  }
-  .nav-personal-link .nav-text-full {
-    display: none;
-  }
-
-  .bmc-badge {
-    padding: 0.45rem 0.65rem;
-    gap: 0;
-  }
-  .bmc-badge .nav-text-full {
-    display: none;
-  }
-
-  .creator-badge {
-    padding: 0.45rem 0.75rem;
-    gap: 0.4rem;
-  }
-  .creator-badge .avatar-small {
-    display: none;
-  }
-  .creator-badge .founder-full {
-    display: none;
-  }
-  .creator-badge .founder-short {
-    display: inline;
   }
   
   .products-grid {
@@ -1579,6 +1377,37 @@ body {
   }
 }
 
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background: rgba(13, 16, 26, 0.94);
+  border: 1px solid rgba(6, 182, 212, 0.4);
+  color: #f1f5f9;
+  padding: 0.85rem 1.4rem;
+  border-radius: 12px;
+  font-size: 0.88rem;
+  font-weight: 500;
+  backdrop-filter: blur(16px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(6, 182, 212, 0.25);
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+
 </style>
 </head>
 <body>
@@ -1675,12 +1504,18 @@ body {
 
         <div class="products-grid" id="products-grid">
           <!-- Project: MCP Studio -->
-          <div class="product-card" data-category="devtools">
+          <div class="product-card" id="mcp-studio" data-category="devtools" data-project-id="mcp-studio" data-project-title="MCP Studio">
             <div class="card-top">
               <span class="status-pill status-dev">
                 <span class="pulse-dot"></span> In Active Dev
               </span>
-              <span class="cat-pill">AI & Developer Studio</span>
+              <div class="card-top-right">
+                <span class="cat-pill">AI & Developer Studio</span>
+                <button type="button" class="card-share-btn" data-project-id="mcp-studio" data-project-title="MCP Studio" title="Copy direct link to MCP Studio" aria-label="Copy direct link to MCP Studio">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">MCP Studio</h3>
@@ -1701,12 +1536,18 @@ body {
           </div>
 
           <!-- Project: SnapFrame.store -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="snapframe" data-category="saas" data-project-id="snapframe" data-project-title="SnapFrame.store">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live SaaS
               </span>
-              <span class="cat-pill">Micro-SaaS</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Micro-SaaS</span>
+                <button type="button" class="card-share-btn" data-project-id="snapframe" data-project-title="SnapFrame.store" title="Copy direct link to SnapFrame.store" aria-label="Copy direct link to SnapFrame.store">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">SnapFrame.store</h3>
@@ -1730,12 +1571,18 @@ body {
           </div>
 
           <!-- Project: Oneira Space (Web) -->
-          <div class="product-card" data-category="ai">
+          <div class="product-card" id="oneira-web" data-category="ai" data-project-id="oneira-web" data-project-title="Oneira Space (Web)">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Web Platform
               </span>
-              <span class="cat-pill">AI & Mental Health</span>
+              <div class="card-top-right">
+                <span class="cat-pill">AI & Mental Health</span>
+                <button type="button" class="card-share-btn" data-project-id="oneira-web" data-project-title="Oneira Space (Web)" title="Copy direct link to Oneira Space (Web)" aria-label="Copy direct link to Oneira Space (Web)">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Oneira Space (Web)</h3>
@@ -1757,12 +1604,18 @@ body {
           </div>
 
           <!-- Project: Oneira: Journal & Self-Growth -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="oneira-app" data-category="saas" data-project-id="oneira-app" data-project-title="Oneira: Journal & Self-Growth">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Google Play App
               </span>
-              <span class="cat-pill">Mobile Well-Being</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Mobile Well-Being</span>
+                <button type="button" class="card-share-btn" data-project-id="oneira-app" data-project-title="Oneira: Journal & Self-Growth" title="Copy direct link to Oneira: Journal & Self-Growth" aria-label="Copy direct link to Oneira: Journal & Self-Growth">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Oneira: Journal & Self-Growth</h3>
@@ -1783,12 +1636,18 @@ body {
           </div>
 
           <!-- Project: Bubble.io Dev Studio -->
-          <div class="product-card" data-category="devtools">
+          <div class="product-card" id="bubble-dev-studio" data-category="devtools" data-project-id="bubble-dev-studio" data-project-title="Bubble.io Dev Studio">
             <div class="card-top">
               <span class="status-pill status-dev">
                 <span class="pulse-dot"></span> In Active Dev
               </span>
-              <span class="cat-pill">Developer Studio</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Developer Studio</span>
+                <button type="button" class="card-share-btn" data-project-id="bubble-dev-studio" data-project-title="Bubble.io Dev Studio" title="Copy direct link to Bubble.io Dev Studio" aria-label="Copy direct link to Bubble.io Dev Studio">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Bubble.io Dev Studio</h3>
@@ -1813,12 +1672,18 @@ body {
           </div>
 
           <!-- Project: bubble-io-cli -->
-          <div class="product-card" data-category="devtools">
+          <div class="product-card" id="bubble-cli" data-category="devtools" data-project-id="bubble-cli" data-project-title="bubble-io-cli">
             <div class="card-top">
               <span class="status-pill status-oss">
                 <span class="pulse-dot"></span> Open Source
               </span>
-              <span class="cat-pill">CLI & Automation</span>
+              <div class="card-top-right">
+                <span class="cat-pill">CLI & Automation</span>
+                <button type="button" class="card-share-btn" data-project-id="bubble-cli" data-project-title="bubble-io-cli" title="Copy direct link to bubble-io-cli" aria-label="Copy direct link to bubble-io-cli">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-cli</h3>
@@ -1843,12 +1708,18 @@ body {
           </div>
 
           <!-- Project: bubble-io-ai-translator -->
-          <div class="product-card" data-category="ai">
+          <div class="product-card" id="bubble-ai-translator" data-category="ai" data-project-id="bubble-ai-translator" data-project-title="bubble-io-ai-translator">
             <div class="card-top">
               <span class="status-pill status-ai">
                 <span class="pulse-dot"></span> AI Engine
               </span>
-              <span class="cat-pill">AI & Localization</span>
+              <div class="card-top-right">
+                <span class="cat-pill">AI & Localization</span>
+                <button type="button" class="card-share-btn" data-project-id="bubble-ai-translator" data-project-title="bubble-io-ai-translator" title="Copy direct link to bubble-io-ai-translator" aria-label="Copy direct link to bubble-io-ai-translator">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-ai-translator</h3>
@@ -1874,12 +1745,18 @@ body {
           </div>
 
           <!-- Project: bubble-io-dead-code-detector -->
-          <div class="product-card" data-category="devtools">
+          <div class="product-card" id="bubble-dead-code-detector" data-category="devtools" data-project-id="bubble-dead-code-detector" data-project-title="bubble-io-dead-code-detector">
             <div class="card-top">
               <span class="status-pill status-tool">
                 <span class="pulse-dot"></span> Audit Tool
               </span>
-              <span class="cat-pill">Code Health</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Code Health</span>
+                <button type="button" class="card-share-btn" data-project-id="bubble-dead-code-detector" data-project-title="bubble-io-dead-code-detector" title="Copy direct link to bubble-io-dead-code-detector" aria-label="Copy direct link to bubble-io-dead-code-detector">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-dead-code-detector</h3>
@@ -1904,12 +1781,18 @@ body {
           </div>
 
           <!-- Project: bubble-io-visual-tester -->
-          <div class="product-card" data-category="devtools">
+          <div class="product-card" id="bubble-visual-tester" data-category="devtools" data-project-id="bubble-visual-tester" data-project-title="bubble-io-visual-tester">
             <div class="card-top">
               <span class="status-pill status-tool">
                 <span class="pulse-dot"></span> Visual QA
               </span>
-              <span class="cat-pill">Automated QA</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Automated QA</span>
+                <button type="button" class="card-share-btn" data-project-id="bubble-visual-tester" data-project-title="bubble-io-visual-tester" title="Copy direct link to bubble-io-visual-tester" aria-label="Copy direct link to bubble-io-visual-tester">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">bubble-io-visual-tester</h3>
@@ -1930,12 +1813,18 @@ body {
           </div>
 
           <!-- Project: Alu-Traumterrasse -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="alu-traumterrasse" data-category="saas" data-project-id="alu-traumterrasse" data-project-title="Alu-Traumterrasse">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live E-Commerce
               </span>
-              <span class="cat-pill">Custom Architectural</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Custom Architectural</span>
+                <button type="button" class="card-share-btn" data-project-id="alu-traumterrasse" data-project-title="Alu-Traumterrasse" title="Copy direct link to Alu-Traumterrasse" aria-label="Copy direct link to Alu-Traumterrasse">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Alu-Traumterrasse</h3>
@@ -1956,12 +1845,18 @@ body {
           </div>
 
           <!-- Project: Quiz2Coin -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="quiz2coin" data-category="web3" data-project-id="quiz2coin" data-project-title="Quiz2Coin">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Web3 App
               </span>
-              <span class="cat-pill">Web3 & FinTech</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Web3 & FinTech</span>
+                <button type="button" class="card-share-btn" data-project-id="quiz2coin" data-project-title="Quiz2Coin" title="Copy direct link to Quiz2Coin" aria-label="Copy direct link to Quiz2Coin">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Quiz2Coin</h3>
@@ -1982,12 +1877,18 @@ body {
           </div>
 
           <!-- Project: ONE2ALL -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="one2all" data-category="web3" data-project-id="one2all" data-project-title="ONE2ALL">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Web3 Engine
               </span>
-              <span class="cat-pill">No-Code / NFT</span>
+              <div class="card-top-right">
+                <span class="cat-pill">No-Code / NFT</span>
+                <button type="button" class="card-share-btn" data-project-id="one2all" data-project-title="ONE2ALL" title="Copy direct link to ONE2ALL" aria-label="Copy direct link to ONE2ALL">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">ONE2ALL</h3>
@@ -2012,12 +1913,18 @@ body {
           </div>
 
           <!-- Project: TeleQuiz -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="telequiz" data-category="web3" data-project-id="telequiz" data-project-title="TeleQuiz">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Mini App
               </span>
-              <span class="cat-pill">Telegram & Gaming</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Telegram & Gaming</span>
+                <button type="button" class="card-share-btn" data-project-id="telequiz" data-project-title="TeleQuiz" title="Copy direct link to TeleQuiz" aria-label="Copy direct link to TeleQuiz">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">TeleQuiz</h3>
@@ -2042,12 +1949,18 @@ body {
           </div>
 
           <!-- Project: atCollege.com -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="atcollege" data-category="saas" data-project-id="atcollege" data-project-title="atCollege.com">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Platform
               </span>
-              <span class="cat-pill">Campus Network</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Campus Network</span>
+                <button type="button" class="card-share-btn" data-project-id="atcollege" data-project-title="atCollege.com" title="Copy direct link to atCollege.com" aria-label="Copy direct link to atCollege.com">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">atCollege.com</h3>
@@ -2071,12 +1984,18 @@ body {
           </div>
 
           <!-- Project: Nxt Chapter -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="nxtchapter" data-category="saas" data-project-id="nxtchapter" data-project-title="Nxt Chapter">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Marketplace
               </span>
-              <span class="cat-pill">Sustainable Re-Commerce</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Sustainable Re-Commerce</span>
+                <button type="button" class="card-share-btn" data-project-id="nxtchapter" data-project-title="Nxt Chapter" title="Copy direct link to Nxt Chapter" aria-label="Copy direct link to Nxt Chapter">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Nxt Chapter</h3>
@@ -2097,12 +2016,18 @@ body {
           </div>
 
           <!-- Project: BurgerCraft -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="burgercraft" data-category="saas" data-project-id="burgercraft" data-project-title="BurgerCraft">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Web App
               </span>
-              <span class="cat-pill">Food & Delivery</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Food & Delivery</span>
+                <button type="button" class="card-share-btn" data-project-id="burgercraft" data-project-title="BurgerCraft" title="Copy direct link to BurgerCraft" aria-label="Copy direct link to BurgerCraft">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">BurgerCraft</h3>
@@ -2123,12 +2048,18 @@ body {
           </div>
 
           <!-- Project: GreenSpace Architects -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="greenspace" data-category="saas" data-project-id="greenspace" data-project-title="GreenSpace Architects">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Template
               </span>
-              <span class="cat-pill">Architecture Showcase</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Architecture Showcase</span>
+                <button type="button" class="card-share-btn" data-project-id="greenspace" data-project-title="GreenSpace Architects" title="Copy direct link to GreenSpace Architects" aria-label="Copy direct link to GreenSpace Architects">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">GreenSpace Architects</h3>
@@ -2149,12 +2080,18 @@ body {
           </div>
 
           <!-- Project: PixelWave Agency -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="pixelwave" data-category="saas" data-project-id="pixelwave" data-project-title="PixelWave Agency">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Template
               </span>
-              <span class="cat-pill">Digital Agency</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Digital Agency</span>
+                <button type="button" class="card-share-btn" data-project-id="pixelwave" data-project-title="PixelWave Agency" title="Copy direct link to PixelWave Agency" aria-label="Copy direct link to PixelWave Agency">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">PixelWave Agency</h3>
@@ -2175,12 +2112,18 @@ body {
           </div>
 
           <!-- Project: AcreHedge -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="acrehedge" data-category="web3" data-project-id="acrehedge" data-project-title="AcreHedge">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Platform
               </span>
-              <span class="cat-pill">FinTech & Agri</span>
+              <div class="card-top-right">
+                <span class="cat-pill">FinTech & Agri</span>
+                <button type="button" class="card-share-btn" data-project-id="acrehedge" data-project-title="AcreHedge" title="Copy direct link to AcreHedge" aria-label="Copy direct link to AcreHedge">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">AcreHedge</h3>
@@ -2201,12 +2144,18 @@ body {
           </div>
 
           <!-- Project: Format (Kultify) -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="format-kultify" data-category="web3" data-project-id="format-kultify" data-project-title="Format (Kultify)">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Web3 Engine
               </span>
-              <span class="cat-pill">Web3 Publishing</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Web3 Publishing</span>
+                <button type="button" class="card-share-btn" data-project-id="format-kultify" data-project-title="Format (Kultify)" title="Copy direct link to Format (Kultify)" aria-label="Copy direct link to Format (Kultify)">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Format (Kultify)</h3>
@@ -2227,12 +2176,18 @@ body {
           </div>
 
           <!-- Project: InkTradr -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="inktradr" data-category="web3" data-project-id="inktradr" data-project-title="InkTradr">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Marketplace
               </span>
-              <span class="cat-pill">Web3 & Art</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Web3 & Art</span>
+                <button type="button" class="card-share-btn" data-project-id="inktradr" data-project-title="InkTradr" title="Copy direct link to InkTradr" aria-label="Copy direct link to InkTradr">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">InkTradr</h3>
@@ -2253,12 +2208,18 @@ body {
           </div>
 
           <!-- Project: SatoshiBet -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="satoshibet" data-category="web3" data-project-id="satoshibet" data-project-title="SatoshiBet">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live MVP
               </span>
-              <span class="cat-pill">Prediction Market</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Prediction Market</span>
+                <button type="button" class="card-share-btn" data-project-id="satoshibet" data-project-title="SatoshiBet" title="Copy direct link to SatoshiBet" aria-label="Copy direct link to SatoshiBet">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">SatoshiBet</h3>
@@ -2279,12 +2240,18 @@ body {
           </div>
 
           <!-- Project: AisleSync -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="aislesync" data-category="saas" data-project-id="aislesync" data-project-title="AisleSync">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Mobile App
               </span>
-              <span class="cat-pill">Smart Shopping</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Smart Shopping</span>
+                <button type="button" class="card-share-btn" data-project-id="aislesync" data-project-title="AisleSync" title="Copy direct link to AisleSync" aria-label="Copy direct link to AisleSync">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">AisleSync</h3>
@@ -2305,12 +2272,18 @@ body {
           </div>
 
           <!-- Project: EVAS RO -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="evas-ro" data-category="saas" data-project-id="evas-ro" data-project-title="EVAS RO">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Platform
               </span>
-              <span class="cat-pill">Accessibility & Audits</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Accessibility & Audits</span>
+                <button type="button" class="card-share-btn" data-project-id="evas-ro" data-project-title="EVAS RO" title="Copy direct link to EVAS RO" aria-label="Copy direct link to EVAS RO">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">EVAS RO</h3>
@@ -2331,12 +2304,18 @@ body {
           </div>
 
           <!-- Project: EzLanguage (EzSchool) -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="ezlanguage" data-category="saas" data-project-id="ezlanguage" data-project-title="EzLanguage (EzSchool)">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Platform
               </span>
-              <span class="cat-pill">EdTech & Tutors</span>
+              <div class="card-top-right">
+                <span class="cat-pill">EdTech & Tutors</span>
+                <button type="button" class="card-share-btn" data-project-id="ezlanguage" data-project-title="EzLanguage (EzSchool)" title="Copy direct link to EzLanguage (EzSchool)" aria-label="Copy direct link to EzLanguage (EzSchool)">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">EzLanguage (EzSchool)</h3>
@@ -2357,12 +2336,18 @@ body {
           </div>
 
           <!-- Project: Moldova Customs Calculator -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="moldova-customs" data-category="saas" data-project-id="moldova-customs" data-project-title="Moldova Customs Calculator">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Google Play App
               </span>
-              <span class="cat-pill">Mobile Utility</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Mobile Utility</span>
+                <button type="button" class="card-share-btn" data-project-id="moldova-customs" data-project-title="Moldova Customs Calculator" title="Copy direct link to Moldova Customs Calculator" aria-label="Copy direct link to Moldova Customs Calculator">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Moldova Customs Calculator</h3>
@@ -2383,12 +2368,18 @@ body {
           </div>
 
           <!-- Project: Nothing Unwanted -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="nothing-unwanted" data-category="saas" data-project-id="nothing-unwanted" data-project-title="Nothing Unwanted">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Mobile App
               </span>
-              <span class="cat-pill">Music & Booking</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Music & Booking</span>
+                <button type="button" class="card-share-btn" data-project-id="nothing-unwanted" data-project-title="Nothing Unwanted" title="Copy direct link to Nothing Unwanted" aria-label="Copy direct link to Nothing Unwanted">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Nothing Unwanted</h3>
@@ -2409,12 +2400,18 @@ body {
           </div>
 
           <!-- Project: SOMA Micronutrient & Bioflow Platform -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="soma-platform" data-category="saas" data-project-id="soma-platform" data-project-title="SOMA Micronutrient & Bioflow Platform">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Google Play App
               </span>
-              <span class="cat-pill">Biometrics & Health</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Biometrics & Health</span>
+                <button type="button" class="card-share-btn" data-project-id="soma-platform" data-project-title="SOMA Micronutrient & Bioflow Platform" title="Copy direct link to SOMA Micronutrient & Bioflow Platform" aria-label="Copy direct link to SOMA Micronutrient & Bioflow Platform">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">SOMA Micronutrient & Bioflow Platform</h3>
@@ -2435,12 +2432,18 @@ body {
           </div>
 
           <!-- Project: IdealToolkit -->
-          <div class="product-card" data-category="devtools">
+          <div class="product-card" id="idealtoolkit" data-category="devtools" data-project-id="idealtoolkit" data-project-title="IdealToolkit">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live SaaS & Migration
               </span>
-              <span class="cat-pill">Productivity & Tooling</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Productivity & Tooling</span>
+                <button type="button" class="card-share-btn" data-project-id="idealtoolkit" data-project-title="IdealToolkit" title="Copy direct link to IdealToolkit" aria-label="Copy direct link to IdealToolkit">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">IdealToolkit</h3>
@@ -2464,12 +2467,18 @@ body {
           </div>
 
           <!-- Project: Webotit -->
-          <div class="product-card" data-category="ai">
+          <div class="product-card" id="webotit" data-category="ai" data-project-id="webotit" data-project-title="Webotit">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Platform
               </span>
-              <span class="cat-pill">Conversational AI</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Conversational AI</span>
+                <button type="button" class="card-share-btn" data-project-id="webotit" data-project-title="Webotit" title="Copy direct link to Webotit" aria-label="Copy direct link to Webotit">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Webotit</h3>
@@ -2490,12 +2499,18 @@ body {
           </div>
 
           <!-- Project: Ovidiu Platform -->
-          <div class="product-card" data-category="saas">
+          <div class="product-card" id="ovidiu-platform" data-category="saas" data-project-id="ovidiu-platform" data-project-title="Ovidiu Platform">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Platform
               </span>
-              <span class="cat-pill">Enterprise Workflow</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Enterprise Workflow</span>
+                <button type="button" class="card-share-btn" data-project-id="ovidiu-platform" data-project-title="Ovidiu Platform" title="Copy direct link to Ovidiu Platform" aria-label="Copy direct link to Ovidiu Platform">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Ovidiu Platform</h3>
@@ -2516,12 +2531,18 @@ body {
           </div>
 
           <!-- Project: NFTyMuse -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="nftymuse" data-category="web3" data-project-id="nftymuse" data-project-title="NFTyMuse">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Web3
               </span>
-              <span class="cat-pill">Digital Art & 3D</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Digital Art & 3D</span>
+                <button type="button" class="card-share-btn" data-project-id="nftymuse" data-project-title="NFTyMuse" title="Copy direct link to NFTyMuse" aria-label="Copy direct link to NFTyMuse">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">NFTyMuse</h3>
@@ -2542,12 +2563,18 @@ body {
           </div>
 
           <!-- Project: Transium -->
-          <div class="product-card" data-category="devtools">
+          <div class="product-card" id="transium" data-category="devtools" data-project-id="transium" data-project-title="Transium">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Platform
               </span>
-              <span class="cat-pill">Localization Engine</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Localization Engine</span>
+                <button type="button" class="card-share-btn" data-project-id="transium" data-project-title="Transium" title="Copy direct link to Transium" aria-label="Copy direct link to Transium">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Transium</h3>
@@ -2568,12 +2595,18 @@ body {
           </div>
 
           <!-- Project: Prophet -->
-          <div class="product-card" data-category="ai">
+          <div class="product-card" id="prophet" data-category="ai" data-project-id="prophet" data-project-title="Prophet">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live AI Engine
               </span>
-              <span class="cat-pill">Predictive Intelligence</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Predictive Intelligence</span>
+                <button type="button" class="card-share-btn" data-project-id="prophet" data-project-title="Prophet" title="Copy direct link to Prophet" aria-label="Copy direct link to Prophet">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Prophet</h3>
@@ -2594,12 +2627,18 @@ body {
           </div>
 
           <!-- Project: Odyssey -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="odyssey" data-category="web3" data-project-id="odyssey" data-project-title="Odyssey">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Ecosystem
               </span>
-              <span class="cat-pill">Community Quests</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Community Quests</span>
+                <button type="button" class="card-share-btn" data-project-id="odyssey" data-project-title="Odyssey" title="Copy direct link to Odyssey" aria-label="Copy direct link to Odyssey">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Odyssey</h3>
@@ -2620,12 +2659,18 @@ body {
           </div>
 
           <!-- Project: Parabolica -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="parabolica" data-category="web3" data-project-id="parabolica" data-project-title="Parabolica">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live DeFi Terminal
               </span>
-              <span class="cat-pill">DeFi & Trading</span>
+              <div class="card-top-right">
+                <span class="cat-pill">DeFi & Trading</span>
+                <button type="button" class="card-share-btn" data-project-id="parabolica" data-project-title="Parabolica" title="Copy direct link to Parabolica" aria-label="Copy direct link to Parabolica">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Parabolica</h3>
@@ -2646,12 +2691,18 @@ body {
           </div>
 
           <!-- Project: Metaverde -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="metaverde" data-category="web3" data-project-id="metaverde" data-project-title="Metaverde">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live EcoTech
               </span>
-              <span class="cat-pill">Green Web3</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Green Web3</span>
+                <button type="button" class="card-share-btn" data-project-id="metaverde" data-project-title="Metaverde" title="Copy direct link to Metaverde" aria-label="Copy direct link to Metaverde">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">Metaverde</h3>
@@ -2672,12 +2723,18 @@ body {
           </div>
 
           <!-- Project: MatterDust -->
-          <div class="product-card" data-category="ai">
+          <div class="product-card" id="matterdust" data-category="ai" data-project-id="matterdust" data-project-title="MatterDust">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Sandbox
               </span>
-              <span class="cat-pill">Generative Shaders</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Generative Shaders</span>
+                <button type="button" class="card-share-btn" data-project-id="matterdust" data-project-title="MatterDust" title="Copy direct link to MatterDust" aria-label="Copy direct link to MatterDust">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">MatterDust</h3>
@@ -2698,12 +2755,18 @@ body {
           </div>
 
           <!-- Project: o1a Engine -->
-          <div class="product-card" data-category="ai">
+          <div class="product-card" id="o1a" data-category="ai" data-project-id="o1a" data-project-title="o1a Engine">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live AI Agent
               </span>
-              <span class="cat-pill">Agent Orchestration</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Agent Orchestration</span>
+                <button type="button" class="card-share-btn" data-project-id="o1a" data-project-title="o1a Engine" title="Copy direct link to o1a Engine" aria-label="Copy direct link to o1a Engine">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">o1a Engine</h3>
@@ -2724,12 +2787,18 @@ body {
           </div>
 
           <!-- Project: NuttiPetz -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="nuttipetz" data-category="web3" data-project-id="nuttipetz" data-project-title="NuttiPetz">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live GameFi
               </span>
-              <span class="cat-pill">Web3 Gaming & NFTs</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Web3 Gaming & NFTs</span>
+                <button type="button" class="card-share-btn" data-project-id="nuttipetz" data-project-title="NuttiPetz" title="Copy direct link to NuttiPetz" aria-label="Copy direct link to NuttiPetz">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">NuttiPetz</h3>
@@ -2750,12 +2819,18 @@ body {
           </div>
 
           <!-- Project: CoVault -->
-          <div class="product-card" data-category="web3">
+          <div class="product-card" id="covault" data-category="web3" data-project-id="covault" data-project-title="CoVault">
             <div class="card-top">
               <span class="status-pill status-live">
                 <span class="pulse-dot"></span> Live Security Vault
               </span>
-              <span class="cat-pill">Security & Custody</span>
+              <div class="card-top-right">
+                <span class="cat-pill">Security & Custody</span>
+                <button type="button" class="card-share-btn" data-project-id="covault" data-project-title="CoVault" title="Copy direct link to CoVault" aria-label="Copy direct link to CoVault">
+                  <svg class="share-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+                  <svg class="check-icon" viewBox="0 0 24 24" width="13" height="13" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </button>
+              </div>
             </div>
             <div class="card-main">
               <h3 class="product-name">CoVault</h3>
@@ -2860,6 +2935,9 @@ body {
       </div>
     </footer>
   </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toast" class="toast"></div>
 
   <script src="script.js"></script>
 
