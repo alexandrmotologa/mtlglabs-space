@@ -2,14 +2,14 @@
   "cleanUrls": true,
   "redirects": [
     {
-      "source": "/(.*)",
+      "source": "/:path*",
       "has": [
         {
           "type": "host",
           "value": "mcp.mtlglabs.space"
         }
       ],
-      "destination": "https://www.mtlglabs.space/mcp",
+      "destination": "https://www.mtlglabs.space/mcp/:path*",
       "permanent": false
     }
   ]
